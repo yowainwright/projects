@@ -1,12 +1,20 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ChangeEvent } from 'react';
 import { projects, categories } from '@/data/projects';
-import { ProjectCard } from '@/components/ProjectCard';
+import { Card } from '@/components/Sidebar/Card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Search, X } from 'lucide-react';
-import { CategorySectionProps, SidebarProps, TagsProps } from './types';
+import type {
+  CategorySectionProps,
+  SidebarProps,
+  TagsProps,
+  SearchInputProps,
+  FilteredTagTextProps,
+  FilteredBadgesProps,
+  BadgeNavProps,
+} from './types';
 
 export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
   const [search, setSearch] = useState('');
@@ -54,7 +62,7 @@ export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
     setSelectedTags([]);
   };
 
-  const handleSearch = (e) => setSearch(e.target.value)
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)
 
   return (
     <aside className="lg:sticky lg:top-4 lg:self-start text-foreground">
@@ -88,7 +96,7 @@ export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
   );
 }
 
-export const SearchInput = ({ search, handleSearch }: any) => {
+export const SearchInput = ({ search, handleSearch }: SearchInputProps) => {
   return (
     <div className="relative mb-6">
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -129,7 +137,7 @@ export function Tags ({ clearFilters, tags, toggleTag }: TagsProps) {
   )
 }
 
-export const FilteredTagText = ({ search, selectedTags, filteredProjects }: any) => {
+export const FilteredTagText = ({ search, selectedTags, filteredProjects }: FilteredTagTextProps) => {
   const hasFilters = search || selectedTags.length > 0;
   if (!hasFilters) return null;
   return (
@@ -139,7 +147,7 @@ export const FilteredTagText = ({ search, selectedTags, filteredProjects }: any)
   )
 }
 
-export const FilteredBadges = ({ search, selectedTags, toggleTag, allTags }: any) => {
+export const FilteredBadges = ({ search, selectedTags, toggleTag, allTags }: FilteredBadgesProps) => {
   const hasFilters = search || selectedTags.length > 0;
   if (!hasFilters) return null;
   return (
@@ -166,7 +174,7 @@ export const FilteredBadges = ({ search, selectedTags, toggleTag, allTags }: any
   )
 }
 
-export const BadgeNav = ({ projectsByCategory, activeId, onProjectClick, selectedTags, toggleTag }: any) => {
+export const BadgeNav = ({ projectsByCategory, activeId, onProjectClick, selectedTags, toggleTag }: BadgeNavProps) => {
   const hasProjectsByCategory = projectsByCategory.length > 0;
   if (!hasProjectsByCategory) {
     return (
@@ -177,7 +185,7 @@ export const BadgeNav = ({ projectsByCategory, activeId, onProjectClick, selecte
   }
   return (
     <nav className="space-y-8">
-      {projectsByCategory.map((category: any) => (
+      {projectsByCategory.map((category) => (
         <CategorySection
           key={category.id}
           label={category.label}
@@ -207,7 +215,7 @@ export const CategorySection = ({
       </h2>
       <div className="space-y-2">
         {projects.map((project) => (
-          <ProjectCard
+          <Card
             key={project.id}
             project={project}
             isActive={activeId === project.id}

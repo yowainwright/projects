@@ -1,8 +1,13 @@
-import type { Project } from '@/data/projects';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star, Check, Github, ExternalLink } from 'lucide-react';
-import { ProjectDetailProps } from '../types';
+import type {
+  ProjectDetailProps,
+  HeaderProps,
+  HighlightsProps,
+  TagsProps,
+  LinksProps,
+} from '../types';
 
 export function Detail({ project }: ProjectDetailProps) {
   return (
@@ -20,7 +25,7 @@ export function Detail({ project }: ProjectDetailProps) {
   );
 }
 
-export function Header({ project }: { project: Project }) {
+export function Header({ project }: HeaderProps) {
   return (
     <header>
       <div className="flex items-center gap-3 mb-1">
@@ -37,7 +42,7 @@ export function Header({ project }: { project: Project }) {
   );
 }
 
-function Highlights({ highlights }: { highlights: string[] }) {
+function Highlights({ highlights }: HighlightsProps) {
   return (
     <div>
       <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3">
@@ -55,7 +60,7 @@ function Highlights({ highlights }: { highlights: string[] }) {
   );
 }
 
-export export function Tags({ tags }: { tags: string[] }) {
+export function Tags({ tags }: TagsProps) {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
@@ -67,7 +72,7 @@ export export function Tags({ tags }: { tags: string[] }) {
   );
 }
 
-export function Links({ project }: { project: Project }) {
+export function Links({ project }: LinksProps) {
   const hasLinks = project.github || project.npm || project.website;
   if (!hasLinks) return null;
 

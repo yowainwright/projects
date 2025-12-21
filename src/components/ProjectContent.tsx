@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { projects } from '@/data/projects';
 import { Sidebar } from '@/components/Sidebar';
-import { ProjectList } from '@/components/ProjectList';
+import { ProjectList } from '@/components/Projects';
 import { useScrollspy } from '@/hooks/useScrollspy';
 import '@/styles/content.css';
 

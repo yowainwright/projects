@@ -8,10 +8,9 @@ export function App() {
       <Header />
       <main className="section">
         <header className="header__description">
-          <h1>Projects</h1>
-          <p>
-            This page showcases projects I work on—from JavaScript utilities like es-check to contributions to Koa.js, JSPM and other community projects.
-          </p>
+          <h1>
+            Projects showcase: This page showcase projects I work on, maintain, or have done so in the past.
+          </h1>
         </header>
         <ProjectsMicrofrontend />
       </main>
