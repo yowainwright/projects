@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import type { Project } from '@/data/projects';
-import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star } from 'lucide-react';
 
@@ -15,32 +14,32 @@ interface ProjectCardProps {
 export function ProjectCard({ project, isActive, onClick, selectedTags, onTagClick }: ProjectCardProps) {
   return (
     <button onClick={onClick} className="w-full text-left">
-      <Card
+      <div
         className={cn(
-          'p-4 py-4 gap-2 cursor-pointer transition-all duration-200 bg-transparent border-transparent shadow-none',
-          'hover:border-border',
-          isActive && 'border-primary'
+          'p-4 rounded-lg cursor-pointer transition-all duration-200 border',
+          'border-border hover:border-foreground hover:border-2',
+          isActive && 'border-foreground border-2'
         )}
       >
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-sm">{project.title}</h3>
+        <div className="flex items-start justify-between gap-2 mb-3">
+          <h3 className="font-medium text-base leading-tight">{project.title}</h3>
           {project.stars && (
-            <span className="text-xs text-muted-foreground flex items-center gap-1 shrink-0">
+            <span className="text-sm text-muted-foreground flex items-center gap-1 shrink-0">
               <Star className="w-3 h-3" />
               {project.stars}
             </span>
           )}
         </div>
-        <p className="text-xs text-muted-foreground line-clamp-2">
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-4 leading-relaxed">
           {project.tagline}
         </p>
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1.5">
           {project.tags.slice(0, 3).map((tag) => (
             <Badge
               key={tag}
               variant={selectedTags.includes(tag) ? 'default' : 'secondary'}
               className={cn(
-                'text-[10px] px-1.5 py-0 cursor-pointer',
+                'cursor-pointer',
                 'hover:bg-primary hover:text-primary-foreground'
               )}
               onClick={(e) => {
@@ -52,7 +51,7 @@ export function ProjectCard({ project, isActive, onClick, selectedTags, onTagCli
             </Badge>
           ))}
         </div>
-      </Card>
+      </div>
     </button>
   );
 }

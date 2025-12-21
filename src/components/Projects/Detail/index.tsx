@@ -2,28 +2,25 @@ import type { Project } from '@/data/projects';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star, Check, Github, ExternalLink } from 'lucide-react';
+import { ProjectDetailProps } from '../types';
 
-interface ProjectDetailProps {
-  project: Project;
-}
-
-export function ProjectDetail({ project }: ProjectDetailProps) {
+export function Detail({ project }: ProjectDetailProps) {
   return (
     <section id={project.id} className="py-16 border-t border-foreground first:border-t-0">
       <div className="space-y-8">
-        <ProjectHeader project={project} />
+        <Header project={project} />
         <p className="text-lg font-light leading-loose">{project.description}</p>
         {project.highlights && project.highlights.length > 0 && (
-          <ProjectHighlights highlights={project.highlights} />
+          <Highlights highlights={project.highlights} />
         )}
-        <ProjectTags tags={project.tags} />
-        <ProjectLinks project={project} />
+        <Tags tags={project.tags} />
+        <Links project={project} />
       </div>
     </section>
   );
 }
 
-function ProjectHeader({ project }: { project: Project }) {
+export function Header({ project }: { project: Project }) {
   return (
     <header>
       <div className="flex items-center gap-3 mb-1">
@@ -40,7 +37,7 @@ function ProjectHeader({ project }: { project: Project }) {
   );
 }
 
-function ProjectHighlights({ highlights }: { highlights: string[] }) {
+function Highlights({ highlights }: { highlights: string[] }) {
   return (
     <div>
       <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3">
@@ -58,7 +55,7 @@ function ProjectHighlights({ highlights }: { highlights: string[] }) {
   );
 }
 
-function ProjectTags({ tags }: { tags: string[] }) {
+export export function Tags({ tags }: { tags: string[] }) {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
@@ -70,7 +67,7 @@ function ProjectTags({ tags }: { tags: string[] }) {
   );
 }
 
-function ProjectLinks({ project }: { project: Project }) {
+export function Links({ project }: { project: Project }) {
   const hasLinks = project.github || project.npm || project.website;
   if (!hasLinks) return null;
 
@@ -104,7 +101,7 @@ function ProjectLinks({ project }: { project: Project }) {
   );
 }
 
-function NpmIcon() {
+export function NpmIcon() {
   return (
     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
       <path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331z" />
