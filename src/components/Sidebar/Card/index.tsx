@@ -28,19 +28,25 @@ export function Card({ project, isActive, onClick, selectedTags, onTagClick }: C
           {project.tagline}
         </p>
         <div id={`sidebar-card-${project.id}-tags`} className={CARD_STYLES.tags.wrapper}>
-          {project.tags.slice(0, 3).map((tag) => (
-            <Badge
-              key={tag}
-              variant={selectedTags.includes(tag) ? 'default' : 'secondary'}
-              className={CARD_STYLES.tags.badge}
-              onClick={(e) => {
-                e.stopPropagation();
-                onTagClick(tag);
-              }}
-            >
-              {tag}
-            </Badge>
-          ))}
+          {project.tags.slice(0, 3).map((tag) => {
+            const isSelected = selectedTags.includes(tag);
+            return (
+              <Badge
+                key={tag}
+                variant="secondary"
+                className={cn(
+                  CARD_STYLES.tags.badge,
+                  isSelected && CARD_STYLES.tags.badgeActive
+                )}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onTagClick(tag);
+                }}
+              >
+                {tag}
+              </Badge>
+            );
+          })}
         </div>
       </div>
     </button>

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 
 export function useScrollspy(ids: string[], offset: number = 100) {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const activeIdRef = useRef<string | null>(null);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const initialHashHandled = useRef(false);
@@ -18,21 +19,27 @@ export function useScrollspy(ids: string[], offset: number = 100) {
     }
   }, []);
 
+  const updateActiveId = useCallback((id: string | null) => {
+    if (activeIdRef.current !== id) {
+      activeIdRef.current = id;
+      setActiveId(id);
+    }
+  }, []);
+
   const scrollToId = useCallback(
-    (id: string, updateHash: boolean = true) => {
+    (id: string) => {
       const element = document.getElementById(id);
       if (element) {
         setScrolling(true);
-        setActiveId(id);
+        updateActiveId(id);
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (updateHash) {
-          window.history.replaceState(null, '', `#${id}`);
-        }
+        window.history.replaceState(null, '', `#${id}`);
       }
     },
-    [setScrolling]
+    [setScrolling, updateActiveId]
   );
 
+  // Handle initial hash on page load only
   useEffect(() => {
     if (initialHashHandled.current) return;
     initialHashHandled.current = true;
@@ -40,21 +47,9 @@ export function useScrollspy(ids: string[], offset: number = 100) {
     const hash = window.location.hash.slice(1);
     if (hash && ids.includes(hash)) {
       requestAnimationFrame(() => {
-        scrollToId(hash, false);
+        scrollToId(hash);
       });
     }
-  }, [ids, scrollToId]);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash && ids.includes(hash)) {
-        scrollToId(hash, false);
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
   }, [ids, scrollToId]);
 
   useEffect(() => {
@@ -66,17 +61,13 @@ export function useScrollspy(ids: string[], offset: number = 100) {
       for (let i = ids.length - 1; i >= 0; i--) {
         const element = document.getElementById(ids[i]);
         if (element && element.offsetTop <= scrollPosition) {
-          if (activeId !== ids[i]) {
-            setActiveId(ids[i]);
-            window.history.replaceState(null, '', `#${ids[i]}`);
-          }
+          updateActiveId(ids[i]);
           return;
         }
       }
 
-      if (ids.length > 0 && activeId !== ids[0]) {
-        setActiveId(ids[0]);
-        window.history.replaceState(null, '', `#${ids[0]}`);
+      if (ids.length > 0) {
+        updateActiveId(ids[0]);
       }
     };
 
@@ -89,7 +80,7 @@ export function useScrollspy(ids: string[], offset: number = 100) {
         clearTimeout(scrollTimeoutRef.current);
       }
     };
-  }, [ids, offset, activeId]);
+  }, [ids, offset, updateActiveId]);
 
   return { activeId, scrollTo: scrollToId };
 }
