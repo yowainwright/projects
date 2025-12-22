@@ -3,6 +3,9 @@
 @import 'tailwindcss/utilities' layer(utilities);
 @import 'tailwindcss/theme' layer(theme);
 
+/* Configure dark mode to use js-is-darkmode class from jeffry.in */
+@custom-variant dark (&:where(.js-is-darkmode, .js-is-darkmode *));
+
 @layer base {
   .projects-content,
   .projects-content * {
@@ -108,6 +111,30 @@
   --color-link: var(--color-link-primary, #0000ff);
 }
 
+/* Dark mode colors - matching jeffry.in dark theme */
+.js-is-darkmode {
+  --color-background: #040b21;
+  --color-foreground: #ffffff;
+  --color-card: #0a1433;
+  --color-card-foreground: #ffffff;
+  --color-popover: #040b21;
+  --color-popover-foreground: #ffffff;
+  --color-primary: #6b8aff;
+  --color-primary-foreground: #040b21;
+  --color-secondary: #0a1433;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #1a2744;
+  --color-muted-foreground: #a0a0a0;
+  --color-accent: #1a2744;
+  --color-accent-foreground: #6b8aff;
+  --color-destructive: #ff6b6b;
+  --color-border: #3a4a6b;
+  --color-border-light: #1a2744;
+  --color-input: #3a4a6b;
+  --color-ring: #6b8aff;
+  --color-link: #6b8aff;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -117,11 +144,12 @@
   display: none;
 }
 
-.sidebar-card-active {
+.sidebar-card {
   position: relative;
 }
 
-.sidebar-card-active::before {
+.sidebar-card::before,
+.sidebar-card::after {
   content: '';
   position: absolute;
   right: -26px;
@@ -129,16 +157,15 @@
   transform: translateY(-50%);
   width: 0;
   height: 0;
+}
+
+.sidebar-card::before {
   border-top: 26px solid transparent;
   border-bottom: 26px solid transparent;
-  border-left: 26px solid var(--color-foreground);
+  border-left: 26px solid transparent;
 }
 
-.js-is-darkmode .sidebar-card-active::before {
-  border-left: 26px solid #fff;
-}
-
-.sidebar-card-active::after {
+.sidebar-card::after {
   content: '';
   position: absolute;
   right: -16px;
@@ -151,6 +178,14 @@
   border-left: 16px solid var(--color-background);
 }
 
-.js-is-darkmode .sidebar-card-active::after {
+.js-is-darkmode .sidebar-card::after {
   border-left: 16px solid #040b21;
+}
+
+.sidebar-card-active::before {
+  border-left: 26px solid var(--color-foreground);
+}
+
+.js-is-darkmode .sidebar-card-active::before {
+  border-left: 26px solid #fff;
 }

@@ -1,5 +1,4 @@
-import { forwardRef, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
-import { projects, categories } from '@/data/projects';
+import { forwardRef, useEffect, useRef } from 'react';
 import { Card } from '@/components/Sidebar/Card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -17,9 +16,18 @@ import type {
   BadgeNavProps,
 } from './types';
 
-export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
-  const [search, setSearch] = useState('');
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+export function Sidebar({
+  activeId,
+  onProjectClick,
+  search,
+  handleSearch,
+  selectedTags,
+  toggleTag,
+  clearFilters,
+  allTags,
+  filteredProjects,
+  projectsByCategory,
+}: SidebarProps) {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -45,78 +53,36 @@ export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
     nav.scrollTo({ top: Math.max(0, scrollOffset), behavior: 'smooth' });
   }, [activeId]);
 
-  const allTags = useMemo(() => {
-    const tagSet = new Set<string>();
-    projects.forEach((p) => p.tags.forEach((t) => tagSet.add(t)));
-    return Array.from(tagSet).sort();
-  }, []);
-
-  const filteredProjects = useMemo(() => {
-    return projects.filter((p) => {
-      const title = trimWord(p.title, search)
-      const tagLine = trimWord(p.tagline, search)
-      const matchesSearch =
-        !search || title || tagLine ||
-        p.tags.some((t) => trimWord(t, search));
-
-      const matchesTags =
-        selectedTags.length === 0 ||
-        selectedTags.every((tag) => p.tags.includes(tag));
-
-      return matchesSearch && matchesTags;
-    });
-  }, [search, selectedTags]);
-
-  const projectsByCategory = useMemo(() => {
-    return categories
-      .map((category) => ({
-        ...category,
-        projects: filteredProjects.filter((p) => p.category === category.id),
-      }))
-      .filter((category) => category.projects.length > 0);
-  }, [filteredProjects]);
-
-  const toggleTag = (tag: string) => {
-    setSelectedTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
-    );
-  };
-
-  const clearFilters = () => {
-    setSearch('');
-    setSelectedTags([]);
-  };
-
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)
-
   return (
     <aside id="sidebar" className={SIDEBAR_STYLES.aside}>
       <div id="sidebar-container" className={SIDEBAR_STYLES.container}>
         <SearchInput search={search} handleSearch={handleSearch} />
-        <Tags
-            clearFilters={clearFilters}
-            tags={selectedTags}
-            toggleTag={toggleTag}
-        />
-        <FilteredTagText
-            search={search}
-            selectedTags={selectedTags}
-            filteredProjects={filteredProjects}
-        />
-        <BadgeNav
-            ref={navRef}
-            projectsByCategory={projectsByCategory}
-            activeId={activeId}
-            onProjectClick={onProjectClick}
-            selectedTags={selectedTags}
-            toggleTag={toggleTag}
-        />
-        <FilteredBadges
-            search={search}
-            selectedTags={selectedTags}
-            toggleTag={toggleTag}
-            allTags={allTags}
-        />
+        <div id="sidebar-content" className="sidebar-content hidden lg:block">
+          <Tags
+              clearFilters={clearFilters}
+              tags={selectedTags}
+              toggleTag={toggleTag}
+          />
+          <FilteredTagText
+              search={search}
+              selectedTags={selectedTags}
+              filteredProjects={filteredProjects}
+          />
+          <BadgeNav
+              ref={navRef}
+              projectsByCategory={projectsByCategory}
+              activeId={activeId}
+              onProjectClick={onProjectClick}
+              selectedTags={selectedTags}
+              toggleTag={toggleTag}
+          />
+          <FilteredBadges
+              search={search}
+              selectedTags={selectedTags}
+              toggleTag={toggleTag}
+              allTags={allTags}
+          />
+        </div>
       </div>
     </aside>
   );
@@ -260,7 +226,3 @@ export const CategorySection = ({
   )
 }
 
-export const trimWord = (wrd: String, srchWrd: String) => {
-  const lwrSrchWrd = srchWrd.toLowerCase();
-  return wrd.toLowerCase().includes(lwrSrchWrd);
-}

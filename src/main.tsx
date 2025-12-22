@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { routeTree } from './routes';
 import './index.css';
-import './styles/jeffry.in.css';
 
 const router = createRouter({ routeTree });
 
