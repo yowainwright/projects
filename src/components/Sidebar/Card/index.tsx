@@ -6,35 +6,33 @@ import { CARD_STYLES } from './constants';
 
 export function Card({ project, isActive, onClick, selectedTags, onTagClick }: CardProps) {
   return (
-    <button onClick={onClick} className="w-full text-left">
+    <button id={`sidebar-card-${project.id}`} onClick={onClick} className={CARD_STYLES.button}>
       <div
+        id={`sidebar-card-${project.id}-content`}
         className={cn(
-          CARD_STYLES.base,
-          CARD_STYLES.inactive,
-          isActive && CARD_STYLES.active
+          CARD_STYLES.content.base,
+          CARD_STYLES.content.inactive,
+          isActive && CARD_STYLES.content.active
         )}
       >
-        <div className="flex items-start justify-between gap-2 mb-3">
-          <h3 className="font-medium text-base leading-tight">{project.title}</h3>
+        <div id={`sidebar-card-${project.id}-header`} className={CARD_STYLES.header}>
+          <h3 id={`sidebar-card-${project.id}-title`} className={CARD_STYLES.title}>{project.title}</h3>
           {project.stars && (
-            <span className="text-sm text-muted-foreground flex items-center gap-1 shrink-0">
-              <Star className="w-3 h-3" />
+            <span id={`sidebar-card-${project.id}-stars`} className={CARD_STYLES.stars}>
+              <Star className={CARD_STYLES.starsIcon} />
               {project.stars}
             </span>
           )}
         </div>
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-4 leading-relaxed">
+        <p id={`sidebar-card-${project.id}-tagline`} className={CARD_STYLES.tagline}>
           {project.tagline}
         </p>
-        <div className="flex flex-wrap gap-1.5">
+        <div id={`sidebar-card-${project.id}-tags`} className={CARD_STYLES.tags.wrapper}>
           {project.tags.slice(0, 3).map((tag) => (
             <Badge
               key={tag}
               variant={selectedTags.includes(tag) ? 'default' : 'secondary'}
-              className={cn(
-                'cursor-pointer',
-                'hover:bg-primary hover:text-primary-foreground'
-              )}
+              className={CARD_STYLES.tags.badge}
               onClick={(e) => {
                 e.stopPropagation();
                 onTagClick(tag);

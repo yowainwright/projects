@@ -1,79 +1,81 @@
+@layer base, utilities;
+
 @import 'tailwindcss/utilities' layer(utilities);
 @import 'tailwindcss/theme' layer(theme);
 
-/* Reset inherited styles from jeffry.in inside projects-content */
-.projects-content,
-.projects-content * {
-  all: revert-layer;
-}
+@layer base {
+  .projects-content,
+  .projects-content * {
+    all: revert-layer;
+  }
 
-/* Scoped preflight for content area */
-.projects-content {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 0.025rem;
-  -webkit-font-smoothing: antialiased;
-}
+  .projects-content {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.025rem;
+    -webkit-font-smoothing: antialiased;
+  }
 
-.projects-content *,
-.projects-content *::before,
-.projects-content *::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--color-border);
-}
+  .projects-content *,
+  .projects-content *::before,
+  .projects-content *::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--color-border);
+  }
 
-.projects-content img,
-.projects-content svg {
-  display: block;
-  max-width: 100%;
-}
+  .projects-content img,
+  .projects-content svg {
+    display: block;
+    max-width: 100%;
+  }
 
-.projects-content button,
-.projects-content input {
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-}
+  .projects-content button,
+  .projects-content input {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
 
-.projects-content a {
-  color: inherit;
-  text-decoration: inherit;
-}
+  .projects-content a {
+    color: inherit;
+    text-decoration: inherit;
+  }
 
-.projects-content a:visited {
-  color: inherit;
-}
+  .projects-content a:visited {
+    color: inherit;
+  }
 
-.projects-content ul,
-.projects-content ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  .projects-content ul,
+  .projects-content ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.projects-content h1,
-.projects-content h2,
-.projects-content h3,
-.projects-content h4,
-.projects-content h5,
-.projects-content h6 {
-  font-size: inherit;
-  font-weight: inherit;
-  margin: 0;
-}
+  .projects-content h1,
+  .projects-content h2,
+  .projects-content h3,
+  .projects-content h4,
+  .projects-content h5,
+  .projects-content h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+  }
 
-.projects-content p,
-.projects-content li {
-  font-size: inherit;
-  font-weight: inherit;
-  letter-spacing: normal;
-  line-height: inherit;
-  margin: 0;
+  .projects-content p,
+  .projects-content li {
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: normal;
+    line-height: inherit;
+    margin: 0;
+  }
 }
 
 /* Theme using jeffry.in CSS variables - these inherit from parent and respect dark mode */

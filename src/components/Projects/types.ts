@@ -9,10 +9,12 @@ export interface HeaderProps {
 }
 
 export interface HighlightsProps {
+  projectId: string;
   highlights: string[];
 }
 
 export interface TagsProps {
+  projectId: string;
   tags: string[];
 }
 

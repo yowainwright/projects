@@ -58,15 +58,16 @@ export function Header() {
       role="navigation"
       itemType="http://schema.org/SiteNavigationElement"
     >
-      <section className="site-nav__container">
-        <a href="https://jeffry.in" className="logo">
-          <h3 className="logo__title">j</h3>
+      <section id="site-nav-container" className="site-nav__container">
+        <a id="site-logo" href="https://jeffry.in" className="logo">
+          <h3 id="site-logo-title" className="logo__title">j</h3>
         </a>
-        <div className="site-nav__links-wrapper">
-          <ul className="site-nav__items">
+        <div id="site-nav-links" className="site-nav__links-wrapper">
+          <ul id="site-nav-items" className="site-nav__items">
             {NAV_ITEMS.map(({ alias, name, path }) => (
-              <li key={alias} className={`site-nav__item site-nav__item--${alias}`}>
+              <li key={alias} id={`site-nav-item-${alias}`} className={`site-nav__item site-nav__item--${alias}`}>
                 <a
+                  id={`site-nav-link-${alias}`}
                   className={`site-nav__link site-nav__link--${alias}`}
                   href={path}
                 >
@@ -76,6 +77,7 @@ export function Header() {
             ))}
           </ul>
           <button
+            id="site-nav-toggle"
             className="site-nav__toggle"
             onClick={handleToggle}
             title="Toggle Darkmode"

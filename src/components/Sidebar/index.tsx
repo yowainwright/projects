@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Search, X } from 'lucide-react';
+import { SIDEBAR_STYLES } from './constants';
 import type {
   CategorySectionProps,
   SidebarProps,
@@ -65,8 +66,8 @@ export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)
 
   return (
-    <aside className="lg:sticky lg:top-4 lg:self-start text-foreground">
-      <div className="border border-foreground rounded-[2rem] p-6">
+    <aside id="sidebar" className={SIDEBAR_STYLES.aside}>
+      <div id="sidebar-container" className={SIDEBAR_STYLES.container}>
         <SearchInput search={search} handleSearch={handleSearch} />
         <Tags
             clearFilters={clearFilters}
@@ -98,14 +99,15 @@ export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
 
 export const SearchInput = ({ search, handleSearch }: SearchInputProps) => {
   return (
-    <div className="relative mb-6">
-      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+    <div id="sidebar-search" className={SIDEBAR_STYLES.search.wrapper}>
+      <Search className={SIDEBAR_STYLES.search.icon} />
       <Input
+        id="sidebar-search-input"
         type="text"
         placeholder="Search projects..."
         value={search}
         onChange={handleSearch}
-        className="pl-9 border-foreground"
+        className={SIDEBAR_STYLES.search.input}
       />
     </div>
   )
@@ -115,21 +117,21 @@ export function Tags ({ clearFilters, tags, toggleTag }: TagsProps) {
   const hasSelectedTags = tags.length > 0;
   if (!hasSelectedTags) return null;
   return (
-    <div className="flex flex-wrap gap-2 mb-6">
+    <div id="sidebar-selected-tags" className={SIDEBAR_STYLES.tags.wrapper}>
       {tags.map((tag) => (
         <Badge
-        key={tag}
-        variant="default"
-        className="cursor-pointer"
-        onClick={() => toggleTag(tag)}
+          key={tag}
+          variant="default"
+          className={SIDEBAR_STYLES.tags.badge}
+          onClick={() => toggleTag(tag)}
         >
-        {tag}
-        <X className="w-3 h-3 ml-1" />
+          {tag}
+          <X className={SIDEBAR_STYLES.tags.closeIcon} />
         </Badge>
       ))}
       <Button
         onClick={clearFilters}
-        className="text-sm text-muted-foreground hover:text-foreground hover:underline"
+        className={SIDEBAR_STYLES.tags.clearButton}
       >
         Clear all
       </Button>
@@ -141,7 +143,7 @@ export const FilteredTagText = ({ search, selectedTags, filteredProjects }: Filt
   const hasFilters = search || selectedTags.length > 0;
   if (!hasFilters) return null;
   return (
-    <p className="text-sm text-muted-foreground mb-6">
+    <p id="sidebar-filter-count" className={SIDEBAR_STYLES.filterCount}>
       {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
     </p>
   )
@@ -151,18 +153,18 @@ export const FilteredBadges = ({ search, selectedTags, toggleTag, allTags }: Fil
   const hasFilters = search || selectedTags.length > 0;
   if (!hasFilters) return null;
   return (
-    <div className="mt-8 pt-6 border-t border-foreground">
-      <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">
+    <div id="sidebar-filter-badges" className={SIDEBAR_STYLES.filterBadges.wrapper}>
+      <h3 id="sidebar-filter-badges-title" className={SIDEBAR_STYLES.filterBadges.title}>
         Filter by tag
       </h3>
-      <div className="flex flex-wrap gap-2">
+      <div id="sidebar-filter-badges-list" className={SIDEBAR_STYLES.filterBadges.list}>
         {allTags.slice(0, 12).map((tag) => (
           <Badge
               key={tag}
               variant="outline"
               className={cn(
-              'cursor-pointer border-foreground',
-              selectedTags.includes(tag) && 'bg-primary text-primary-foreground'
+                SIDEBAR_STYLES.filterBadges.badge,
+                selectedTags.includes(tag) && SIDEBAR_STYLES.filterBadges.badgeActive
               )}
               onClick={() => toggleTag(tag)}
           >
@@ -178,13 +180,13 @@ export const BadgeNav = ({ projectsByCategory, activeId, onProjectClick, selecte
   const hasProjectsByCategory = projectsByCategory.length > 0;
   if (!hasProjectsByCategory) {
     return (
-      <nav className="space-y-8">
-        <p className="text-base text-muted-foreground">No projects match your filters.</p>
+      <nav id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper}>
+        <p id="sidebar-nav-empty" className={SIDEBAR_STYLES.nav.empty}>No projects match your filters.</p>
       </nav>
     )
   }
   return (
-    <nav className="space-y-8">
+    <nav id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper}>
       {projectsByCategory.map((category) => (
         <CategorySection
           key={category.id}
@@ -208,12 +210,13 @@ export const CategorySection = ({
   selectedTags,
   onTagClick,
 }: CategorySectionProps) => {
+  const categoryId = label.toLowerCase().replace(/\s+/g, '-');
   return (
-    <div>
-      <h2 className="text-base font-black uppercase tracking-wider text-foreground mb-4">
+    <div id={`sidebar-category-${categoryId}`} className={SIDEBAR_STYLES.category.wrapper}>
+      <h2 id={`sidebar-category-${categoryId}-title`} className={SIDEBAR_STYLES.category.title}>
         {label}
       </h2>
-      <div className="space-y-2">
+      <div id={`sidebar-category-${categoryId}-list`} className={SIDEBAR_STYLES.category.list}>
         {projects.map((project) => (
           <Card
             key={project.id}
