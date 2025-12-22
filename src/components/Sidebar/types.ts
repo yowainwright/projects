@@ -4,6 +4,14 @@ import type { Project } from '@/data/projects';
 export interface SidebarProps {
   activeId: string | null;
   onProjectClick: (id: string) => void;
+  search: string;
+  handleSearch: (e: ChangeEvent<HTMLInputElement>) => void;
+  selectedTags: string[];
+  toggleTag: (tag: string) => void;
+  clearFilters: () => void;
+  allTags: string[];
+  filteredProjects: Project[];
+  projectsByCategory: CategoryWithProjects[];
 }
 
 export interface CategorySectionProps {

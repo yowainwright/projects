@@ -2,15 +2,15 @@ export const SIDEBAR_STYLES = {
   aside: 'lg:sticky lg:top-4 lg:self-start text-foreground',
   container: '',
   search: {
-    wrapper: 'relative mb-6 border-8! rounded-md border-foreground! md:mr-4',
+    wrapper: 'relative mb-6 border-1! lg:border-8! rounded-md border-foreground! md:mr-4',
     icon: 'absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4',
     input: 'pl-9 border-0!',
   },
   tags: {
     wrapper: 'flex flex-wrap gap-2 mb-6',
-    badge: 'cursor-pointer',
+    badge: 'cursor-pointer text-xs font-bold bg-foreground text-background hover:bg-foreground/75 rounded-md px-2 py-1',
     closeIcon: 'w-3 h-3 ml-1',
-    clearButton: 'text-sm text-muted-foreground hover:text-foreground hover:underline',
+    clearButton: 'text-xs font-bold bg-foreground text-background hover:bg-foreground/75 rounded-md px-2 py-1',
   },
   filterCount: 'text-sm mb-6',
   filterBadges: {

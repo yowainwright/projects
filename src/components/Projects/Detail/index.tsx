@@ -1,6 +1,5 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Star, Check, Github, ExternalLink } from 'lucide-react';
+import { Star, Github, ExternalLink } from 'lucide-react';
 import { DETAIL_STYLES } from './constants';
 import type {
   ProjectDetailProps,
@@ -10,27 +9,33 @@ import type {
   LinksProps,
 } from '../types';
 
-export function Detail({ project }: ProjectDetailProps) {
+export function Detail({ project, selectedTags, onTagClick, onTitleClick }: ProjectDetailProps) {
   return (
     <section id={project.id} className={DETAIL_STYLES.section}>
       <div id={`${project.id}-content`} className={DETAIL_STYLES.content}>
-        <Header project={project} />
+        <Header project={project} onTitleClick={onTitleClick} />
+        <Links project={project} />
         <p id={`${project.id}-description`} className={DETAIL_STYLES.description}>{project.description}</p>
         {project.highlights && project.highlights.length > 0 && (
           <Highlights projectId={project.id} highlights={project.highlights} />
         )}
-        <Tags projectId={project.id} tags={project.tags} />
-        <Links project={project} />
+        <Tags projectId={project.id} tags={project.tags} selectedTags={selectedTags} onTagClick={onTagClick} />
       </div>
     </section>
   );
 }
 
-export function Header({ project }: HeaderProps) {
+export function Header({ project, onTitleClick }: HeaderProps) {
   return (
     <header id={`${project.id}-header`} className={DETAIL_STYLES.header.wrapper}>
       <div id={`${project.id}-header-title-row`} className={DETAIL_STYLES.header.titleRow}>
-        <h2 id={`${project.id}-title`} className={DETAIL_STYLES.header.title}>{project.title}</h2>
+        <h2
+          id={`${project.id}-title`}
+          className={`${DETAIL_STYLES.header.title} cursor-pointer`}
+          onClick={() => onTitleClick(project.id)}
+        >
+          {project.title}
+        </h2>
         {project.stars && (
           <span id={`${project.id}-stars`} className={DETAIL_STYLES.header.stars}>
             <Star className={DETAIL_STYLES.header.starsIcon} />
@@ -60,18 +65,22 @@ function Highlights({ projectId, highlights }: HighlightsProps) {
   );
 }
 
-export function Tags({ projectId, tags }: TagsProps) {
+export function Tags({ projectId, tags, selectedTags, onTagClick }: TagsProps) {
   return (
     <div id={`${projectId}-tags`} className={DETAIL_STYLES.tags.wrapper}>
-      {tags.map((tag) => (
-        <Badge
-          key={tag}
-          variant={'default'}
-          className={DETAIL_STYLES.tags.badge}
-        >
-          {tag}
-        </Badge>
-      ))}
+      {tags.map((tag) => {
+        const isSelected = selectedTags.includes(tag);
+        return (
+          <Badge
+            key={tag}
+            variant={'default'}
+            className={`${DETAIL_STYLES.tags.badge} ${isSelected ? DETAIL_STYLES.tags.badgeActive : ''}`}
+            onClick={() => onTagClick(tag)}
+          >
+            {tag}
+          </Badge>
+        );
+      })}
     </div>
   );
 }
@@ -83,28 +92,28 @@ export function Links({ project }: LinksProps) {
   return (
     <div id={`${project.id}-links`} className={DETAIL_STYLES.links.wrapper}>
       {project.github && (
-        <Button variant="link" asChild className={DETAIL_STYLES.links.button}>
+        <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-github`} href={project.github} target="_blank" rel="noopener noreferrer">
             <Github className={DETAIL_STYLES.links.icon} />
             GitHub
           </a>
-        </Button>
+        </Badge>
       )}
       {project.npm && (
-        <Button variant="link" asChild className={DETAIL_STYLES.links.button}>
+        <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-npm`} href={project.npm} target="_blank" rel="noopener noreferrer">
             <NpmIcon />
             npm
           </a>
-        </Button>
+        </Badge>
       )}
       {project.website && (
-        <Button variant="link" asChild className={DETAIL_STYLES.links.button}>
+        <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-website`} href={project.website} target="_blank" rel="noopener noreferrer">
             <ExternalLink className={DETAIL_STYLES.links.icon} />
             Website
           </a>
-        </Button>
+        </Badge>
       )}
     </div>
   );
