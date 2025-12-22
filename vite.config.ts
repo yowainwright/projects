@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
-export default defineConfig(({ command }) => ({
-  base: './',
+export default defineConfig({
+  base: '/projects/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -15,4 +15,4 @@ export default defineConfig(({ command }) => ({
     port: 5173 + Math.floor(Math.random() * 100),
     strictPort: false,
   },
-}));
+});
