@@ -2,9 +2,9 @@ export const SIDEBAR_STYLES = {
   aside: 'lg:sticky lg:top-4 lg:self-start text-foreground',
   container: '',
   search: {
-    wrapper: 'relative mb-6 border-3! rounded-md border-foreground!',
+    wrapper: 'relative mb-6 border-8! rounded-md border-foreground! md:mr-4',
     icon: 'absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4',
-    input: 'pl-9 border-0',
+    input: 'pl-9 border-0!',
   },
   tags: {
     wrapper: 'flex flex-wrap gap-2 mb-6',
@@ -21,12 +21,12 @@ export const SIDEBAR_STYLES = {
     badgeActive: 'bg-primary text-primary-foreground',
   },
   nav: {
-    wrapper: 'hidden md:block space-y-8',
+    wrapper: 'hidden md:block space-y-8 max-h-[70vh] overflow-y-auto scroll-smooth pr-4 scrollbar-hide',
     empty: 'text-base',
   },
   category: {
     wrapper: '',
-    title: 'uppercase mb-4',
+    title: 'text-xs! font-semibold uppercase mb-8!',
     list: '',
   },
 } as const;

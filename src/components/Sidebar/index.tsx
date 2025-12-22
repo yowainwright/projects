@@ -1,4 +1,4 @@
-import { useMemo, useState, type ChangeEvent } from 'react';
+import { forwardRef, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 import { projects, categories } from '@/data/projects';
 import { Card } from '@/components/Sidebar/Card';
 import { Input } from '@/components/ui/input';
@@ -20,6 +20,30 @@ import type {
 export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!activeId || !navRef.current) return;
+    const activeCard = document.getElementById(`sidebar-card-${activeId}`);
+    if (!activeCard) return;
+
+    const nav = navRef.current;
+    const navRect = nav.getBoundingClientRect();
+    const cardRect = activeCard.getBoundingClientRect();
+
+    const cardTop = cardRect.top - navRect.top;
+    const cardBottom = cardRect.bottom - navRect.top;
+    const isAboveView = cardTop < 0;
+    const isBelowView = cardBottom > navRect.height;
+
+    if (!isAboveView && !isBelowView) return;
+
+    const categorySection = activeCard.closest('[id^="sidebar-category-"]') as HTMLElement | null;
+    const categoryTitle = categorySection?.querySelector('h2');
+    const titleHeight = categoryTitle?.offsetHeight || 0;
+    const scrollOffset = cardRect.top - navRect.top + nav.scrollTop - titleHeight - 32;
+    nav.scrollTo({ top: Math.max(0, scrollOffset), behavior: 'smooth' });
+  }, [activeId]);
 
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
@@ -80,6 +104,7 @@ export function Sidebar({ activeId, onProjectClick }: SidebarProps) {
             filteredProjects={filteredProjects}
         />
         <BadgeNav
+            ref={navRef}
             projectsByCategory={projectsByCategory}
             activeId={activeId}
             onProjectClick={onProjectClick}
@@ -176,31 +201,33 @@ export const FilteredBadges = ({ search, selectedTags, toggleTag, allTags }: Fil
   )
 }
 
-export const BadgeNav = ({ projectsByCategory, activeId, onProjectClick, selectedTags, toggleTag }: BadgeNavProps) => {
-  const hasProjectsByCategory = projectsByCategory.length > 0;
-  if (!hasProjectsByCategory) {
+export const BadgeNav = forwardRef<HTMLElement, BadgeNavProps>(
+  ({ projectsByCategory, activeId, onProjectClick, selectedTags, toggleTag }, ref) => {
+    const hasProjectsByCategory = projectsByCategory.length > 0;
+    if (!hasProjectsByCategory) {
+      return (
+        <nav ref={ref} id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper}>
+          <p id="sidebar-nav-empty" className={SIDEBAR_STYLES.nav.empty}>No projects match your filters.</p>
+        </nav>
+      )
+    }
     return (
-      <nav id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper}>
-        <p id="sidebar-nav-empty" className={SIDEBAR_STYLES.nav.empty}>No projects match your filters.</p>
+      <nav ref={ref} id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper}>
+        {projectsByCategory.map((category) => (
+          <CategorySection
+            key={category.id}
+            label={category.label}
+            projects={category.projects}
+            activeId={activeId}
+            onProjectClick={onProjectClick}
+            selectedTags={selectedTags}
+            onTagClick={toggleTag}
+          />
+        ))}
       </nav>
     )
   }
-  return (
-    <nav id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper}>
-      {projectsByCategory.map((category) => (
-        <CategorySection
-          key={category.id}
-          label={category.label}
-          projects={category.projects}
-          activeId={activeId}
-          onProjectClick={onProjectClick}
-          selectedTags={selectedTags}
-          onTagClick={toggleTag}
-        />
-      ))}
-    </nav>
-  )
-}
+)
 
 export const CategorySection = ({
   label,
@@ -211,13 +238,14 @@ export const CategorySection = ({
   onTagClick,
 }: CategorySectionProps) => {
   const categoryId = label.toLowerCase().replace(/\s+/g, '-');
+  const sortedProjects = projects;
   return (
     <div id={`sidebar-category-${categoryId}`} className={SIDEBAR_STYLES.category.wrapper}>
       <h2 id={`sidebar-category-${categoryId}-title`} className={SIDEBAR_STYLES.category.title}>
         {label}
       </h2>
       <div id={`sidebar-category-${categoryId}-list`} className={SIDEBAR_STYLES.category.list}>
-        {projects.map((project) => (
+        {sortedProjects.map((project) => (
           <Card
             key={project.id}
             project={project}

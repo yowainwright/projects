@@ -52,7 +52,6 @@ function Highlights({ projectId, highlights }: HighlightsProps) {
       <ul id={`${projectId}-highlights-list`} className={DETAIL_STYLES.highlights.list}>
         {highlights.map((highlight, index) => (
           <li key={index} id={`${projectId}-highlight-${index}`} className={DETAIL_STYLES.highlights.item}>
-            <Check className={DETAIL_STYLES.highlights.checkIcon} />
             {highlight}
           </li>
         ))}
@@ -65,7 +64,11 @@ export function Tags({ projectId, tags }: TagsProps) {
   return (
     <div id={`${projectId}-tags`} className={DETAIL_STYLES.tags.wrapper}>
       {tags.map((tag) => (
-        <Badge key={tag} variant="secondary">
+        <Badge
+          key={tag}
+          variant={'default'}
+          className={DETAIL_STYLES.tags.badge}
+        >
           {tag}
         </Badge>
       ))}

@@ -1,0 +1,12 @@
+{
+  "experimental": {
+    "classRegex": [
+      [":\\s*['\"]([^'\"]*)['\"]", "['\"]([^'\"]*)['\"]"],
+      ["STYLES\\s*=\\s*\\{([^}]*)\\}", ":\\s*['\"]([^'\"]*)['\"]"]
+    ]
+  },
+  "includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  }
+}
