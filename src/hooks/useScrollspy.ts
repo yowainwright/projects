@@ -4,6 +4,7 @@ export function useScrollspy(ids: string[], offset: number = 100) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const initialHashHandled = useRef(false);
 
   const setScrolling = useCallback((value: boolean) => {
     isScrollingRef.current = value;
@@ -17,6 +18,45 @@ export function useScrollspy(ids: string[], offset: number = 100) {
     }
   }, []);
 
+  const scrollToId = useCallback(
+    (id: string, updateHash: boolean = true) => {
+      const element = document.getElementById(id);
+      if (element) {
+        setScrolling(true);
+        setActiveId(id);
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (updateHash) {
+          window.history.replaceState(null, '', `#${id}`);
+        }
+      }
+    },
+    [setScrolling]
+  );
+
+  useEffect(() => {
+    if (initialHashHandled.current) return;
+    initialHashHandled.current = true;
+
+    const hash = window.location.hash.slice(1);
+    if (hash && ids.includes(hash)) {
+      requestAnimationFrame(() => {
+        scrollToId(hash, false);
+      });
+    }
+  }, [ids, scrollToId]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash && ids.includes(hash)) {
+        scrollToId(hash, false);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [ids, scrollToId]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (isScrollingRef.current) return;
@@ -26,13 +66,17 @@ export function useScrollspy(ids: string[], offset: number = 100) {
       for (let i = ids.length - 1; i >= 0; i--) {
         const element = document.getElementById(ids[i]);
         if (element && element.offsetTop <= scrollPosition) {
-          setActiveId(ids[i]);
+          if (activeId !== ids[i]) {
+            setActiveId(ids[i]);
+            window.history.replaceState(null, '', `#${ids[i]}`);
+          }
           return;
         }
       }
 
-      if (ids.length > 0) {
+      if (ids.length > 0 && activeId !== ids[0]) {
         setActiveId(ids[0]);
+        window.history.replaceState(null, '', `#${ids[0]}`);
       }
     };
 
@@ -45,19 +89,7 @@ export function useScrollspy(ids: string[], offset: number = 100) {
         clearTimeout(scrollTimeoutRef.current);
       }
     };
-  }, [ids, offset]);
+  }, [ids, offset, activeId]);
 
-  const scrollTo = useCallback(
-    (id: string) => {
-      const element = document.getElementById(id);
-      if (element) {
-        setScrolling(true);
-        setActiveId(id);
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    },
-    [setScrolling]
-  );
-
-  return { activeId, scrollTo };
+  return { activeId, scrollTo: scrollToId };
 }
