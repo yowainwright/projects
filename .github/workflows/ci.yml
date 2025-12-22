@@ -1,4 +1,4 @@
-name: jeffry.in ci 🥤
+name: projects ci
 on:
   pull_request:
     branches: [main]
