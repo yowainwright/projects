@@ -140,3 +140,7 @@ vite.config.ts.timestamp-*
 
 # Temporary project files
 tmp
+.claude
+
+# Editor config (personal preference)
+.editorconfig
