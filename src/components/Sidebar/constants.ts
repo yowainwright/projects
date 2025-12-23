@@ -1,32 +1,32 @@
 export const SIDEBAR_STYLES = {
-  aside: 'lg:sticky lg:top-4 lg:self-start text-foreground',
+  aside: 'lg:sticky lg:top-4 lg:self-start text-foreground text-right',
   container: '',
   search: {
-    wrapper: 'relative mb-6 border-1! lg:border-8! rounded-md border-foreground! md:mr-4',
+    wrapper: 'relative mb-6 border-1! rounded-md border-foreground! mr-2',
     icon: 'absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4',
-    input: 'pl-9 border-0!',
+    input: 'pl-9 border-0! text-left',
   },
   tags: {
-    wrapper: 'flex flex-wrap gap-2 mb-6',
+    wrapper: 'flex flex-wrap gap-2 mb-6 justify-end ml-4 pr-4',
     badge: 'cursor-pointer text-xs font-bold bg-foreground text-background hover:bg-foreground/75 rounded-md px-2 py-1',
     closeIcon: 'w-3 h-3 ml-1',
     clearButton: 'text-xs font-bold bg-foreground text-background hover:bg-foreground/75 rounded-md px-2 py-1',
   },
-  filterCount: 'text-sm mb-6',
+  filterCount: 'text-sm mb-6 text-right ml-4 pr-4',
   filterBadges: {
-    wrapper: 'mt-8 pt-6 border-t border-foreground',
-    title: 'text-sm font-bold uppercase tracking-wider text-foreground mb-4',
-    list: 'flex flex-wrap gap-2',
+    wrapper: 'mt-8 pt-6 border-t border-foreground ml-4 pr-4',
+    title: 'text-sm font-bold uppercase tracking-wider text-foreground mb-4 text-right',
+    list: 'flex flex-wrap gap-2 justify-end',
     badge: 'cursor-pointer border-foreground',
     badgeActive: 'bg-primary text-primary-foreground',
   },
   nav: {
-    wrapper: 'hidden md:block space-y-8 max-h-[70vh] overflow-y-auto scroll-smooth pr-4 scrollbar-hide',
-    empty: 'text-base',
+    wrapper: 'hidden md:block space-y-8 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-visible scroll-smooth ml-4 pr-4 scrollbar-hide',
+    empty: 'text-base text-right',
   },
   category: {
     wrapper: '',
-    title: 'text-xs! font-semibold uppercase mb-8!',
+    title: 'text-xs! font-semibold uppercase mb-8! text-right mr-5!',
     list: '',
   },
 } as const;

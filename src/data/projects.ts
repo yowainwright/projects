@@ -1,3 +1,8 @@
+export interface GitHubRepo {
+  url: string;
+  stars?: number;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -5,7 +10,7 @@ export interface Project {
   description: string;
   category: 'personal' | 'oss-contribution' | 'work';
   tags: string[];
-  github?: string;
+  github?: string | GitHubRepo[];
   npm?: string;
   website?: string;
   stars?: number;
@@ -14,6 +19,81 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'koa',
+    title: 'Koa.js',
+    tagline: 'Next-gen web framework for Node.js',
+    description:
+      'Active contributor to Koa, the expressive HTTP middleware framework for Node.js. Contributions include security fixes, memory leak patches, stream cleanup improvements, and documentation updates. Part of the core maintenance team.',
+    category: 'oss-contribution',
+    tags: ['Node.js', 'HTTP', 'Middleware', 'Backend'],
+    github: [
+      { url: 'https://github.com/koajs/koa', stars: 35704 },
+    ],
+    website: 'https://koajs.com',
+    highlights: [
+      'Fixed redirect vulnerability',
+      'Resolved memory leak (issue-1834)',
+      'Stream cleanup improvements',
+      'Documentation refresh',
+    ],
+  },
+  {
+    id: 'postmate',
+    title: 'Postmate',
+    tagline: 'Promise-based postMessage library',
+    description:
+      'Major contributor to Postmate, a powerful and simple promise-based postMessage library for cross-origin iframe communication. Contributions include the call queue feature, bug fixes, and version management. Part of Dollar Shave Club engineering.',
+    category: 'oss-contribution',
+    tags: ['JavaScript', 'postMessage', 'iframes', 'Cross-origin'],
+    github: 'https://github.com/dollarshaveclub/postmate',
+    npm: 'https://www.npmjs.com/package/postmate',
+    stars: 1900,
+    highlights: [
+      'Call queue feature',
+      'Context passing fixes',
+      'Classes support',
+      '29+ merged PRs',
+    ],
+  },
+  {
+    id: 'lifecycle',
+    title: 'Lifecycle',
+    tagline: 'Ephemeral PR environments',
+    description:
+      'Transforms pull requests into ephemeral development environments that seamlessly connect to required dependencies while remaining isolated from unrelated changes. Enables development, testing, design review, and external sandboxes from any PR.',
+    category: 'oss-contribution',
+    tags: ['TypeScript', 'Kubernetes', 'DevOps', 'CI/CD'],
+    github: 'https://github.com/goodrxoss/lifecycle',
+    stars: 75,
+    highlights: [
+      'Isolated PR environments',
+      'Kubernetes + Docker integration',
+      'Design review workflows',
+      'Partner sandbox environments',
+    ],
+  },
+  {
+    id: 'jspm',
+    title: 'JSPM',
+    tagline: 'Native ES module package management',
+    description:
+      'Contributor to JSPM, providing native ES module workflows for JavaScript. Contributions include the Node.js import map loader, import-map package development, website improvements, and organization support.',
+    category: 'oss-contribution',
+    tags: ['TypeScript', 'ESM', 'Import Maps', 'Node.js'],
+    github: [
+      { url: 'https://github.com/jspm/node-importmap-loader', stars: 11 },
+      { url: 'https://github.com/jspm/jspm.org', stars: 13 },
+      { url: 'https://github.com/jspm/import-map', stars: 51 },
+    ],
+    website: 'https://jspm.org',
+    highlights: [
+      'Node.js import map loader',
+      'Import map package development',
+      'Website improvements',
+      'Organization support',
+    ],
+  },
+  {
     id: 'stickybits',
     title: 'Stickybits',
     tagline: 'Lightweight sticky positioning polyfill',
@@ -21,9 +101,11 @@ export const projects: Project[] = [
       'A lightweight alternative to position: sticky polyfills. Stickybits enables elements to remain visible while scrolling, then stop at their parent container boundary. It prioritizes native CSS support when available and only adds scroll listeners when necessary.',
     category: 'personal',
     tags: ['JavaScript', 'CSS', 'DOM', 'Polyfill'],
-    github: 'https://github.com/yowainwright/stickybits',
+    github: [
+      { url: 'https://github.com/dollarshaveclub/stickybits', stars: 2181 },
+      { url: 'https://github.com/yowainwright/stickybits', stars: 253 },
+    ],
     npm: 'https://www.npmjs.com/package/stickybits',
-    stars: 253,
     highlights: [
       'Smart CSS support detection',
       'Adds styling classes for sticky states',
@@ -57,9 +139,11 @@ export const projects: Project[] = [
       'A lightweight JavaScript utility for truncating multi-line text to fit within HTML elements based on a specified maximum height. Preserves original text content by storing truncated portions in a hidden element. Uses binary search for optimal performance.',
     category: 'personal',
     tags: ['TypeScript', 'DOM', 'Text', 'UI'],
-    github: 'https://github.com/yowainwright/shave',
+    github: [
+      { url: 'https://github.com/dollarshaveclub/shave', stars: 2099 },
+      { url: 'https://github.com/yowainwright/shave', stars: 171 },
+    ],
     npm: 'https://www.npmjs.com/package/shave',
-    stars: 171,
     highlights: [
       'Zero dependencies, ~1.5KB',
       'Preserves original content',
@@ -111,9 +195,11 @@ export const projects: Project[] = [
       'A lightweight JavaScript utility that detects vertical scroll direction and applies it via a CSS data attribute. Enables developers to style elements based on scroll direction without complex JavaScript. Perfect for hiding/showing sticky navigation.',
     category: 'personal',
     tags: ['JavaScript', 'CSS', 'DOM', 'Navigation'],
-    github: 'https://github.com/yowainwright/scrolldir',
+    github: [
+      { url: 'https://github.com/dollarshaveclub/scrolldir', stars: 656 },
+      { url: 'https://github.com/yowainwright/scrolldir', stars: 40 },
+    ],
     npm: 'https://www.npmjs.com/package/scrolldir',
-    stars: 40,
     highlights: [
       'Zero dependencies, ~1KB',
       'Configurable threshold',
@@ -129,9 +215,11 @@ export const projects: Project[] = [
       'A lightweight plugin that makes unresponsive elements like embedded videos and iframes scale responsively at a fixed aspect ratio. Wraps elements in a container with intrinsic ratio sizing. Inspired by FitVids but jQuery-free.',
     category: 'personal',
     tags: ['JavaScript', 'CSS', 'Responsive', 'Embeds'],
-    github: 'https://github.com/yowainwright/reframe.js',
+    github: [
+      { url: 'https://github.com/dollarshaveclub/reframe.js', stars: 1593 },
+      { url: 'https://github.com/yowainwright/reframe.js', stars: 65 },
+    ],
     npm: 'https://www.npmjs.com/package/reframe.js',
-    stars: 65,
     highlights: [
       'jQuery-free implementation',
       'Noframe.js variant (no DOM manipulation)',
@@ -207,60 +295,201 @@ export const projects: Project[] = [
     highlights: ['Node.js Lambda layers', 'Build control', 'AWS integration'],
   },
   {
-    id: 'koa',
-    title: 'Koa.js',
-    tagline: 'Next-gen web framework for Node.js',
+    id: 'common-utilities',
+    title: 'Common Utilities',
+    tagline: 'Typed functional utilities',
     description:
-      'Active contributor to Koa, the expressive HTTP middleware framework for Node.js. Contributions include security fixes, memory leak patches, stream cleanup improvements, and documentation updates. Part of the core maintenance team.',
-    category: 'oss-contribution',
-    tags: ['Node.js', 'HTTP', 'Middleware', 'Backend'],
-    github: 'https://github.com/koajs/koa',
-    website: 'https://koajs.com',
-    highlights: [
-      'Fixed redirect vulnerability',
-      'Resolved memory leak (issue-1834)',
-      'Stream cleanup improvements',
-      'Documentation refresh',
-    ],
+      'Simple typed utilities generally written in a functional style for learning and practical use. Provides a collection of commonly needed helper functions with full TypeScript support.',
+    category: 'personal',
+    tags: ['TypeScript', 'Functional', 'Utilities'],
+    github: 'https://github.com/yowainwright/common-utilities',
+    npm: 'https://www.npmjs.com/package/common-utilities',
+    stars: 29,
+    highlights: ['Functional style', 'Fully typed', 'Learning-focused'],
   },
   {
-    id: 'postmate',
-    title: 'Postmate',
-    tagline: 'Promise-based postMessage library',
+    id: 'fast-brake',
+    title: 'Fast Brake',
+    tagline: 'Quick JS checker for builds',
     description:
-      'Major contributor to Postmate, a powerful and simple promise-based postMessage library for cross-origin iframe communication. Contributions include the call queue feature, bug fixes, and version management. Part of Dollar Shave Club engineering.',
-    category: 'oss-contribution',
-    tags: ['JavaScript', 'postMessage', 'iframes', 'Cross-origin'],
-    github: 'https://github.com/dollarshaveclub/postmate',
-    npm: 'https://www.npmjs.com/package/postmate',
-    stars: 1900,
-    highlights: [
-      'Call queue feature',
-      'Context passing fixes',
-      'Classes support',
-      '29+ merged PRs',
-    ],
+      'A quick JavaScript checker to keep your builds right. Validates JavaScript files during the build process to catch issues early and prevent broken deployments.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'Build Tools'],
+    github: 'https://github.com/yowainwright/fast-brake',
+    stars: 1,
+    highlights: ['Build validation', 'Fast checks', 'CI integration'],
   },
   {
-    id: 'lifecycle',
-    title: 'Lifecycle',
-    tagline: 'Ephemeral PR environments',
+    id: '1ls',
+    title: '1ls',
+    tagline: 'One-line scripts for CLI',
     description:
-      'Transforms pull requests into ephemeral development environments that seamlessly connect to required dependencies while remaining isolated from unrelated changes. Enables development, testing, design review, and external sandboxes from any PR.',
-    category: 'oss-contribution',
-    tags: ['TypeScript', 'Kubernetes', 'DevOps', 'CI/CD'],
-    github: 'https://github.com/goodrxoss/lifecycle',
-    stars: 75,
-    highlights: [
-      'Isolated PR environments',
-      'Kubernetes + Docker integration',
-      'Design review workflows',
-      'Partner sandbox environments',
-    ],
+      'One-line-script utility for the command line. Provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'Scripting'],
+    github: 'https://github.com/yowainwright/1ls',
+    stars: 1,
+    highlights: ['One-line scripts', 'CLI utility', 'Task automation'],
+  },
+  {
+    id: 'logsdx',
+    title: 'LogsDX',
+    tagline: 'Log streaming with DX focus',
+    description:
+      'Log streaming utility with developer experience at its core. Provides intuitive log streaming capabilities designed to make debugging and monitoring more pleasant.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'Logging', 'DX'],
+    github: 'https://github.com/yowainwright/logsdx',
+    stars: 3,
+    highlights: ['DX-focused', 'Log streaming', 'Developer tooling'],
+  },
+  {
+    id: 'fjsf',
+    title: 'FJSF',
+    tagline: 'Fuzzy JSON search & filter',
+    description:
+      'A fuzzy JSON search and filter utility. Enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'JSON', 'Search'],
+    github: 'https://github.com/yowainwright/fjsf',
+    stars: 2,
+    highlights: ['Fuzzy matching', 'JSON filtering', 'Flexible queries'],
+  },
+  {
+    id: 'intrinsic-dependencies',
+    title: 'Intrinsic Dependencies',
+    tagline: 'Protect invisible required deps',
+    description:
+      'A simple utility ensuring invisible but required Node.js dependencies are not removed. Prevents accidental removal of critical transitive dependencies that your code relies on.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'Dependencies'],
+    github: 'https://github.com/yowainwright/intrinsic-dependencies',
+    stars: 3,
+    highlights: ['Dependency protection', 'Build safety', 'Transitive deps'],
+  },
+  {
+    id: 'prisma-migrations',
+    title: 'Prisma Migrations',
+    tagline: 'Friendly Prisma migration tooling',
+    description:
+      'Friendly Prisma migration tooling that simplifies database schema migrations. Provides a more intuitive interface for managing Prisma migrations in development and production.',
+    category: 'personal',
+    tags: ['TypeScript', 'Prisma', 'Database', 'Migrations'],
+    github: 'https://github.com/yowainwright/prisma-migrations',
+    stars: 3,
+    highlights: ['Prisma integration', 'Migration management', 'Developer friendly'],
+  },
+  {
+    id: 'merge-tsconfigs',
+    title: 'Merge TSConfigs',
+    tagline: 'Merge TypeScript config files',
+    description:
+      'A CLI or Node function for merging tsconfig files. Useful for managing complex TypeScript projects with multiple configuration files that need to be combined.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'Config'],
+    github: 'https://github.com/yowainwright/merge-tsconfigs',
+    stars: 2,
+    highlights: ['TSConfig merging', 'CLI and API', 'Config management'],
+  },
+  {
+    id: 'macrustle',
+    title: 'Macrustle',
+    tagline: 'Mac setup instructions for devs',
+    description:
+      'Super basic setup instructions "rustled up" for coding on a Mac. A quick reference guide for setting up a development environment on macOS.',
+    category: 'personal',
+    tags: ['Documentation', 'macOS', 'Setup'],
+    github: 'https://github.com/yowainwright/macrustle',
+    stars: 4,
+    highlights: ['Mac setup guide', 'Dev environment', 'Quick reference'],
+  },
+  {
+    id: 'typescript-lib-starter',
+    title: 'TypeScript Lib Starter',
+    tagline: 'Batteries-included TS library template',
+    description:
+      'A batteries-included TypeScript library starter with React GitHub Docs page setup in minutes. Provides everything needed to start building and publishing TypeScript libraries.',
+    category: 'personal',
+    tags: ['TypeScript', 'Template', 'Library'],
+    github: 'https://github.com/yowainwright/typescript-lib-starter',
+    stars: 2,
+    highlights: ['Library template', 'GitHub Pages docs', 'Quick start'],
+  },
+  {
+    id: 'algorithms',
+    title: 'Algorithms',
+    tagline: 'Documented algorithms in TypeScript',
+    description:
+      'Documented algorithms using JavaScript written in TypeScript and Markdown. A learning resource for understanding common algorithms with clear explanations and typed implementations.',
+    category: 'personal',
+    tags: ['TypeScript', 'Algorithms', 'Education'],
+    github: 'https://github.com/yowainwright/algorithms',
+    stars: 0,
+    highlights: ['Algorithm implementations', 'TypeScript', 'Educational'],
+  },
+  {
+    id: 'xldx',
+    title: 'XLDX',
+    tagline: 'Excel utility with DX focus',
+    description:
+      'JavaScript version of xldx, an Excel utility with developer experience on the brain. Simplifies working with Excel files in Node.js applications.',
+    category: 'personal',
+    tags: ['TypeScript', 'Excel', 'DX'],
+    github: 'https://github.com/yowainwright/xldx',
+    stars: 1,
+    highlights: ['Excel processing', 'DX-focused', 'Node.js utility'],
+  },
+  {
+    id: 'envdx',
+    title: 'EnvDX',
+    tagline: 'Another dotenv manager',
+    description:
+      'Another dotenv manager focused on developer experience. Provides intuitive environment variable management for Node.js applications.',
+    category: 'personal',
+    tags: ['TypeScript', 'CLI', 'Environment', 'DX'],
+    github: 'https://github.com/yowainwright/envdx',
+    stars: 0,
+    highlights: ['Dotenv management', 'DX-focused', 'Environment vars'],
+  },
+  {
+    id: 'awesome-writing-tools',
+    title: 'Awesome Writing Tools',
+    tagline: 'Curated list of writing tools',
+    description:
+      'A curated list of awesome tools for writers, including note-taking apps, distraction-free editors, grammar checkers, and publishing platforms. Part of the awesome-lists ecosystem.',
+    category: 'personal',
+    tags: ['Awesome List', 'Writing', 'Tools', 'Curation'],
+    github: 'https://github.com/yowainwright/awesome-writing-tools',
+    stars: 0,
+    highlights: ['Curated resources', 'Writing focused', 'Community maintained'],
+  },
+  {
+    id: 'awesome-monorepo-utilities',
+    title: 'Awesome Monorepo Utilities',
+    tagline: 'Curated list of monorepo tools',
+    description:
+      'A curated list of awesome utilities and tools for working with monorepos. Covers package managers, build tools, versioning, and workspace management solutions.',
+    category: 'personal',
+    tags: ['Awesome List', 'Monorepo', 'Tools', 'Curation'],
+    github: 'https://github.com/yowainwright/awesome-monorepo-utilities',
+    stars: 0,
+    highlights: ['Monorepo tooling', 'Build tools', 'Workspace management'],
+  },
+  {
+    id: 'awesome-readmes',
+    title: 'Awesome READMEs',
+    tagline: 'Curated list of great READMEs',
+    description:
+      'A curated list of awesome README examples and templates. Showcases well-crafted project documentation to inspire better open source communication.',
+    category: 'personal',
+    tags: ['Awesome List', 'Documentation', 'README', 'Curation'],
+    github: 'https://github.com/yowainwright/awesome-readmes',
+    stars: 0,
+    highlights: ['README examples', 'Documentation patterns', 'Open source inspiration'],
   },
 ];
 
 export const categories = [
-  { id: 'personal', label: 'Projects' },
   { id: 'oss-contribution', label: 'Contributions' },
+  { id: 'personal', label: 'Projects' },
 ] as const;

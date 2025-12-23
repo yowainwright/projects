@@ -3,7 +3,6 @@ import { Card } from '@/components/Sidebar/Card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { Search, X } from 'lucide-react';
 import { SIDEBAR_STYLES } from './constants';
 import type {
@@ -12,7 +11,6 @@ import type {
   TagsProps,
   SearchInputProps,
   FilteredTagTextProps,
-  FilteredBadgesProps,
   BadgeNavProps,
 } from './types';
 
@@ -24,7 +22,6 @@ export function Sidebar({
   selectedTags,
   toggleTag,
   clearFilters,
-  allTags,
   filteredProjects,
   projectsByCategory,
 }: SidebarProps) {
@@ -75,12 +72,6 @@ export function Sidebar({
               onProjectClick={onProjectClick}
               selectedTags={selectedTags}
               toggleTag={toggleTag}
-          />
-          <FilteredBadges
-              search={search}
-              selectedTags={selectedTags}
-              toggleTag={toggleTag}
-              allTags={allTags}
           />
         </div>
       </div>
@@ -137,33 +128,6 @@ export const FilteredTagText = ({ search, selectedTags, filteredProjects }: Filt
     <p id="sidebar-filter-count" className={SIDEBAR_STYLES.filterCount}>
       {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
     </p>
-  )
-}
-
-export const FilteredBadges = ({ search, selectedTags, toggleTag, allTags }: FilteredBadgesProps) => {
-  const hasFilters = search || selectedTags.length > 0;
-  if (!hasFilters) return null;
-  return (
-    <div id="sidebar-filter-badges" className={SIDEBAR_STYLES.filterBadges.wrapper}>
-      <h3 id="sidebar-filter-badges-title" className={SIDEBAR_STYLES.filterBadges.title}>
-        Filter by tag
-      </h3>
-      <div id="sidebar-filter-badges-list" className={SIDEBAR_STYLES.filterBadges.list}>
-        {allTags.slice(0, 12).map((tag) => (
-          <Badge
-              key={tag}
-              variant="outline"
-              className={cn(
-                SIDEBAR_STYLES.filterBadges.badge,
-                selectedTags.includes(tag) && SIDEBAR_STYLES.filterBadges.badgeActive
-              )}
-              onClick={() => toggleTag(tag)}
-          >
-              {tag}
-          </Badge>
-        ))}
-      </div>
-    </div>
   )
 }
 

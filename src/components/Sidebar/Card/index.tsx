@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import { Star } from 'lucide-react';
 import { CardProps } from './types';
 import { CARD_STYLES } from './constants';
 
@@ -17,12 +16,6 @@ export function Card({ project, isActive, onClick, selectedTags, onTagClick }: C
       >
         <div id={`sidebar-card-${project.id}-header`} className={CARD_STYLES.header}>
           <h3 id={`sidebar-card-${project.id}-title`} className={CARD_STYLES.title}>{project.title}</h3>
-          {project.stars && (
-            <span id={`sidebar-card-${project.id}-stars`} className={CARD_STYLES.stars}>
-              <Star className={CARD_STYLES.starsIcon} />
-              {project.stars}
-            </span>
-          )}
         </div>
         <p id={`sidebar-card-${project.id}-tagline`} className={CARD_STYLES.tagline}>
           {project.tagline}

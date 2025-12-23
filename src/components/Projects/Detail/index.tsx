@@ -1,5 +1,9 @@
 import { Badge } from '@/components/ui/badge';
-import { Star, Github, ExternalLink } from 'lucide-react';
+import { StarLink } from '@/components/StarLink';
+import { EditableContent } from '@/components/EditableContent';
+import { Comments } from '@/components/Comments';
+import { Github, ExternalLink } from 'lucide-react';
+import { getGitHubRepos } from '@/data/utils';
 import { DETAIL_STYLES } from './constants';
 import type {
   ProjectDetailProps,
@@ -9,23 +13,50 @@ import type {
   LinksProps,
 } from '../types';
 
-export function Detail({ project, selectedTags, onTagClick, onTitleClick }: ProjectDetailProps) {
+export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFieldChange, getEditedValue }: ProjectDetailProps) {
+  const description = getEditedValue
+    ? getEditedValue(project.id, 'description', project.description)
+    : project.description;
+
+  const handleDescriptionChange = (value: string) => {
+    if (onFieldChange) {
+      onFieldChange(project.id, 'description', value);
+    }
+  };
+
   return (
     <section id={project.id} className={DETAIL_STYLES.section}>
       <div id={`${project.id}-content`} className={DETAIL_STYLES.content}>
-        <Header project={project} onTitleClick={onTitleClick} />
+        <Header project={project} onTitleClick={onTitleClick} onFieldChange={onFieldChange} getEditedValue={getEditedValue} />
         <Links project={project} />
-        <p id={`${project.id}-description`} className={DETAIL_STYLES.description}>{project.description}</p>
+        <EditableContent
+          value={description}
+          onChange={handleDescriptionChange}
+          as="p"
+          className={DETAIL_STYLES.description}
+          placeholder="Add a description..."
+        />
         {project.highlights && project.highlights.length > 0 && (
           <Highlights projectId={project.id} highlights={project.highlights} />
         )}
         <Tags projectId={project.id} tags={project.tags} selectedTags={selectedTags} onTagClick={onTagClick} />
+        <Comments projectId={project.id} />
       </div>
     </section>
   );
 }
 
-export function Header({ project, onTitleClick }: HeaderProps) {
+export function Header({ project, onTitleClick, onFieldChange, getEditedValue }: HeaderProps) {
+  const tagline = getEditedValue
+    ? getEditedValue(project.id, 'tagline', project.tagline)
+    : project.tagline;
+
+  const handleTaglineChange = (value: string) => {
+    if (onFieldChange) {
+      onFieldChange(project.id, 'tagline', value);
+    }
+  };
+
   return (
     <header id={`${project.id}-header`} className={DETAIL_STYLES.header.wrapper}>
       <div id={`${project.id}-header-title-row`} className={DETAIL_STYLES.header.titleRow}>
@@ -36,14 +67,20 @@ export function Header({ project, onTitleClick }: HeaderProps) {
         >
           {project.title}
         </h2>
-        {project.stars && (
-          <span id={`${project.id}-stars`} className={DETAIL_STYLES.header.stars}>
-            <Star className={DETAIL_STYLES.header.starsIcon} />
-            {project.stars.toLocaleString()}
-          </span>
-        )}
+        <StarLink
+          id={`${project.id}-stars`}
+          project={project}
+          className={DETAIL_STYLES.header.stars}
+          iconClassName={DETAIL_STYLES.header.starsIcon}
+        />
       </div>
-      <p id={`${project.id}-tagline`} className={DETAIL_STYLES.header.tagline}>{project.tagline}</p>
+      <EditableContent
+        value={tagline}
+        onChange={handleTaglineChange}
+        as="p"
+        className={DETAIL_STYLES.header.tagline}
+        placeholder="Add a tagline..."
+      />
     </header>
   );
 }
@@ -85,29 +122,71 @@ export function Tags({ projectId, tags, selectedTags, onTagClick }: TagsProps) {
   );
 }
 
+function extractRepoName(url: string, includeOrg: boolean): string {
+  const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
+  const isNoMatch = !match;
+  if (isNoMatch) return 'GitHub';
+
+  const [, org, repo] = match;
+  const fullName = `${org}/${repo}`;
+  return includeOrg ? fullName : repo;
+}
+
+function extractNpmPackageName(url: string, includeOrg: boolean): string {
+  const match = url.match(/npmjs\.com\/package\/(.+)/);
+  const isNoMatch = !match;
+  if (isNoMatch) return 'npm';
+
+  const packageName = match[1];
+  const hasScope = packageName.startsWith('@');
+  const shouldStripScope = !includeOrg && hasScope;
+
+  if (shouldStripScope) {
+    const scopedMatch = packageName.match(/@[^/]+\/(.+)/);
+    const strippedName = scopedMatch ? scopedMatch[1] : packageName;
+    return strippedName;
+  }
+
+  return packageName;
+}
+
 export function Links({ project }: LinksProps) {
-  const hasLinks = project.github || project.npm || project.website;
+  const githubRepos = getGitHubRepos(project);
+  const hasGithub = githubRepos.length > 0;
+  const hasNpm = Boolean(project.npm);
+  const hasWebsite = Boolean(project.website);
+  const hasLinks = hasGithub || hasNpm || hasWebsite;
+  const hasFork = githubRepos.length > 1;
+
   if (!hasLinks) return null;
 
   return (
     <div id={`${project.id}-links`} className={DETAIL_STYLES.links.wrapper}>
-      {project.github && (
-        <Badge asChild className={DETAIL_STYLES.links.badge}>
-          <a id={`${project.id}-link-github`} href={project.github} target="_blank" rel="noopener noreferrer">
-            <Github className={DETAIL_STYLES.links.icon} />
-            GitHub
-          </a>
-        </Badge>
-      )}
-      {project.npm && (
+      {githubRepos.map((repo, index) => {
+        const repoName = extractRepoName(repo.url, hasFork);
+        return (
+          <Badge key={repo.url} asChild className={DETAIL_STYLES.links.badge}>
+            <a
+              id={`${project.id}-link-github-${index}`}
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className={DETAIL_STYLES.links.icon} />
+              {repoName}
+            </a>
+          </Badge>
+        );
+      })}
+      {hasNpm && (
         <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-npm`} href={project.npm} target="_blank" rel="noopener noreferrer">
             <NpmIcon />
-            npm
+            {extractNpmPackageName(project.npm!, hasFork)}
           </a>
         </Badge>
       )}
-      {project.website && (
+      {hasWebsite && (
         <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-website`} href={project.website} target="_blank" rel="noopener noreferrer">
             <ExternalLink className={DETAIL_STYLES.links.icon} />

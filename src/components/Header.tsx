@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AuthButton } from '@/components/AuthButton';
 
 const NAV_ITEMS = [
   { alias: 'resume', name: 'Resume', path: 'https://jeffry.in/resume/' },
@@ -84,6 +85,7 @@ export function Header() {
           >
             <Icon isDarkMode={isDarkMode} />
           </button>
+          <AuthButton />
         </div>
       </section>
     </nav>
