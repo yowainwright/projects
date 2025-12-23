@@ -2,7 +2,7 @@ import { Detail } from '@/components/Projects/Detail';
 import { PROJECT_LIST_STYLES } from './constants';
 import type { ProjectListProps } from './types';
 
-export function ProjectList({ projects, selectedTags, onTagClick, onTitleClick }: ProjectListProps) {
+export function ProjectList({ projects, selectedTags, onTagClick, onTitleClick, onFieldChange, getEditedValue }: ProjectListProps) {
   return (
     <main id="project-list" className={PROJECT_LIST_STYLES.main}>
       <div id="project-list-container" className={PROJECT_LIST_STYLES.container}>
@@ -13,6 +13,8 @@ export function ProjectList({ projects, selectedTags, onTagClick, onTitleClick }
             selectedTags={selectedTags}
             onTagClick={onTagClick}
             onTitleClick={onTitleClick}
+            onFieldChange={onFieldChange}
+            getEditedValue={getEditedValue}
           />
         ))}
       </div>

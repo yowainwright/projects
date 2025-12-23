@@ -2,7 +2,9 @@ import { useMemo, useState, type ChangeEvent } from 'react';
 import { projects, categories } from '@/data/projects';
 import { Sidebar } from '@/components/Sidebar';
 import { ProjectList } from '@/components/Projects';
+import { SaveChanges } from '@/components/SaveChanges';
 import { useScrollspy } from '@/hooks/useScrollspy';
+import { useProjectEdits } from '@/hooks/useProjectEdits';
 import { PROJECT_CONTENT_STYLES } from './ProjectContent.constants';
 import '@/styles/content.css';
 
@@ -14,6 +16,7 @@ const trimWord = (wrd: string, srchWrd: string) => {
 export function ProjectContent() {
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const { hasUnsavedChanges, updateField, getEditedValue, discardEdits, getAllEdits } = useProjectEdits();
 
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
@@ -81,6 +84,13 @@ export function ProjectContent() {
         selectedTags={selectedTags}
         onTagClick={toggleTag}
         onTitleClick={scrollTo}
+        onFieldChange={updateField}
+        getEditedValue={getEditedValue}
+      />
+      <SaveChanges
+        hasChanges={hasUnsavedChanges}
+        edits={getAllEdits()}
+        onDiscard={discardEdits}
       />
     </section>
   );
