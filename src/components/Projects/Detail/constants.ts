@@ -1,5 +1,5 @@
 export const DETAIL_STYLES = {
-  section: 'py-8 border-t-10 border-foreground lg:mr-8',
+  section: 'py-8 border-t-10 border-foreground lg:mr-12',
   content: 'space-y-8',
   description: 'text-lg leading-loose pb-2',
   header: {
@@ -8,7 +8,7 @@ export const DETAIL_STYLES = {
     title: 'text-2xl! lg:text-5xl! font-black!',
     stars: 'text-xs font-black! flex items-center gap-1',
     starsIcon: 'w-3.5 h-3.5',
-    tagline: 'lg:text-lg',
+    tagline: 'lg:text-lg font-bold!',
   },
   highlights: {
     wrapper: '',
@@ -23,7 +23,7 @@ export const DETAIL_STYLES = {
   },
   links: {
     wrapper: 'flex flex-wrap gap-2',
-    badge: 'cursor-pointer hover:bg-link/75 text-sm font-bold text-background rounded-md bg-link px-2 py-1 dark:text-[#040b21]!',
+    badge: 'cursor-pointer hover:bg-link/75 text-sm font-bold text-background! rounded-md bg-link px-2 py-1 dark:text-[#040b21]!',
     icon: 'size-5',
   },
 } as const;
