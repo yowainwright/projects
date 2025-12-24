@@ -1,0 +1,5 @@
+procs:
+  vite:
+    shell: "bun run dev:vite"
+  api:
+    shell: "bun run dev:api"

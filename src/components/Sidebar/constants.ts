@@ -2,7 +2,7 @@ export const SIDEBAR_STYLES = {
   aside: 'lg:sticky lg:top-4 lg:self-start text-foreground text-right',
   container: '',
   search: {
-    wrapper: 'relative mb-6 border-1! rounded-md border-foreground! mr-2',
+    wrapper: 'relative mb-2 lg:mb-6 border-1! rounded-md border-foreground! mr-2',
     icon: 'absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4',
     input: 'pl-9 border-0! text-left',
   },

@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 
 interface GitHubApiRepo {
   stargazers_count: number;
+  homepage: string | null;
 }
 
 interface GitHubRepoEntry {
@@ -16,7 +17,12 @@ function extractRepoPath(githubUrl: string): string | null {
   return match ? match[1] : null;
 }
 
-async function fetchStars(repoPath: string): Promise<number | null> {
+interface RepoData {
+  stars: number;
+  homepage: string | null;
+}
+
+async function fetchRepoData(repoPath: string): Promise<RepoData | null> {
   const url = `https://api.github.com/repos/${repoPath}`;
   const headers: Record<string, string> = {
     'Accept': 'application/vnd.github.v3+json',
@@ -36,7 +42,10 @@ async function fetchStars(repoPath: string): Promise<number | null> {
   }
 
   const data = await response.json() as GitHubApiRepo;
-  return data.stargazers_count;
+  return {
+    stars: data.stargazers_count,
+    homepage: data.homepage,
+  };
 }
 
 async function updateStars(): Promise<void> {
@@ -54,24 +63,44 @@ async function updateStars(): Promise<void> {
       if (typeof data.github === 'string') {
         const repoPath = extractRepoPath(data.github);
         if (repoPath) {
-          const stars = await fetchStars(repoPath);
-          if (stars !== null && stars !== data.stars) {
-            console.log(`${file}: stars ${data.stars ?? 'none'} → ${stars}`);
-            data.stars = stars;
-            updated = true;
-          }
-        }
-      } else if (Array.isArray(data.github)) {
-        for (const repo of data.github as GitHubRepoEntry[]) {
-          const repoPath = extractRepoPath(repo.url);
-          if (repoPath) {
-            const stars = await fetchStars(repoPath);
-            if (stars !== null && stars !== repo.stars) {
-              console.log(`${file} (${repoPath}): stars ${repo.stars ?? 'none'} → ${stars}`);
-              repo.stars = stars;
+          const repoData = await fetchRepoData(repoPath);
+          if (repoData !== null) {
+            if (repoData.stars !== data.stars) {
+              console.log(`${file}: stars ${data.stars ?? 'none'} → ${repoData.stars}`);
+              data.stars = repoData.stars;
+              updated = true;
+            }
+            const hasNewWebsite = repoData.homepage && !data.website;
+            if (hasNewWebsite) {
+              console.log(`${file}: website → ${repoData.homepage}`);
+              data.website = repoData.homepage;
               updated = true;
             }
           }
+        }
+      } else if (Array.isArray(data.github)) {
+        let primaryHomepage: string | null = null;
+        for (const repo of data.github as GitHubRepoEntry[]) {
+          const repoPath = extractRepoPath(repo.url);
+          if (repoPath) {
+            const repoData = await fetchRepoData(repoPath);
+            if (repoData !== null) {
+              if (repoData.stars !== repo.stars) {
+                console.log(`${file} (${repoPath}): stars ${repo.stars ?? 'none'} → ${repoData.stars}`);
+                repo.stars = repoData.stars;
+                updated = true;
+              }
+              if (repoData.homepage && !primaryHomepage) {
+                primaryHomepage = repoData.homepage;
+              }
+            }
+          }
+        }
+        const hasNewWebsite = primaryHomepage && !data.website;
+        if (hasNewWebsite) {
+          console.log(`${file}: website → ${primaryHomepage}`);
+          data.website = primaryHomepage;
+          updated = true;
         }
       }
     }

@@ -1,11 +1,11 @@
 export const DETAIL_STYLES = {
-  section: 'py-8 border-t-10 border-foreground lg:mr-12',
+  section: 'py-8 border-t-4 lg:border-t-10 border-foreground lg:mr-12',
   content: 'space-y-8',
   description: 'text-lg leading-loose pb-2',
   header: {
     wrapper: '',
     titleRow: 'flex items-center gap-3',
-    title: 'text-2xl! lg:text-5xl! font-black!',
+    title: 'text-3xl! lg:text-5xl! font-black!',
     stars: 'text-xs font-black! flex items-center gap-1',
     starsIcon: 'w-3.5 h-3.5',
     tagline: 'lg:text-lg font-bold!',
@@ -13,7 +13,7 @@ export const DETAIL_STYLES = {
   highlights: {
     wrapper: '',
     title: 'text-xs uppercase font-black! mb-8',
-    list: 'list-disc',
+    list: 'list-disc!',
     item: '',
   },
   tags: {

@@ -7,6 +7,7 @@ import {
   initiateGitHubLogin,
   type GitHubUser,
 } from '@/lib/auth';
+import { identifyUser, resetUser, trackEvent } from '@/lib/analytics';
 
 export function useAuth() {
   const [user, setUser] = useState<GitHubUser | null>(null);
@@ -19,6 +20,10 @@ export function useAuth() {
     setUser(storedUser);
     setToken(storedToken);
     setLoading(false);
+
+    if (storedUser) {
+      identifyUser(storedUser.login, { name: storedUser.name });
+    }
   }, []);
 
   const login = useCallback(() => {
@@ -26,6 +31,8 @@ export function useAuth() {
   }, []);
 
   const logout = useCallback(() => {
+    trackEvent('user_logged_out');
+    resetUser();
     clearAuth();
     setUser(null);
     setToken(null);
@@ -54,6 +61,8 @@ export function useAuth() {
     setAuth(data.user, data.token);
     setUser(data.user);
     setToken(data.token);
+    identifyUser(data.user.login, { name: data.user.name });
+    trackEvent('user_logged_in');
   }, []);
 
   const isAuthenticated = Boolean(token);

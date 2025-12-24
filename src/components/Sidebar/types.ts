@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import type { Project } from '@/data/projects';
+import type { Project } from '@/data/projects-generated';
 
 export interface SidebarProps {
   activeId: string | null;

@@ -1,5 +1,5 @@
 import { useMemo, useState, type ChangeEvent } from 'react';
-import { projects, categories } from '@/data/projects';
+import { projects, categories } from '@/data/projects-generated';
 import { Sidebar } from '@/components/Sidebar';
 import { ProjectList } from '@/components/Projects';
 import { SaveChanges } from '@/components/SaveChanges';
