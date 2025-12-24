@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ProjectsMicrofrontend } from '@/components/ProjectsMicrofrontend';
+import { Toaster } from 'sonner';
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
         <ProjectsMicrofrontend />
       </main>
       <Footer />
+      <Toaster richColors position="bottom-right" />
     </>
   );
 }

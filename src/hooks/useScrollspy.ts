@@ -58,17 +58,18 @@ export function useScrollspy(ids: string[], offset: number = 100) {
 
       const scrollPosition = window.scrollY + offset;
 
-      for (let i = ids.length - 1; i >= 0; i--) {
-        const element = document.getElementById(ids[i]);
-        if (element && element.offsetTop <= scrollPosition) {
-          updateActiveId(ids[i]);
-          return;
-        }
-      }
+      const activeSection = [...ids]
+        .reverse()
+        .find((id) => {
+          const element = document.getElementById(id);
+          if (!element) return false;
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          return elementTop <= scrollPosition;
+        });
 
-      if (ids.length > 0) {
-        updateActiveId(ids[0]);
-      }
+      const newActiveId = activeSection ?? ids[0] ?? null;
+      updateActiveId(newActiveId);
     };
 
     handleScroll();

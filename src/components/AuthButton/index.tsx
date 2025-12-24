@@ -2,59 +2,46 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
-import { Github, LogOut } from 'lucide-react';
+import { Loader2, LogIn, LogOut } from 'lucide-react';
 
-const BUTTON_BASE = 'flex items-center gap-2 text-sm rounded-md transition-colors';
-const LOADING_BUTTON_CLASS = `${BUTTON_BASE} px-3 py-1.5 bg-muted text-muted-foreground`;
-const SIGN_IN_BUTTON_CLASS = `${BUTTON_BASE} px-3 py-1.5 bg-foreground text-background hover:bg-foreground/90`;
-const LOGOUT_BUTTON_CLASS = `${BUTTON_BASE} gap-1 px-2 py-1 hover:bg-muted`;
+const ICON_SIZE = 'w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]';
+const ICON_BUTTON_CLASS = 'flex items-center justify-center transition-opacity hover:opacity-70';
 
-function useIsAdmin() {
-  const [isAdmin, setIsAdmin] = useState(false);
+function useLoginEnabled() {
+  const [isLoginEnabled, setIsLoginEnabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const adminParam = params.get('isAdmin');
-    const hasAdminParam = adminParam === 'true';
-    setIsAdmin(hasAdminParam);
+    const param = params.get('isLoggedIn');
+    setIsLoginEnabled(param === 'true');
+    setIsLoading(false);
   }, []);
 
-  return isAdmin;
+  return { isLoginEnabled, isLoading };
 }
 
 function LoadingButton() {
   return (
-    <button disabled className={LOADING_BUTTON_CLASS}>
-      Loading...
-    </button>
+    <div className={`${ICON_SIZE} flex items-center justify-center`}>
+      <Loader2 className={`${ICON_SIZE} text-foreground animate-spin`} />
+    </div>
   );
 }
 
-interface AuthenticatedUserProps {
-  avatarUrl: string;
-  login: string;
+interface LogoutButtonProps {
   onLogout: () => void;
 }
 
-function AuthenticatedUser({ avatarUrl, login, onLogout }: AuthenticatedUserProps) {
+function LogoutButton({ onLogout }: LogoutButtonProps) {
   return (
-    <div className="flex items-center gap-2">
-      <img
-        src={avatarUrl}
-        alt={login}
-        className="w-6 h-6 rounded-full"
-      />
-      <span className="text-sm text-muted-foreground hidden sm:inline">
-        {login}
-      </span>
-      <button
-        onClick={onLogout}
-        className={LOGOUT_BUTTON_CLASS}
-        title="Sign out"
-      >
-        <LogOut className="w-4 h-4" />
-      </button>
-    </div>
+    <button
+      onClick={onLogout}
+      className={`${ICON_BUTTON_CLASS} border-0 bg-transparent p-0`}
+      title="Sign out"
+    >
+      <LogOut className={`${ICON_SIZE} text-foreground`} />
+    </button>
   );
 }
 
@@ -64,34 +51,28 @@ interface SignInButtonProps {
 
 function SignInButton({ onLogin }: SignInButtonProps) {
   return (
-    <button onClick={onLogin} className={SIGN_IN_BUTTON_CLASS}>
-      <Github className="w-4 h-4" />
-      Sign in
+    <button onClick={onLogin} className={`${ICON_BUTTON_CLASS} border-0 bg-transparent p-0`} title="Sign in with GitHub">
+      <LogIn className={`${ICON_SIZE} text-foreground`} />
     </button>
   );
 }
 
 export function AuthButton() {
-  const isAdmin = useIsAdmin();
-  const { user, isAuthenticated, loading, login, logout } = useAuth();
+  const { isLoginEnabled, isLoading: paramLoading } = useLoginEnabled();
+  const { isAuthenticated, loading, login, logout } = useAuth();
 
-  if (!isAdmin) {
+  const isLoading = paramLoading || loading;
+
+  if (isLoading) {
     return null;
   }
 
-  if (loading) {
-    return <LoadingButton />;
+  if (!isLoginEnabled) {
+    return null;
   }
 
-  const isLoggedIn = isAuthenticated && user;
-  if (isLoggedIn) {
-    return (
-      <AuthenticatedUser
-        avatarUrl={user.avatar_url}
-        login={user.login}
-        onLogout={logout}
-      />
-    );
+  if (isAuthenticated) {
+    return <LogoutButton onLogout={logout} />;
   }
 
   return <SignInButton onLogin={login} />;

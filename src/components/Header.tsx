@@ -77,15 +77,17 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <button
-            id="site-nav-toggle"
-            className="site-nav__toggle"
-            onClick={handleToggle}
-            title="Toggle Darkmode"
-          >
-            <Icon isDarkMode={isDarkMode} />
-          </button>
-          <AuthButton />
+          <div className="flex items-center gap-2">
+            <button
+              id="site-nav-toggle"
+              className="site-nav__toggle"
+              onClick={handleToggle}
+              title="Toggle Darkmode"
+            >
+              <Icon isDarkMode={isDarkMode} />
+            </button>
+            <AuthButton />
+          </div>
         </div>
       </section>
     </nav>

@@ -1,8 +1,11 @@
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { StarLink } from '@/components/StarLink';
 import { EditableContent } from '@/components/EditableContent';
 import { Comments } from '@/components/Comments';
-import { Github, ExternalLink } from 'lucide-react';
+import { MDXContent } from '@/components/MDXContent';
+import { useAuth } from '@/hooks/useAuth';
+import { Github, ExternalLink, Plus, X } from 'lucide-react';
 import { getGitHubRepos } from '@/data/utils';
 import { DETAIL_STYLES } from './constants';
 import type {
@@ -18,11 +21,23 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
     ? getEditedValue(project.id, 'description', project.description)
     : project.description;
 
+  const content = getEditedValue
+    ? getEditedValue(project.id, 'content', project.content ?? '')
+    : (project.content ?? '');
+
   const handleDescriptionChange = (value: string) => {
     if (onFieldChange) {
       onFieldChange(project.id, 'description', value);
     }
   };
+
+  const handleContentChange = (value: string) => {
+    if (onFieldChange) {
+      onFieldChange(project.id, 'content', value);
+    }
+  };
+
+  const hasContent = content.trim().length > 0;
 
   return (
     <section id={project.id} className={DETAIL_STYLES.section}>
@@ -36,9 +51,18 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
           className={DETAIL_STYLES.description}
           placeholder="Add a description..."
         />
-        {project.highlights && project.highlights.length > 0 && (
-          <Highlights projectId={project.id} highlights={project.highlights} />
+        {(project.highlights && project.highlights.length > 0) && (
+          <Highlights
+            projectId={project.id}
+            highlights={getEditedValue ? getEditedValue(project.id, 'highlights', project.highlights) : project.highlights}
+            onFieldChange={onFieldChange}
+          />
         )}
+        <ContentSection
+          content={content}
+          hasContent={hasContent}
+          onChange={handleContentChange}
+        />
         <Tags projectId={project.id} tags={project.tags} selectedTags={selectedTags} onTagClick={onTagClick} />
         <Comments projectId={project.id} />
       </div>
@@ -85,7 +109,96 @@ export function Header({ project, onTitleClick, onFieldChange, getEditedValue }:
   );
 }
 
-function Highlights({ projectId, highlights }: HighlightsProps) {
+interface ContentSectionProps {
+  content: string;
+  hasContent: boolean;
+  onChange: (value: string) => void;
+}
+
+function ContentSection({ content, hasContent, onChange }: ContentSectionProps) {
+  const { isAuthenticated } = useAuth();
+
+  if (isAuthenticated) {
+    return (
+      <EditableContent
+        value={content}
+        onChange={onChange}
+        as="div"
+        className="mt-4 prose prose-sm dark:prose-invert max-w-none whitespace-pre-wrap"
+        placeholder="Add additional content (supports markdown)..."
+      />
+    );
+  }
+
+  if (!hasContent) {
+    return null;
+  }
+
+  return <MDXContent content={content} className="mt-4" />;
+}
+
+function Highlights({ projectId, highlights, onFieldChange }: HighlightsProps) {
+  const { isAuthenticated } = useAuth();
+
+  const handleHighlightChange = (index: number, value: string) => {
+    if (!onFieldChange) return;
+    const updated = [...highlights];
+    updated[index] = value;
+    onFieldChange(projectId, 'highlights', updated);
+  };
+
+  const handleAddHighlight = () => {
+    if (!onFieldChange) return;
+    onFieldChange(projectId, 'highlights', [...highlights, '']);
+  };
+
+  const handleRemoveHighlight = (index: number) => {
+    if (!onFieldChange) return;
+    const updated = highlights.filter((_, i) => i !== index);
+    onFieldChange(projectId, 'highlights', updated);
+  };
+
+  if (isAuthenticated) {
+    return (
+      <div id={`${projectId}-highlights`} className={DETAIL_STYLES.highlights.wrapper}>
+        <h3 id={`${projectId}-highlights-title`} className={DETAIL_STYLES.highlights.title}>
+          Highlights
+        </h3>
+        <ul id={`${projectId}-highlights-list`} className={DETAIL_STYLES.highlights.list}>
+          {highlights.map((highlight, index) => (
+            <li key={index} id={`${projectId}-highlight-${index}`} className={`${DETAIL_STYLES.highlights.item} flex items-center gap-2`}>
+              <EditableContent
+                value={highlight}
+                onChange={(value) => handleHighlightChange(index, value)}
+                as="span"
+                className={`${DETAIL_STYLES.highlights.item} flex-1`}
+                placeholder="Add highlight..."
+              />
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                onClick={() => handleRemoveHighlight(index)}
+                className="text-muted-foreground hover:text-red-500"
+                title="Remove highlight"
+              >
+                <X className="size-4" />
+              </Button>
+            </li>
+          ))}
+        </ul>
+        <Button
+          variant="ghost"
+          onClick={handleAddHighlight}
+          className="text-muted-foreground hover:text-foreground mt-2"
+          title="Add highlight"
+        >
+          <Plus className="size-4" />
+          Add highlight
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <div id={`${projectId}-highlights`} className={DETAIL_STYLES.highlights.wrapper}>
       <h3 id={`${projectId}-highlights-title`} className={DETAIL_STYLES.highlights.title}>

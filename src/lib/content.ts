@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import type { Project, GitHubRepo } from '@/data/projects';
+import type { Project, GitHubRepo } from '@/data/projects-generated';
 
 const contentDirectory = join(process.cwd(), 'content');
 

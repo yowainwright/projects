@@ -1,6 +1,6 @@
 import { Octokit } from 'octokit';
 import matter from 'gray-matter';
-import type { Project } from '@/data/projects';
+import type { Project } from '@/data/projects-generated';
 
 const REPO_OWNER = 'yowainwright';
 const REPO_NAME = 'projects';
@@ -62,7 +62,7 @@ export async function createProjectEditPR({
   });
 
   const message = commitMessage ?? `Update ${projectId} content`;
-  const encodedContent = Buffer.from(updatedContent).toString('base64');
+  const encodedContent = Buffer.from(updatedContent, 'utf-8').toString('base64');
 
   await octokit.rest.repos.createOrUpdateFileContents({
     owner: REPO_OWNER,

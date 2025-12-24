@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useAuth } from './useAuth';
 import { createProjectEditPR } from '@/lib/github';
-import type { Project } from '@/data/projects';
+import type { Project } from '@/data/projects-generated';
 
 interface UseSubmitPRReturn {
   submitPR: (projectId: string, changes: Partial<Project>) => Promise<string | null>;
@@ -37,8 +37,9 @@ export function useSubmitPR(): UseSubmitPRReturn {
         return url;
       } catch (err) {
         const message = err instanceof Error ? err.message : 'Failed to create PR';
+        console.error('PR creation error:', err);
         setError(message);
-        return null;
+        throw err;
       } finally {
         setIsSubmitting(false);
       }

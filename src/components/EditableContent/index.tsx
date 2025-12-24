@@ -3,12 +3,15 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 
+const DEFAULT_MAX_LENGTH = 5000;
+
 interface EditableContentProps {
   value: string;
   onChange: (value: string) => void;
   as?: 'p' | 'h1' | 'h2' | 'h3' | 'span' | 'div';
   className?: string;
   placeholder?: string;
+  maxLength?: number;
 }
 
 export function EditableContent({
@@ -17,6 +20,7 @@ export function EditableContent({
   as: Tag = 'div',
   className = '',
   placeholder = 'Click to edit...',
+  maxLength = DEFAULT_MAX_LENGTH,
 }: EditableContentProps) {
   const { isAuthenticated } = useAuth();
   const ref = useRef<HTMLElement>(null);
@@ -36,13 +40,19 @@ export function EditableContent({
     const element = ref.current;
     if (!element) return;
 
-    const newValue = element.textContent ?? '';
+    const rawValue = element.textContent ?? '';
+    const newValue = rawValue.slice(0, maxLength);
     const hasChanged = newValue !== value;
 
     if (hasChanged) {
       onChange(newValue);
     }
-  }, [onChange, value]);
+
+    const isTruncated = rawValue.length > maxLength;
+    if (isTruncated) {
+      element.textContent = newValue;
+    }
+  }, [onChange, value, maxLength]);
 
   const handleFocus = useCallback(() => {
     setIsEditing(true);
