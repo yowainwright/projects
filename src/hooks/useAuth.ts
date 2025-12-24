@@ -15,8 +15,22 @@ export function useAuth() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const isLoginEnabled = params.get('isLoggedIn') === 'true';
+
     const storedUser = getStoredUser();
     const storedToken = getStoredToken();
+
+    const isLogout = storedToken && !isLoginEnabled;
+    if (isLogout) {
+      clearAuth();
+      resetUser();
+      setUser(null);
+      setToken(null);
+      setLoading(false);
+      return;
+    }
+
     setUser(storedUser);
     setToken(storedToken);
     setLoading(false);

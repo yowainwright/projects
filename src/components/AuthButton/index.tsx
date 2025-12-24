@@ -7,19 +7,18 @@ import { Loader2, LogIn, LogOut } from 'lucide-react';
 const ICON_SIZE = 'w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]';
 const ICON_BUTTON_CLASS = 'flex items-center justify-center transition-opacity hover:opacity-70';
 
-function useIsAdmin() {
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [isAdminLoading, setIsAdminLoading] = useState(true);
+function useLoginEnabled() {
+  const [isLoginEnabled, setIsLoginEnabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const adminParam = params.get('isAdmin');
-    const hasAdminParam = adminParam === 'true';
-    setIsAdmin(hasAdminParam);
-    setIsAdminLoading(false);
+    const param = params.get('isLoggedIn');
+    setIsLoginEnabled(param === 'true');
+    setIsLoading(false);
   }, []);
 
-  return { isAdmin, isAdminLoading };
+  return { isLoginEnabled, isLoading };
 }
 
 function LoadingButton() {
@@ -59,16 +58,16 @@ function SignInButton({ onLogin }: SignInButtonProps) {
 }
 
 export function AuthButton() {
-  const { isAdmin, isAdminLoading } = useIsAdmin();
+  const { isLoginEnabled, isLoading: paramLoading } = useLoginEnabled();
   const { isAuthenticated, loading, login, logout } = useAuth();
 
-  const isLoading = isAdminLoading || loading;
+  const isLoading = paramLoading || loading;
 
   if (isLoading) {
     return null;
   }
 
-  if (!isAdmin) {
+  if (!isLoginEnabled) {
     return null;
   }
 
