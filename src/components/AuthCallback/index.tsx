@@ -21,7 +21,7 @@ export function AuthCallback() {
     handleCallback(code, state)
       .then(() => {
         setStatus('success');
-        window.location.href = '/projects/?isAdmin=true';
+        window.location.href = '/projects/?isLoggedIn=true';
       })
       .catch((err) => {
         setStatus('error');
