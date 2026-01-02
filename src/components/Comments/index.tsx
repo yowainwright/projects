@@ -7,6 +7,7 @@ import { MessageSquare, ChevronDown, ChevronUp } from 'lucide-react';
 const CONTAINER_CLASS = 'mt-8 pt-8 border-t border-border';
 const TOGGLE_BUTTON_CLASS = 'flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors';
 const GISCUS_CONTAINER_CLASS = 'mt-4';
+const GISCUS_HIDDEN_CLASS = 'sr-only';
 
 interface CommentsProps {
   projectId: string;
@@ -14,15 +15,16 @@ interface CommentsProps {
 
 interface ToggleButtonProps {
   isOpen: boolean;
+  onHover: () => void;
   onClick: () => void;
 }
 
-function ToggleButton({ isOpen, onClick }: ToggleButtonProps) {
+function ToggleButton({ isOpen, onHover, onClick }: ToggleButtonProps) {
   const Icon = isOpen ? ChevronUp : ChevronDown;
   const label = isOpen ? 'Hide discussion' : 'Show discussion';
 
   return (
-    <button onClick={onClick} className={TOGGLE_BUTTON_CLASS}>
+    <button onMouseEnter={onHover} onFocus={onHover} onClick={onClick} className={TOGGLE_BUTTON_CLASS}>
       <MessageSquare className="w-4 h-4" />
       <span>{label}</span>
       <Icon className="w-4 h-4" />
@@ -32,15 +34,17 @@ function ToggleButton({ isOpen, onClick }: ToggleButtonProps) {
 
 interface GiscusWidgetProps {
   projectId: string;
+  hidden?: boolean;
 }
 
-function GiscusWidget({ projectId }: GiscusWidgetProps) {
+function GiscusWidget({ projectId, hidden = false }: GiscusWidgetProps) {
   const env = (import.meta as unknown as { env: Record<string, string> }).env;
   const repoId = env.VITE_GISCUS_REPO_ID || '';
   const categoryId = env.VITE_GISCUS_CATEGORY_ID || '';
+  const containerClass = hidden ? GISCUS_HIDDEN_CLASS : GISCUS_CONTAINER_CLASS;
 
   return (
-    <div className={GISCUS_CONTAINER_CLASS}>
+    <div className={containerClass}>
       <Giscus
         id={`comments-${projectId}`}
         repo="yowainwright/projects"
@@ -62,15 +66,22 @@ function GiscusWidget({ projectId }: GiscusWidgetProps) {
 
 export function Comments({ projectId }: CommentsProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [shouldPreload, setShouldPreload] = useState(false);
+
+  const handlePreload = () => {
+    if (!shouldPreload) setShouldPreload(true);
+  };
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const showWidget = isOpen || shouldPreload;
+
   return (
     <div className={CONTAINER_CLASS}>
-      <ToggleButton isOpen={isOpen} onClick={handleToggle} />
-      {isOpen && <GiscusWidget projectId={projectId} />}
+      <ToggleButton isOpen={isOpen} onHover={handlePreload} onClick={handleToggle} />
+      {showWidget && <GiscusWidget projectId={projectId} hidden={!isOpen} />}
     </div>
   );
 }

@@ -142,5 +142,9 @@ vite.config.ts.timestamp-*
 tmp
 .claude
 
+# Playwright
+playwright-report
+test-results
+
 # Editor config (personal preference)
 .editorconfig

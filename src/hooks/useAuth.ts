@@ -53,7 +53,7 @@ export function useAuth() {
   }, []);
 
   const handleCallback = useCallback(async (code: string, state: string) => {
-    const storedState = localStorage.getItem('oauth_state');
+    const storedState = sessionStorage.getItem('oauth_state');
     const isInvalidState = state !== storedState;
 
     if (isInvalidState) {

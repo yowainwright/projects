@@ -1,10 +1,11 @@
-import { useMemo, useState, type ChangeEvent } from 'react';
+import { useCallback, useMemo, useState, type ChangeEvent } from 'react';
 import { projects, categories } from '@/data/projects-generated';
 import { Sidebar } from '@/components/Sidebar';
 import { ProjectList } from '@/components/Projects';
 import { SaveChanges } from '@/components/SaveChanges';
 import { useScrollspy } from '@/hooks/useScrollspy';
 import { useProjectEdits } from '@/hooks/useProjectEdits';
+import { useDebounce } from '@/hooks/useDebounce';
 import { PROJECT_CONTENT_STYLES } from './ProjectContent.constants';
 import '@/styles/content.css';
 
@@ -15,22 +16,17 @@ const trimWord = (wrd: string, srchWrd: string) => {
 
 export function ProjectContent() {
   const [search, setSearch] = useState('');
+  const debouncedSearch = useDebounce(search, 150);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const { hasUnsavedChanges, updateField, getEditedValue, discardEdits, getAllEdits } = useProjectEdits();
 
-  const allTags = useMemo(() => {
-    const tagSet = new Set<string>();
-    projects.forEach((p) => p.tags.forEach((t) => tagSet.add(t)));
-    return Array.from(tagSet).sort();
-  }, []);
-
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
-      const title = trimWord(p.title, search);
-      const tagLine = trimWord(p.tagline, search);
+      const title = trimWord(p.title, debouncedSearch);
+      const tagLine = trimWord(p.tagline, debouncedSearch);
       const matchesSearch =
-        !search || title || tagLine ||
-        p.tags.some((t) => trimWord(t, search));
+        !debouncedSearch || title || tagLine ||
+        p.tags.some((t) => trimWord(t, debouncedSearch));
 
       const matchesTags =
         selectedTags.length === 0 ||
@@ -38,7 +34,7 @@ export function ProjectContent() {
 
       return matchesSearch && matchesTags;
     });
-  }, [search, selectedTags]);
+  }, [debouncedSearch, selectedTags]);
 
   const projectsByCategory = useMemo(() => {
     return categories
@@ -49,18 +45,18 @@ export function ProjectContent() {
       .filter((category) => category.projects.length > 0);
   }, [filteredProjects]);
 
-  const toggleTag = (tag: string) => {
+  const toggleTag = useCallback((tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
-  };
+  }, []);
 
-  const clearFilters = () => {
+  const clearFilters = useCallback(() => {
     setSearch('');
     setSelectedTags([]);
-  };
+  }, []);
 
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
+  const handleSearch = useCallback((e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value), []);
 
   const projectIds = useMemo(() => projects.map((p) => p.id), []);
   const { activeId, scrollTo } = useScrollspy(projectIds, 150);
@@ -75,7 +71,6 @@ export function ProjectContent() {
         selectedTags={selectedTags}
         toggleTag={toggleTag}
         clearFilters={clearFilters}
-        allTags={allTags}
         filteredProjects={filteredProjects}
         projectsByCategory={projectsByCategory}
       />

@@ -1,17 +1,17 @@
 import { Star } from 'lucide-react';
 import { getGitHubRepos, getTotalStars } from '@/data/utils';
-import type { StarLinkProps } from './types';
-
-const CONTRIBUTOR_LABEL = 'core contributor';
+import { useStars } from '@/hooks/useStars';
+import { CONTRIBUTOR_LABEL, STARLINK_STYLES } from './constants';
+import type {
+  StarLinkProps,
+  StarCountProps,
+  ForkStarCountProps,
+  ContributorBadgeProps,
+} from './types';
 
 function extractOrgName(url: string): string {
   const match = url.match(/github\.com\/([^/]+)/);
   return match ? match[1] : '';
-}
-
-interface ContributorBadgeProps {
-  id: string;
-  className?: string;
 }
 
 function ContributorBadge({ id, className }: ContributorBadgeProps) {
@@ -22,25 +22,47 @@ function ContributorBadge({ id, className }: ContributorBadgeProps) {
   );
 }
 
-interface StarCountProps {
-  stars: number;
-  url: string;
-  id: string;
-  className?: string;
-  iconClassName?: string;
-}
+function StarCount({ fallbackStars, url, id, className, iconClassName }: StarCountProps) {
+  const { stars, loading } = useStars(url, fallbackStars);
+  const displayStars = stars ?? fallbackStars;
 
-function StarCount({ stars, url, id, className, iconClassName }: StarCountProps) {
+  if (displayStars === 0) return null;
+
+  const loadingClass = loading ? STARLINK_STYLES.loading : '';
+
   return (
     <a
       id={id}
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={className}
+      className={`${className} ${loadingClass}`}
       onClick={(e) => e.stopPropagation()}
     >
-      {stars.toLocaleString()}
+      {displayStars.toLocaleString()}
+      <Star className={iconClassName} />
+    </a>
+  );
+}
+
+function ForkStarCount({ fallbackStars, url, orgName, id, className, iconClassName }: ForkStarCountProps) {
+  const { stars, loading } = useStars(url, fallbackStars);
+  const displayStars = stars ?? fallbackStars;
+
+  if (displayStars === 0) return null;
+
+  const loadingClass = loading ? STARLINK_STYLES.loading : '';
+
+  return (
+    <a
+      id={id}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${className} ${loadingClass}`}
+      onClick={(e) => e.stopPropagation()}
+    >
+      {orgName}: {displayStars.toLocaleString()}
       <Star className={iconClassName} />
     </a>
   );
@@ -57,15 +79,14 @@ export function StarLink({ project, id, className, iconClassName }: StarLinkProp
   if (isContribution) {
     const totalStars = getTotalStars(project);
     const primaryUrl = repos[0]?.url;
-    const hasStars = totalStars > 0;
-    const shouldShowStars = hasStars && !isJspm;
+    const shouldShowStars = !isJspm;
 
     return (
-      <div className="flex items-center gap-3">
+      <div className={STARLINK_STYLES.wrapper}>
         <ContributorBadge id={`${id}-contributor`} className={className} />
         {shouldShowStars && (
           <StarCount
-            stars={totalStars}
+            fallbackStars={totalStars}
             url={primaryUrl}
             id={`${id}-stars`}
             className={className}
@@ -80,27 +101,21 @@ export function StarLink({ project, id, className, iconClassName }: StarLinkProp
 
   if (hasFork) {
     return (
-      <div className="flex items-center gap-3">
+      <div className={STARLINK_STYLES.wrapper}>
         {repos.map((repo, index) => {
           const repoStars = repo.stars ?? 0;
-          const hasStars = repoStars > 0;
-          if (!hasStars) return null;
-
           const orgName = extractOrgName(repo.url);
 
           return (
-            <a
+            <ForkStarCount
               key={repo.url}
+              fallbackStars={repoStars}
+              url={repo.url}
+              orgName={orgName}
               id={`${id}-${index}`}
-              href={repo.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className={className}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {orgName}: {repoStars.toLocaleString()}
-              <Star className={iconClassName} />
-            </a>
+              iconClassName={iconClassName}
+            />
           );
         })}
       </div>
@@ -109,12 +124,10 @@ export function StarLink({ project, id, className, iconClassName }: StarLinkProp
 
   const primaryRepo = repos[0];
   const primaryStars = primaryRepo.stars ?? 0;
-  const hasStars = primaryStars > 0;
-  if (!hasStars) return null;
 
   return (
     <StarCount
-      stars={primaryStars}
+      fallbackStars={primaryStars}
       url={primaryRepo.url}
       id={id}
       className={className}

@@ -26,7 +26,9 @@ export const SIDEBAR_STYLES = {
   },
   category: {
     wrapper: '',
-    title: 'text-xs! font-semibold uppercase mb-8! text-right mr-5!',
-    list: '',
+    header: 'sticky top-0 bg-background z-10 pb-2 border-b',
+    title: 'text-xs! font-semibold uppercase mb-0! text-right mr-5!',
+    list: 'mt-0!',
+    item: ''
   },
 } as const;
