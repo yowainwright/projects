@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
+const SCROLL_LOCK_DURATION_MS = 1000;
+
 export function useScrollspy(ids: string[], offset: number = 100) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const activeIdRef = useRef<string | null>(null);
@@ -15,7 +17,7 @@ export function useScrollspy(ids: string[], offset: number = 100) {
       }
       scrollTimeoutRef.current = setTimeout(() => {
         isScrollingRef.current = false;
-      }, 1000);
+      }, SCROLL_LOCK_DURATION_MS);
     }
   }, []);
 
@@ -53,23 +55,29 @@ export function useScrollspy(ids: string[], offset: number = 100) {
   }, [ids, scrollToId]);
 
   useEffect(() => {
+    let rafId: number | null = null;
+
     const handleScroll = () => {
       if (isScrollingRef.current) return;
+      if (rafId !== null) return;
 
-      const scrollPosition = window.scrollY + offset;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const scrollPosition = window.scrollY + offset;
 
-      const activeSection = [...ids]
-        .reverse()
-        .find((id) => {
-          const element = document.getElementById(id);
-          if (!element) return false;
-          const rect = element.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          return elementTop <= scrollPosition;
-        });
+        const activeSection = [...ids]
+          .reverse()
+          .find((id) => {
+            const element = document.getElementById(id);
+            if (!element) return false;
+            const rect = element.getBoundingClientRect();
+            const elementTop = rect.top + window.scrollY;
+            return elementTop <= scrollPosition;
+          });
 
-      const newActiveId = activeSection ?? ids[0] ?? null;
-      updateActiveId(newActiveId);
+        const newActiveId = activeSection ?? ids[0] ?? null;
+        updateActiveId(newActiveId);
+      });
     };
 
     handleScroll();
@@ -77,9 +85,8 @@ export function useScrollspy(ids: string[], offset: number = 100) {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
   }, [ids, offset, updateActiveId]);
 

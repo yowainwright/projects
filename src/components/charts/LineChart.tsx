@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import {
   LineChart as RechartsLineChart,
   Line,
@@ -56,8 +57,8 @@ export function LineChart({
   yDomain,
 }: LineChartProps) {
   const colors = Object.values(CHART_COLORS.light);
-  const series = data.map((s) => s.label);
-  const formattedData = formatChartData(data);
+  const series = useMemo(() => data.map((s) => s.label), [data]);
+  const formattedData = useMemo(() => formatChartData(data), [data]);
 
   return (
     <div style={{ ...CHART_STYLES.container, height }}>

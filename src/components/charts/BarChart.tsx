@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import {
   BarChart as RechartsBarChart,
   Bar,
@@ -20,7 +21,7 @@ export function BarChart({
   secondaryLabel = '',
   height = '400px',
 }: BarChartProps) {
-  const chartData = data[0]?.data || [];
+  const chartData = useMemo(() => data[0]?.data || [], [data]);
   const colors = Object.values(CHART_COLORS.light);
 
   return (

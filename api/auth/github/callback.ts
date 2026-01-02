@@ -21,8 +21,25 @@ const ALLOWED_ORIGINS = [
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_MAX = 10;
 const RATE_LIMIT_WINDOW_MS = 60000;
+const CLEANUP_INTERVAL_MS = 300000;
+
+let lastCleanup = Date.now();
+
+function cleanupExpiredEntries() {
+  const now = Date.now();
+  if (now - lastCleanup < CLEANUP_INTERVAL_MS) return;
+
+  lastCleanup = now;
+  for (const [ip, entry] of rateLimitMap) {
+    if (now > entry.resetTime) {
+      rateLimitMap.delete(ip);
+    }
+  }
+}
 
 function isRateLimited(ip: string): boolean {
+  cleanupExpiredEntries();
+
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
 
@@ -32,8 +49,7 @@ function isRateLimited(ip: string): boolean {
   }
 
   entry.count++;
-  const isLimited = entry.count > RATE_LIMIT_MAX;
-  return isLimited;
+  return entry.count > RATE_LIMIT_MAX;
 }
 
 function getCorsHeaders(origin: string | null): Record<string, string> {
@@ -67,10 +83,19 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
-  const { code } = await req.json();
+  let body: { code?: string };
+  try {
+    body = await req.json();
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid JSON body' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
 
-  if (!code) {
-    return new Response(JSON.stringify({ error: 'Missing code' }), {
+  const { code } = body;
+  if (!code || typeof code !== 'string') {
+    return new Response(JSON.stringify({ error: 'Missing or invalid code' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

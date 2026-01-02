@@ -6,3 +6,25 @@ export interface StarLinkProps {
   className?: string;
   iconClassName?: string;
 }
+
+export interface StarCountProps {
+  fallbackStars: number;
+  url: string;
+  id: string;
+  className?: string;
+  iconClassName?: string;
+}
+
+export interface ForkStarCountProps {
+  fallbackStars: number;
+  url: string;
+  orgName: string;
+  id: string;
+  className?: string;
+  iconClassName?: string;
+}
+
+export interface ContributorBadgeProps {
+  id: string;
+  className?: string;
+}

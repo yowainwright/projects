@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "stars": {
+      "$org": {
+        "$repo": {
+          ".read": true,
+          ".write": true,
+          ".validate": "newData.hasChildren(['stars', 'updatedAt']) && newData.child('stars').isNumber() && newData.child('stars').val() >= 0 && newData.child('updatedAt').isNumber()"
+        }
+      }
+    },
+    ".read": false,
+    ".write": false
+  }
+}

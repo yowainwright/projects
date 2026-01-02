@@ -1,9 +1,10 @@
+import { memo } from 'react';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { CardProps } from './types';
 import { CARD_STYLES } from './constants';
 
-export function Card({ project, isActive, onClick, selectedTags, onTagClick }: CardProps) {
+export const Card = memo(function Card({ project, isActive, onClick, selectedTags, onTagClick }: CardProps) {
   return (
     <button id={`sidebar-card-${project.id}`} onClick={onClick} className={CARD_STYLES.button}>
       <div
@@ -44,4 +45,4 @@ export function Card({ project, isActive, onClick, selectedTags, onTagClick }: C
       </div>
     </button>
   );
-}
+});

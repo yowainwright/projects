@@ -11,7 +11,7 @@ export function initiateGitHubLogin() {
     state: crypto.randomUUID(),
   });
 
-  localStorage.setItem('oauth_state', params.get('state')!);
+  sessionStorage.setItem('oauth_state', params.get('state')!);
   window.location.href = `https://github.com/login/oauth/authorize?${params}`;
 }
 
@@ -39,7 +39,7 @@ export function setAuth(user: GitHubUser, token: string) {
 export function clearAuth() {
   localStorage.removeItem('github_user');
   localStorage.removeItem('github_token');
-  localStorage.removeItem('oauth_state');
+  sessionStorage.removeItem('oauth_state');
 }
 
 export function isAuthenticated(): boolean {

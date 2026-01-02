@@ -5,9 +5,10 @@ import { EditableContent } from '@/components/EditableContent';
 import { Comments } from '@/components/Comments';
 import { MDXContent } from '@/components/MDXContent';
 import { useAuth } from '@/hooks/useAuth';
+import { useInView } from '@/hooks/useInView';
 import { Github, ExternalLink, Plus, X } from 'lucide-react';
 import { getGitHubRepos } from '@/data/utils';
-import { DETAIL_STYLES } from './constants';
+import { DETAIL_STYLES, ANIMATION_CLASSES } from './constants';
 import type {
   ProjectDetailProps,
   HeaderProps,
@@ -17,6 +18,8 @@ import type {
 } from '../types';
 
 export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFieldChange, getEditedValue }: ProjectDetailProps) {
+  const { ref, hasEntered } = useInView<HTMLElement>({ threshold: 0.05 });
+
   const description = getEditedValue
     ? getEditedValue(project.id, 'description', project.description)
     : project.description;
@@ -38,9 +41,10 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
   };
 
   const hasContent = content.trim().length > 0;
+  const animationClass = hasEntered ? ANIMATION_CLASSES.visible : ANIMATION_CLASSES.hidden;
 
   return (
-    <section id={project.id} className={DETAIL_STYLES.section}>
+    <section ref={ref} id={project.id} className={`${DETAIL_STYLES.section} ${animationClass}`}>
       <div id={`${project.id}-content`} className={DETAIL_STYLES.content}>
         <Header project={project} onTitleClick={onTitleClick} onFieldChange={onFieldChange} getEditedValue={getEditedValue} />
         <Links project={project} />
