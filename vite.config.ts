@@ -10,7 +10,7 @@ const securityHeaders = {
     "script-src 'self' 'unsafe-inline' https://us.i.posthog.com https://giscus.app",
     "style-src 'self' 'unsafe-inline' https://jeffry.in https://fonts.googleapis.com",
     "img-src 'self' https: data: https://yowainwright.imgix.net",
-    "connect-src 'self' https://api.github.com https://github.com https://us.i.posthog.com",
+    "connect-src 'self' https://api.github.com https://github.com https://us.i.posthog.com https://*.firebaseio.com wss://*.firebaseio.com https://*.firebasedatabase.app wss://*.firebasedatabase.app",
     "frame-src https://giscus.app",
     "font-src 'self' https://fonts.gstatic.com https://jeffry.in https://yowainwright.imgix.net",
   ].join('; '),
