@@ -1,7 +1,7 @@
 const env = (import.meta as unknown as { env: Record<string, string> }).env;
 
 export const GITHUB_CLIENT_ID = env.VITE_GITHUB_CLIENT_ID;
-export const GITHUB_REDIRECT_URI = env.VITE_GITHUB_REDIRECT_URI || `${window.location.origin}/auth/callback`;
+export const GITHUB_REDIRECT_URI = env.VITE_GITHUB_REDIRECT_URI || `${window.location.origin}/projects/auth/callback`;
 
 export function initiateGitHubLogin() {
   const params = new URLSearchParams({

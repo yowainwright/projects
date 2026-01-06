@@ -27,7 +27,7 @@ export const Card = memo(function Card({ project, isActive, onClick, selectedTag
             return (
               <Badge
                 key={tag}
-                variant="secondary"
+                variant="outline"
                 className={cn(
                   CARD_STYLES.tags.badge,
                   isSelected && CARD_STYLES.tags.badgeActive

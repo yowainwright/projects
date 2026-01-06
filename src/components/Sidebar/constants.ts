@@ -8,9 +8,9 @@ export const SIDEBAR_STYLES = {
   },
   tags: {
     wrapper: 'flex flex-wrap gap-2 mb-6 justify-end ml-4 pr-4',
-    badge: 'cursor-pointer text-xs font-bold bg-foreground text-background hover:bg-foreground/75 rounded-md px-2 py-1',
+    badge: 'cursor-pointer text-xs font-bold bg-foreground/10 text-foreground hover:bg-foreground/20 rounded-md px-1! py-0.5!',
     closeIcon: 'w-3 h-3 ml-1',
-    clearButton: 'text-xs font-bold bg-foreground text-background hover:bg-foreground/75 rounded-md px-2 py-1',
+    clearButton: 'text-xs font-bold bg-foreground/10 text-foreground hover:bg-foreground/20 rounded-md px-1! py-0.5! h-auto!',
   },
   filterCount: 'text-sm mb-6 text-right ml-4 pr-4',
   filterBadges: {

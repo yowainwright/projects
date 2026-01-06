@@ -10,7 +10,7 @@ export const CARD_STYLES = {
   tagline: 'text-sm! line-clamp-2 mb-3 text-right',
   tags: {
     wrapper: 'flex flex-wrap gap-2 justify-end',
-    badge: 'cursor-pointer hover:bg-foreground/10 text-xs font-bold text-foreground rounded-md bg-transparent px-1 py-0.5',
-    badgeActive: 'bg-foreground text-background hover:bg-foreground/75',
+    badge: 'cursor-pointer hover:bg-foreground/10 text-xs font-bold text-foreground rounded-md bg-transparent border-transparent px-1! py-0.5!',
+    badgeActive: 'bg-foreground/10 hover:bg-foreground/20',
   },
 } as const;
