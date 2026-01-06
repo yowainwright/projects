@@ -47,7 +47,8 @@ export function useAuth() {
       throw new Error('Invalid OAuth state');
     }
 
-    const response = await fetch('/api/auth/github/callback', {
+    const apiUrl = import.meta.env.VITE_API_URL || '';
+    const response = await fetch(`${apiUrl}/api/auth/github/callback`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ code }),
