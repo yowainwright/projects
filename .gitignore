@@ -148,3 +148,4 @@ test-results
 
 # Editor config (personal preference)
 .editorconfig
+.vercel

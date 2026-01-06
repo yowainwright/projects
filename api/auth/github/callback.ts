@@ -16,6 +16,7 @@ const ALLOWED_ORIGINS = [
   'http://localhost:4173',
   'http://localhost:4174',
   'https://jeffry.in',
+  'https://api.vercel.jeffry.in',
 ];
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
