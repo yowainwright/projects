@@ -1,3 +1,7 @@
+export const config = {
+  runtime: 'edge',
+};
+
 interface GitHubTokenResponse {
   access_token: string;
   token_type: string;
