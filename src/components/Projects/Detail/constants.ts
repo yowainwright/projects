@@ -18,8 +18,8 @@ export const DETAIL_STYLES = {
   },
   tags: {
     wrapper: 'flex flex-wrap gap-2',
-    badge: 'cursor-pointer hover:bg-foreground/10 text-sm font-bold text-foreground bg-transparent border-transparent px-1 py-0.5',
-    badgeActive: 'bg-foreground text-background hover:bg-foreground/75',
+    badge: 'cursor-pointer hover:bg-foreground/10 text-sm font-bold text-foreground bg-transparent border-transparent px-1! py-0.5!',
+    badgeActive: 'bg-foreground/10 hover:bg-foreground/20',
   },
   links: {
     wrapper: 'flex flex-wrap gap-2 mt-4!',

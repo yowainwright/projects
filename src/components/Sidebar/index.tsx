@@ -161,7 +161,7 @@ interface CategoryNavProps extends BadgeNavProps {
 }
 
 export const CategoryNav = forwardRef<HTMLElement, CategoryNavProps>(
-  function CategoryNav({ categories, activeId, onProjectClick, selectedTags, toggleTag }, ref) {
+  function CategoryNav({ categories, activeId, onProjectClick, selectedTags, onTagClick }, ref) {
     if (categories.length === 0) {
       return (
         <nav ref={ref} id="sidebar-nav" className={SIDEBAR_STYLES.nav.wrapper} aria-label="Projects">
@@ -182,7 +182,7 @@ export const CategoryNav = forwardRef<HTMLElement, CategoryNavProps>(
             activeId={activeId}
             onProjectClick={onProjectClick}
             selectedTags={selectedTags}
-            onTagClick={toggleTag}
+            onTagClick={onTagClick}
           />
         ))}
       </nav>

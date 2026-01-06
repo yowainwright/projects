@@ -38,5 +38,5 @@ export interface BadgeNavProps {
   activeId: string | null;
   onProjectClick: (id: string) => void;
   selectedTags: string[];
-  toggleTag: (tag: string) => void;
+  onTagClick: (tag: string) => void;
 }

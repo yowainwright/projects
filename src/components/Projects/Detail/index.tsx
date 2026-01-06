@@ -227,9 +227,12 @@ export function Tags({ projectId, tags, selectedTags, onTagClick }: TagsProps) {
         return (
           <Badge
             key={tag}
-            variant={'default'}
+            variant="outline"
             className={`${DETAIL_STYLES.tags.badge} ${isSelected ? DETAIL_STYLES.tags.badgeActive : ''}`}
-            onClick={() => onTagClick(tag)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onTagClick(tag);
+            }}
           >
             {tag}
           </Badge>
