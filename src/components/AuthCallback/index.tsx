@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
+import { Loader2 } from 'lucide-react';
 
 export function AuthCallback() {
   const { handleCallback } = useAuth();
@@ -29,16 +30,7 @@ export function AuthCallback() {
       });
   }, [handleCallback]);
 
-  const isLoading = status === 'loading';
   const isError = status === 'error';
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <p className="text-muted-foreground">Authenticating...</p>
-      </div>
-    );
-  }
 
   if (isError) {
     return (
@@ -53,7 +45,7 @@ export function AuthCallback() {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <p className="text-green-500">Success! Redirecting...</p>
+      <Loader2 className="w-8 h-8 animate-spin text-foreground" />
     </div>
   );
 }
