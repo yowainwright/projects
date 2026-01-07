@@ -20,6 +20,7 @@
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "firebase": "^12.7.0",
+        "fuse.js": "^7.1.0",
         "geist": "^1.5.1",
         "gray-matter": "^4.0.3",
         "lucide-react": "^0.562.0",
@@ -767,6 +768,8 @@
     "fractional-indexing": ["fractional-indexing@3.2.0", "", {}, "sha512-PcOxmqwYCW7O2ovKRU8OoQQj2yqTfEB/yeTYk4gPid6dN5ODRfU1hXd9tTVZzax/0NkO7AxpHykvZnT1aYp/BQ=="],
 
     "fsevents": ["fsevents@2.3.3", "", { "os": "darwin" }, "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="],
+
+    "fuse.js": ["fuse.js@7.1.0", "", {}, "sha512-trLf4SzuuUxfusZADLINj+dE8clK1frKdmqiJNb1Es75fmI5oY6X2mxLVUciLLjxqw/xr72Dhy+lER6dGd02FQ=="],
 
     "geist": ["geist@1.5.1", "", { "peerDependencies": { "next": ">=13.2.0" } }, "sha512-mAHZxIsL2o3ZITFaBVFBnwyDOw+zNLYum6A6nIjpzCGIO8QtC3V76XF2RnZTyLx1wlDTmMDy8jg3Ib52MIjGvQ=="],
 

@@ -2,6 +2,7 @@ const SOCIAL_ITEMS = [
   { name: 'Github', path: 'https://github.com/yowainwright', small: true },
   { name: 'Instagram', path: 'https://instagram.com/yowainwright', small: true },
   { name: 'LinkedIn', path: 'https://www.linkedin.com/in/jeffrywainwright/', small: true },
+  { name: 'RSS', path: 'https://jeffry.in/rss.xml', small: true },
 ];
 
 function SocialList() {

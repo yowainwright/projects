@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AuthButton } from '@/components/AuthButton';
+import { Search } from '@/components/Search';
 
 const NAV_ITEMS = [
   { alias: 'resume', name: 'Resume', path: 'https://jeffry.in/resume/' },
@@ -77,7 +78,8 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <div className="flex items-center gap-2">
+          <div className="site-nav__actions">
+            <Search />
             <button
               id="site-nav-toggle"
               className="site-nav__toggle"
