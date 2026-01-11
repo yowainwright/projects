@@ -43,7 +43,7 @@ function formatDate(dateStr: string): string {
   return `${month} '${year}`;
 }
 
-export function MiniChart({ history, dataKey, label, value, color = COLORS.chart, height = CHART_HEIGHT, onClick }: MiniChartProps) {
+export function MiniChart({ history, dataKey, label, value, color = COLORS.chart, height: _height = CHART_HEIGHT, onClick }: MiniChartProps) {
   const chartData = useMemo(() => buildChartData(history, dataKey), [history, dataKey]);
 
   if (history.length === 0) return null;

@@ -16,7 +16,7 @@ interface SaveChangesProps {
 
 export function SaveChanges({ hasChanges, edits, onDiscard }: SaveChangesProps) {
   const { isAuthenticated } = useAuth();
-  const { submitPR, isSubmitting, error } = useSubmitPR();
+  const { submitPR, isSubmitting, error: _error } = useSubmitPR();
 
   const shouldHide = !isAuthenticated || !hasChanges;
   if (shouldHide) {

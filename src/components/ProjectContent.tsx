@@ -28,9 +28,7 @@ export function ProjectContent() {
         !debouncedSearch || title || tagLine ||
         p.tags.some((t) => trimWord(t, debouncedSearch));
 
-      const matchesTags =
-        selectedTags.length === 0 ||
-        selectedTags.every((tag) => p.tags.includes(tag));
+      const matchesTags = selectedTags.every((tag) => p.tags.includes(tag));
 
       return matchesSearch && matchesTags;
     });

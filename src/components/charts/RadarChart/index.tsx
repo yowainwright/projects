@@ -13,7 +13,7 @@ const buildChartData = (grade: GradeData): DataPoint[] => [
   { metric: 'Cmt', value: grade.commits },
 ];
 
-export function RadarChart({ grade, size = CHART_HEIGHT, onClick }: RadarChartProps) {
+export function RadarChart({ grade, size: _size = CHART_HEIGHT, onClick }: RadarChartProps) {
   const data = useMemo(() => buildChartData(grade), [grade]);
   const score = grade.score;
 

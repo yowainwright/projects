@@ -69,29 +69,6 @@ export const projects: Project[] = [
     "content": "Major contributor to Postmate, a powerful and simple promise-based postMessage library for cross-origin iframe communication.\n\nContributions include the call queue feature, bug fixes, and version management as part of Dollar Shave Club engineering."
   },
   {
-    "id": "lifecycle",
-    "title": "Lifecycle",
-    "tagline": "Ephemeral PR environments",
-    "description": "Transforms pull requests into ephemeral development environments that seamlessly connect to required dependencies while remaining isolated from unrelated changes. Enables development, testing, design review, and external sandboxes from any PR.",
-    "category": "oss-contribution",
-    "tags": [
-      "TypeScript",
-      "Kubernetes",
-      "DevOps",
-      "CI/CD"
-    ],
-    "github": "https://github.com/goodrxoss/lifecycle",
-    "stars": 76,
-    "highlights": [
-      "Isolated PR environments",
-      "Kubernetes + Docker integration",
-      "Design review workflows",
-      "Partner sandbox environments"
-    ],
-    "website": "https://goodrxoss.github.io/lifecycle-docs",
-    "content": "Lifecycle transforms pull requests into ephemeral development environments that seamlessly connect to required dependencies while remaining isolated from unrelated changes.\n\nEnables development, testing, design review, and external sandboxes from any PR."
-  },
-  {
     "id": "jspm",
     "title": "JSPM",
     "tagline": "Native ES module package management",
@@ -125,6 +102,29 @@ export const projects: Project[] = [
       "Organization support"
     ],
     "content": "Contributor to JSPM, providing native ES module workflows for JavaScript.\n\nContributions include the Node.js import map loader, import-map package development, website improvements, and organization support."
+  },
+  {
+    "id": "lifecycle",
+    "title": "Lifecycle",
+    "tagline": "Ephemeral PR environments",
+    "description": "Transforms pull requests into ephemeral development environments that seamlessly connect to required dependencies while remaining isolated from unrelated changes. Enables development, testing, design review, and external sandboxes from any PR.",
+    "category": "oss-contribution",
+    "tags": [
+      "TypeScript",
+      "Kubernetes",
+      "DevOps",
+      "CI/CD"
+    ],
+    "github": "https://github.com/goodrxoss/lifecycle",
+    "stars": 76,
+    "highlights": [
+      "Isolated PR environments",
+      "Kubernetes + Docker integration",
+      "Design review workflows",
+      "Partner sandbox environments"
+    ],
+    "website": "https://goodrxoss.github.io/lifecycle-docs",
+    "content": "Lifecycle transforms pull requests into ephemeral development environments that seamlessly connect to required dependencies while remaining isolated from unrelated changes.\n\nEnables development, testing, design review, and external sandboxes from any PR."
   },
   {
     "id": "shave",

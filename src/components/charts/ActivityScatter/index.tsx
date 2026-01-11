@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, ResponsiveContainer } from 'recharts';
 import type { Activity } from '@/data/projects-generated';
 import { CHART_HEIGHT, MONTHS_TO_SHOW, MIN_DOT_SIZE, MAX_DOT_SIZE, COLORS, STYLES } from './constants';
-import type { ActivityScatterProps, DataPoint, ScatterData } from './types';
+import type { ActivityScatterProps, ScatterData } from './types';
 
 function parseMonthLabel(monthStr: string): string {
   const [yearStr, monthStr2] = monthStr.split('-');
@@ -32,7 +32,7 @@ function buildScatterData(activity: Activity): ScatterData {
   return { points, startLabel, endLabel };
 }
 
-export function ActivityScatter({ activity, height = CHART_HEIGHT, showTotal = true, onClick }: ActivityScatterProps) {
+export function ActivityScatter({ activity, height: _height = CHART_HEIGHT, showTotal = true, onClick }: ActivityScatterProps) {
   const { points, startLabel, endLabel } = useMemo(() => buildScatterData(activity), [activity]);
 
   if (points.length === 0) return null;

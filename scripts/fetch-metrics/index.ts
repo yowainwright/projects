@@ -2,13 +2,12 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 
 import { join } from 'path';
 import matter from 'gray-matter';
 import { forkJoin, lastValueFrom, of } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import type {
   GitHubRepoEntry,
   YearlyCommits,
   Downloads,
-  Activity,
   CurrentMetrics,
   GradeData,
   HistoryEntry,

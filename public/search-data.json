@@ -12,16 +12,16 @@
     "url": "#postmate"
   },
   {
-    "id": "lifecycle",
-    "title": "Lifecycle",
-    "description": "Ephemeral PR environments",
-    "url": "#lifecycle"
-  },
-  {
     "id": "jspm",
     "title": "JSPM",
     "description": "Native ES module package management",
     "url": "#jspm"
+  },
+  {
+    "id": "lifecycle",
+    "title": "Lifecycle",
+    "description": "Ephemeral PR environments",
+    "url": "#lifecycle"
   },
   {
     "id": "shave",

@@ -15,7 +15,6 @@ import { MAX_CONCURRENT_REQUESTS, REQUEST_DELAY_MS } from './constants';
 import {
   getCachedCommits,
   setCachedCommits,
-  saveCache,
   getCurrentYear,
   getYearFromDate,
   type CachedCommit,
@@ -26,13 +25,6 @@ const activityCache = new Map<string, Observable<GitHubCommitActivity[]>>();
 const contributorCache = new Map<string, Observable<number>>();
 
 let rateLimitRemaining = 5000;
-
-function updateRateLimit(response: Response): void {
-  const remaining = response.headers.get('X-RateLimit-Remaining');
-  if (remaining) {
-    rateLimitRemaining = parseInt(remaining, 10);
-  }
-}
 
 export function getRateLimitRemaining(): number {
   return rateLimitRemaining;
@@ -120,19 +112,6 @@ function groupCommitsByWeek(commits: GitHubCommit[]): GitHubCommitActivity[] {
     return buildWeekActivity(week, total);
   });
   return result;
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function fetchCommitPage(repoPath: string, page: number): Promise<GitHubCommit[]> {
-  const headers = getAuthHeaders();
-  const url = `https://api.github.com/repos/${repoPath}/commits?per_page=100&page=${page}`;
-  const response = await fetch(url, { headers });
-  if (!response.ok) return [];
-  const commits = await response.json() as GitHubCommit[];
-  return commits;
 }
 
 function getJan1OfYear(year: number): string {
@@ -288,7 +267,7 @@ export function fetchAllRepos$<T>(
 ): Observable<T[]> {
   if (items.length === 0) return of([]);
 
-  const results: T[] = new Array(items.length);
+  const results: T[] = Array.from({ length: items.length });
   const stream$ = from(items).pipe(
     mergeMap((item, index) => fetcher(item).pipe(
       map((result) => ({ result, index })),

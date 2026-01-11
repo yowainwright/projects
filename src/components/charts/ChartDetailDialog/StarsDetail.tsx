@@ -2,7 +2,7 @@
 
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import type { HistoryEntry } from '@/data/projects-generated';
-import { CHART_HEIGHT, COLORS, STYLES } from './constants';
+import { COLORS, STYLES } from './constants';
 
 interface StarsDetailProps {
   history: HistoryEntry[];

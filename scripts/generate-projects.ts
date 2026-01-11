@@ -42,18 +42,6 @@ function parseProject(file: string, contentDir: string): ProjectOutput {
   return { ...frontmatter, content: content.trim() };
 }
 
-const CONTRIBUTION_ORDER = ['koa', 'postmate', 'lifecycle', 'jspm'];
-const DEFAULT_ORDER = 999;
-
-function getContributionOrder(id: string): number {
-  const index = CONTRIBUTION_ORDER.indexOf(id);
-  if (index === -1) return DEFAULT_ORDER;
-  return index;
-}
-
-function sortContributions(contributions: ProjectOutput[]): ProjectOutput[] {
-  return contributions.sort((a, b) => getContributionOrder(a.id) - getContributionOrder(b.id));
-}
 
 function getGradeScore(project: ProjectOutput, index: GradeIndex): number {
   const entry = index[project.id];
@@ -74,7 +62,7 @@ function loadAndParseProjects(contentDir: string): ProjectOutput[] {
 function sortAllProjects(projects: ProjectOutput[], index: GradeIndex): ProjectOutput[] {
   const contributions = projects.filter((p) => p.category === 'oss-contribution');
   const personal = projects.filter((p) => p.category === 'personal');
-  const sortedContributions = sortContributions(contributions);
+  const sortedContributions = sortByGrade(contributions, index);
   const sortedPersonal = sortByGrade(personal, index);
   return [...sortedContributions, ...sortedPersonal];
 }

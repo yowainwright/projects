@@ -1,4 +1,4 @@
-import type { GitHubRepo, Project } from './types';
+import type { Project } from './types';
 
 export type { GitHubRepo, Project } from './types';
 
