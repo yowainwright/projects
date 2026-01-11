@@ -50,8 +50,8 @@ export async function compileMDX(source: string) {
         {
           highlighter,
           themes: {
-            light: 'theme-custom-light',
-            dark: 'theme-custom-dark',
+            light: customLight,
+            dark: customDark,
           },
           transformers: [
             transformerNotationDiff(),

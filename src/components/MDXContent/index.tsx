@@ -66,8 +66,8 @@ async function renderMarkdown(content: string): Promise<string> {
     .use(rehypeShiki, {
       highlighter,
       themes: {
-        light: 'theme-custom-light',
-        dark: 'theme-custom-dark',
+        light: customLight,
+        dark: customDark,
       },
     })
     .use(rehypeSanitize, sanitizeSchema)
