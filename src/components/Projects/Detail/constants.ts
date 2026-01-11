@@ -1,11 +1,19 @@
+const TAG_BADGE_LAYOUT = 'cursor-pointer bg-transparent border-transparent px-1! py-0.5!';
+const TAG_BADGE_STYLE = 'text-sm font-bold text-foreground';
+const TAG_BADGE_HOVER = 'hover:bg-foreground/10';
+
+const LINK_BADGE_LAYOUT = 'cursor-pointer bg-transparent border-transparent px-1! py-0.5!';
+const LINK_BADGE_STYLE = 'text-sm font-bold text-[var(--color-link-visited)]';
+const LINK_BADGE_HOVER = 'hover:underline hover:bg-transparent!';
+
 export const DETAIL_STYLES = {
   section: 'py-8 border-t-4 lg:border-t-2 border-foreground lg:mr-12',
-  content: 'space-y-8',
+  content: '',
   description: 'text-lg leading-loose pb-2',
   header: {
     wrapper: '',
     titleRow: 'flex items-center gap-3',
-    title: 'text-3xl! lg:text-5xl! font-black!',
+    title: 'text-3xl! lg:text-5xl! font-black! text-[var(--color-link-nav)]',
     stars: 'text-xs font-black! flex items-center gap-1',
     starsIcon: 'w-3.5 h-3.5',
     tagline: 'lg:text-lg font-bold!',
@@ -18,12 +26,12 @@ export const DETAIL_STYLES = {
   },
   tags: {
     wrapper: 'flex flex-wrap gap-2',
-    badge: 'cursor-pointer hover:bg-foreground/10 text-sm font-bold text-foreground bg-transparent border-transparent px-1! py-0.5!',
+    badge: `${TAG_BADGE_LAYOUT} ${TAG_BADGE_STYLE} ${TAG_BADGE_HOVER}`,
     badgeActive: 'bg-foreground/10 hover:bg-foreground/20',
   },
   links: {
-    wrapper: 'flex flex-wrap gap-2 mt-4!',
-    badge: 'cursor-pointer hover:bg-link/75 text-sm font-bold text-background! rounded-md bg-link px-2 py-1 dark:text-[#040b21]!',
+    wrapper: 'flex flex-wrap gap-2',
+    badge: `${LINK_BADGE_LAYOUT} ${LINK_BADGE_STYLE} ${LINK_BADGE_HOVER}`,
     icon: 'size-5',
   },
 } as const;

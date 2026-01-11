@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Fuse from "fuse.js";
 import type { SearchResult, SearchState } from "./types";
-import { FUSE_OPTIONS, MAX_RESULTS, SEARCH_DATA_PATH } from "./constants";
+import { FUSE_OPTIONS, MAX_RESULTS } from "./constants";
+
+function getSearchDataUrl(): string {
+  const base = import.meta.env.BASE_URL;
+  if (base) return `${base}search-data.json`;
+  return '/search-data.json';
+}
 
 const createInitialState = (): SearchState => ({
   isOpen: false,
@@ -45,7 +51,8 @@ export function useSearch() {
   const canNavigateResults = state.isOpen && hasResults;
 
   useEffect(() => {
-    fetch(SEARCH_DATA_PATH)
+    const url = getSearchDataUrl();
+    fetch(url)
       .then((res) => res.json())
       .then((data: SearchResult[]) =>
         setState((prev) => ({ ...prev, searchData: data }))
