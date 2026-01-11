@@ -31,6 +31,7 @@
   },
   "displayName": "custom dark",
   "name": "theme-custom-dark",
+  "type": "dark",
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "customLiteral": "#e2657e",
