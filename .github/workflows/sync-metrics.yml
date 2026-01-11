@@ -1,0 +1,46 @@
+name: sync project metrics
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  sync-metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Restore commit cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/commits
+          key: commit-cache-${{ github.run_id }}
+          restore-keys: |
+            commit-cache-
+      - run: bun install
+      - name: Fetch project metrics
+        run: bun run scripts/fetch-metrics.ts
+        env:
+          CLI_GITHUB_TOKEN: ${{ secrets.CLI_GITHUB_TOKEN }}
+      - name: Sync GitHub data to MDX
+        run: bun run scripts/sync-github.ts
+        env:
+          CLI_GITHUB_TOKEN: ${{ secrets.CLI_GITHUB_TOKEN }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.PR_CREATE_TOKEN }}
+          commit-message: Sync project metrics
+          title: "[Auto] Sync project metrics"
+          body: |
+            ## Metrics sync
+            - GitHub: stars, forks, commits
+            - NPM: weekly downloads
+            - Grades calculated
+          branch: sync-metrics
+          labels: automated

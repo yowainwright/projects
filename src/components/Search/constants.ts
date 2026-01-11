@@ -6,4 +6,3 @@ export const FUSE_OPTIONS = {
 
 export const MAX_RESULTS = 8;
 export const RECENT_ITEMS_COUNT = 2;
-export const SEARCH_DATA_PATH = "https://jeffry.in/search-data.json";

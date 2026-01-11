@@ -8,20 +8,22 @@ export interface StarLinkProps {
 }
 
 export interface StarCountProps {
-  fallbackStars: number;
+  stars: number;
   url: string;
   id: string;
   className?: string;
   iconClassName?: string;
+  loading?: boolean;
 }
 
 export interface ForkStarCountProps {
-  fallbackStars: number;
+  stars: number;
   url: string;
   orgName: string;
   id: string;
   className?: string;
   iconClassName?: string;
+  loading?: boolean;
 }
 
 export interface ContributorBadgeProps {

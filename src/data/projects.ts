@@ -1,23 +1,10 @@
-export interface GitHubRepo {
-  url: string;
-  stars?: number;
-}
+import type { Project } from './types';
 
-export interface Project {
-  id: string;
-  title: string;
-  tagline: string;
-  description: string;
-  category: 'personal' | 'oss-contribution' | 'work';
-  tags: string[];
-  github?: string | GitHubRepo[];
-  npm?: string;
-  website?: string;
-  stars?: number;
-  highlights?: string[];
-}
+export type { GitHubRepo, Project } from './types';
 
-export const projects: Project[] = [
+type BaseProject = Omit<Project, 'content' | 'metrics'>;
+
+export const projects: BaseProject[] = [
   {
     id: 'koa',
     title: 'Koa.js',

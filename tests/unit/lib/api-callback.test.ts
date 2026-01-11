@@ -1,4 +1,4 @@
-import { describe, test, expect, mock, beforeEach } from 'bun:test';
+import { describe, test, expect } from 'bun:test';
 import handler from '../../../api/auth/github/callback';
 
 const createRequest = (options: {

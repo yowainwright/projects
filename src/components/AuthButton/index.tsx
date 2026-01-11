@@ -29,6 +29,14 @@ export function AuthButton() {
 
   const isLoading = paramLoading || loading;
 
+  useEffect(() => {
+    if (isLoading) return;
+    const hasTokenButNoParam = isAuthenticated && !isLoggedIn;
+    if (hasTokenButNoParam) {
+      logout();
+    }
+  }, [isLoading, isAuthenticated, isLoggedIn, logout]);
+
   const handleLogout = () => {
     setIsLoggingOut(true);
     logout();

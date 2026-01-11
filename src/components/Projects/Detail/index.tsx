@@ -4,6 +4,7 @@ import { StarLink } from '@/components/StarLink';
 import { EditableContent } from '@/components/EditableContent';
 import { Comments } from '@/components/Comments';
 import { MDXContent } from '@/components/MDXContent';
+import { MetricsSectionLoader } from './MetricsSectionLoader';
 import { useAuth } from '@/hooks/useAuth';
 import { useInView } from '@/hooks/useInView';
 import { Github, ExternalLink, Plus, X } from 'lucide-react';
@@ -48,6 +49,7 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
       <div id={`${project.id}-content`} className={DETAIL_STYLES.content}>
         <Header project={project} onTitleClick={onTitleClick} onFieldChange={onFieldChange} getEditedValue={getEditedValue} />
         <Links project={project} />
+        <MetricsSectionLoader projectId={project.id} />
         <EditableContent
           value={description}
           onChange={handleDescriptionChange}
@@ -292,8 +294,8 @@ export function Links({ project }: LinksProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className={DETAIL_STYLES.links.icon} />
               {repoName}
+              <Github className={DETAIL_STYLES.links.icon} />
             </a>
           </Badge>
         );
@@ -301,16 +303,16 @@ export function Links({ project }: LinksProps) {
       {hasNpm && (
         <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-npm`} href={project.npm} target="_blank" rel="noopener noreferrer">
-            <NpmIcon />
             {extractNpmPackageName(project.npm!, hasFork)}
+            <NpmIcon />
           </a>
         </Badge>
       )}
       {hasWebsite && (
         <Badge asChild className={DETAIL_STYLES.links.badge}>
           <a id={`${project.id}-link-website`} href={project.website} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className={DETAIL_STYLES.links.icon} />
             Website
+            <ExternalLink className={DETAIL_STYLES.links.icon} />
           </a>
         </Badge>
       )}
