@@ -31,6 +31,7 @@
   },
   "displayName": "custom light",
   "name": "theme-custom-light",
+  "type": "light",
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "customLiteral": "#e2657e",
