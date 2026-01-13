@@ -24,7 +24,7 @@ jobs:
             commit-cache-
       - run: bun install
       - name: Fetch project metrics
-        run: bun run scripts/fetch-metrics.ts
+        run: bun run scripts/fetch-metrics/index.ts
         env:
           CLI_GITHUB_TOKEN: ${{ secrets.CLI_GITHUB_TOKEN }}
       - name: Sync GitHub data to MDX
