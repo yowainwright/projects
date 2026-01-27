@@ -76,8 +76,8 @@
       "score": 1,
       "stars": 1,
       "monthlyDownloads": 0,
-      "monthlyActivity": 1,
-      "commits": 1
+      "monthlyActivity": 2,
+      "commits": 2
     }
   },
   "yaml-comment-generator": {
@@ -100,9 +100,9 @@
   },
   "scrolldir": {
     "grade": {
-      "score": 28,
+      "score": 29,
       "stars": 70,
-      "monthlyDownloads": 12,
+      "monthlyDownloads": 14,
       "monthlyActivity": 0,
       "commits": 0
     }
@@ -127,9 +127,9 @@
   },
   "pastoralist": {
     "grade": {
-      "score": 44,
+      "score": 45,
       "stars": 9,
-      "monthlyDownloads": 21,
+      "monthlyDownloads": 24,
       "monthlyActivity": 100,
       "commits": 100
     }
@@ -247,8 +247,8 @@
       "score": 30,
       "stars": 1,
       "monthlyDownloads": 0,
-      "monthlyActivity": 85,
-      "commits": 85
+      "monthlyActivity": 86,
+      "commits": 86
     }
   },
   "typescript-lib-starter": {
@@ -283,8 +283,8 @@
       "score": 39,
       "stars": 21,
       "monthlyDownloads": 100,
-      "monthlyActivity": 4,
-      "commits": 4
+      "monthlyActivity": 5,
+      "commits": 5
     }
   },
   "algorithms": {
