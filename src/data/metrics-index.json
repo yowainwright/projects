@@ -1,11 +1,11 @@
 {
   "lifecycle": {
     "grade": {
-      "score": 9,
+      "score": 10,
       "stars": 8,
       "monthlyDownloads": 0,
-      "monthlyActivity": 19,
-      "commits": 19
+      "monthlyActivity": 20,
+      "commits": 20
     }
   },
   "awesome-monorepo-utilities": {
@@ -100,9 +100,9 @@
   },
   "scrolldir": {
     "grade": {
-      "score": 29,
+      "score": 30,
       "stars": 70,
-      "monthlyDownloads": 14,
+      "monthlyDownloads": 19,
       "monthlyActivity": 0,
       "commits": 0
     }
