@@ -1,11 +1,11 @@
 {
   "lifecycle": {
     "grade": {
-      "score": 9,
+      "score": 10,
       "stars": 8,
       "monthlyDownloads": 0,
-      "monthlyActivity": 19,
-      "commits": 19
+      "monthlyActivity": 20,
+      "commits": 20
     }
   },
   "awesome-monorepo-utilities": {
@@ -100,9 +100,9 @@
   },
   "scrolldir": {
     "grade": {
-      "score": 29,
+      "score": 31,
       "stars": 70,
-      "monthlyDownloads": 14,
+      "monthlyDownloads": 20,
       "monthlyActivity": 0,
       "commits": 0
     }
@@ -129,7 +129,7 @@
     "grade": {
       "score": 45,
       "stars": 9,
-      "monthlyDownloads": 24,
+      "monthlyDownloads": 23,
       "monthlyActivity": 100,
       "commits": 100
     }
@@ -244,11 +244,11 @@
   },
   "build-lambda-layer": {
     "grade": {
-      "score": 30,
+      "score": 31,
       "stars": 1,
       "monthlyDownloads": 0,
-      "monthlyActivity": 86,
-      "commits": 86
+      "monthlyActivity": 87,
+      "commits": 87
     }
   },
   "typescript-lib-starter": {
