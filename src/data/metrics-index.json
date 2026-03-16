@@ -66,7 +66,7 @@
     "grade": {
       "score": 30,
       "stars": 69,
-      "monthlyDownloads": 21,
+      "monthlyDownloads": 19,
       "monthlyActivity": 0,
       "commits": 0
     }
@@ -145,11 +145,11 @@
   },
   "es-check": {
     "grade": {
-      "score": 40,
+      "score": 41,
       "stars": 21,
       "monthlyDownloads": 100,
-      "monthlyActivity": 8,
-      "commits": 8
+      "monthlyActivity": 9,
+      "commits": 9
     }
   },
   "typescript-lib-starter": {
@@ -201,7 +201,7 @@
     "grade": {
       "score": 2,
       "stars": 1,
-      "monthlyDownloads": 2,
+      "monthlyDownloads": 1,
       "monthlyActivity": 4,
       "commits": 4
     }
@@ -346,8 +346,8 @@
       "score": 12,
       "stars": 8,
       "monthlyDownloads": 0,
-      "monthlyActivity": 26,
-      "commits": 26
+      "monthlyActivity": 27,
+      "commits": 27
     }
   },
   "common-utilities": {
@@ -379,11 +379,11 @@
   },
   "build-lambda-layer": {
     "grade": {
-      "score": 31,
+      "score": 32,
       "stars": 1,
       "monthlyDownloads": 0,
-      "monthlyActivity": 88,
-      "commits": 88
+      "monthlyActivity": 89,
+      "commits": 89
     }
   },
   "algorithms": {
@@ -397,9 +397,9 @@
   },
   "pastoralist": {
     "grade": {
-      "score": 43,
+      "score": 41,
       "stars": 9,
-      "monthlyDownloads": 15,
+      "monthlyDownloads": 10,
       "monthlyActivity": 100,
       "commits": 100
     }
