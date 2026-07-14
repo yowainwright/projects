@@ -32,7 +32,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/koajs/koa",
-        "stars": 35709
+        "stars": 35707
       }
     ],
     "npm": "https://www.npmjs.com/package/koa",
@@ -337,27 +337,6 @@ export const projects: Project[] = [
     "content": "Datastructures provides simple functional typed data structures for JavaScript/TypeScript.\n\nIt offers immutable, type-safe implementations of common data structures following functional programming principles."
   },
   {
-    "id": "build-lambda-layer",
-    "title": "Build Lambda Layer",
-    "tagline": "AWS Lambda layer builder",
-    "description": "Build awesome Node.js Lambda layers with control. Provides tooling to create and manage AWS Lambda layers for Node.js applications with fine-grained control over the build process.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "AWS",
-      "Lambda",
-      "Serverless"
-    ],
-    "github": "https://github.com/yowainwright/build-lambda-layer",
-    "stars": 6,
-    "highlights": [
-      "Node.js Lambda layers",
-      "Build control",
-      "AWS integration"
-    ],
-    "content": "Build Lambda Layer provides tooling to create and manage AWS Lambda layers for Node.js applications.\n\nBuild awesome Node.js Lambda layers with fine-grained control over the build process."
-  },
-  {
     "id": "scrolldir",
     "title": "ScrollDir",
     "tagline": "CSS-driven scroll direction detection",
@@ -388,6 +367,27 @@ export const projects: Project[] = [
     ],
     "website": "https://github.com/yowainwright/scrolldir",
     "content": "ScrollDir is a lightweight JavaScript utility that detects vertical scroll direction and applies it via a CSS data attribute.\n\nIt enables developers to style elements based on scroll direction without complex JavaScript, perfect for hiding/showing sticky navigation."
+  },
+  {
+    "id": "build-lambda-layer",
+    "title": "Build Lambda Layer",
+    "tagline": "AWS Lambda layer builder",
+    "description": "Build awesome Node.js Lambda layers with control. Provides tooling to create and manage AWS Lambda layers for Node.js applications with fine-grained control over the build process.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "AWS",
+      "Lambda",
+      "Serverless"
+    ],
+    "github": "https://github.com/yowainwright/build-lambda-layer",
+    "stars": 6,
+    "highlights": [
+      "Node.js Lambda layers",
+      "Build control",
+      "AWS integration"
+    ],
+    "content": "Build Lambda Layer provides tooling to create and manage AWS Lambda layers for Node.js applications.\n\nBuild awesome Node.js Lambda layers with fine-grained control over the build process."
   },
   {
     "id": "stdouttojson",
@@ -583,6 +583,110 @@ export const projects: Project[] = [
     "content": "LogsDX is a log streaming utility with developer experience at its core.\n\nIt provides intuitive log streaming capabilities designed to make debugging and monitoring more pleasant."
   },
   {
+    "id": "mini-cookies",
+    "title": "Mini Cookies",
+    "tagline": "Minimal document.cookie wrapper",
+    "description": "A minimal Document.cookie package providing a clean API for cookie management in the browser. Lightweight and straightforward for basic cookie operations.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "Browser",
+      "Cookies"
+    ],
+    "github": "https://github.com/yowainwright/mini-cookies",
+    "npm": "https://www.npmjs.com/package/mini-cookies",
+    "stars": 11,
+    "highlights": [
+      "Zero dependencies",
+      "Simple API",
+      "TypeScript support"
+    ],
+    "website": "https://jeffry.in/mini-cookies/",
+    "content": "Mini Cookies is a minimal Document.cookie package providing a clean API for cookie management in the browser.\n\nLightweight and straightforward for basic cookie operations."
+  },
+  {
+    "id": "diu",
+    "title": "diu",
+    "tagline": "Package manager manager",
+    "description": "WIP: Do I Use - a package manager manager that helps track and manage dependencies across different package managers.",
+    "category": "personal",
+    "tags": [
+      "CLI",
+      "Package Manager",
+      "Dependencies"
+    ],
+    "github": "https://github.com/yowainwright/diu",
+    "stars": 1,
+    "highlights": [
+      "Multi-package manager support",
+      "Dependency tracking",
+      "Usage analysis"
+    ],
+    "content": "Do I Use - a package manager manager for tracking dependencies."
+  },
+  {
+    "id": "intrinsic-dependencies",
+    "title": "Intrinsic Dependencies",
+    "tagline": "Protect invisible required deps",
+    "description": "A simple utility ensuring invisible but required Node.js dependencies are not removed. Prevents accidental removal of critical transitive dependencies that your code relies on.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "Dependencies"
+    ],
+    "github": "https://github.com/yowainwright/intrinsic-dependencies",
+    "stars": 3,
+    "highlights": [
+      "Dependency protection",
+      "Build safety",
+      "Transitive deps"
+    ],
+    "content": "Intrinsic Dependencies is a simple utility ensuring invisible but required Node.js dependencies are not removed.\n\nIt prevents accidental removal of critical transitive dependencies that your code relies on."
+  },
+  {
+    "id": "1ls",
+    "title": "1ls",
+    "tagline": "One-line scripts for CLI",
+    "description": "One-line-script utility for the command line. Provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "Scripting"
+    ],
+    "github": "https://github.com/yowainwright/1ls",
+    "stars": 1,
+    "highlights": [
+      "One-line scripts",
+      "CLI utility",
+      "Task automation"
+    ],
+    "website": "https://jeffry.in/1ls/",
+    "content": "1ls is a one-line-script utility for the command line.\n\nIt provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks."
+  },
+  {
+    "id": "fjsf",
+    "title": "FJSF",
+    "tagline": "Fuzzy JSON search & filter",
+    "description": "A fuzzy JSON search and filter utility. Enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "JSON",
+      "Search"
+    ],
+    "github": "https://github.com/yowainwright/fjsf",
+    "stars": 2,
+    "highlights": [
+      "Fuzzy matching",
+      "JSON filtering",
+      "Flexible queries"
+    ],
+    "content": "FJSF is a fuzzy JSON search and filter utility.\n\nIt enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries."
+  },
+  {
     "id": "developer-ci-benefits",
     "title": "Developer CI Benefits",
     "tagline": "CI benefits talk docs",
@@ -604,6 +708,28 @@ export const projects: Project[] = [
       "Jest integration"
     ],
     "content": "Talk docs covering CI benefits, descriptions, and setup tips."
+  },
+  {
+    "id": "prisma-migrations",
+    "title": "Prisma Migrations",
+    "tagline": "Friendly Prisma migration tooling",
+    "description": "Friendly Prisma migration tooling that simplifies database schema migrations. Provides a more intuitive interface for managing Prisma migrations in development and production.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "Prisma",
+      "Database",
+      "Migrations"
+    ],
+    "github": "https://github.com/yowainwright/prisma-migrations",
+    "stars": 8,
+    "highlights": [
+      "Prisma integration",
+      "Migration management",
+      "Developer friendly"
+    ],
+    "website": "https://jeffry.in/prisma-migrations/",
+    "content": "Prisma Migrations is friendly Prisma migration tooling that simplifies database schema migrations.\n\nIt provides a more intuitive interface for managing Prisma migrations in development and production."
   },
   {
     "id": "obsidian-gcal-sync",
@@ -647,28 +773,6 @@ export const projects: Project[] = [
       "Smooth scrolling"
     ],
     "content": "A JavaScript utility enabling horizontal dragging on mousedown events."
-  },
-  {
-    "id": "mini-cookies",
-    "title": "Mini Cookies",
-    "tagline": "Minimal document.cookie wrapper",
-    "description": "A minimal Document.cookie package providing a clean API for cookie management in the browser. Lightweight and straightforward for basic cookie operations.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "Browser",
-      "Cookies"
-    ],
-    "github": "https://github.com/yowainwright/mini-cookies",
-    "npm": "https://www.npmjs.com/package/mini-cookies",
-    "stars": 11,
-    "highlights": [
-      "Zero dependencies",
-      "Simple API",
-      "TypeScript support"
-    ],
-    "website": "https://jeffry.in/mini-cookies/",
-    "content": "Mini Cookies is a minimal Document.cookie package providing a clean API for cookie management in the browser.\n\nLightweight and straightforward for basic cookie operations."
   },
   {
     "id": "rssm",
@@ -754,26 +858,6 @@ export const projects: Project[] = [
     "content": "A simple command-line utility for killing processes by name or port."
   },
   {
-    "id": "diu",
-    "title": "diu",
-    "tagline": "Package manager manager",
-    "description": "WIP: Do I Use - a package manager manager that helps track and manage dependencies across different package managers.",
-    "category": "personal",
-    "tags": [
-      "CLI",
-      "Package Manager",
-      "Dependencies"
-    ],
-    "github": "https://github.com/yowainwright/diu",
-    "stars": 1,
-    "highlights": [
-      "Multi-package manager support",
-      "Dependency tracking",
-      "Usage analysis"
-    ],
-    "content": "Do I Use - a package manager manager for tracking dependencies."
-  },
-  {
     "id": "typescript-lib-starter",
     "title": "TypeScript Lib Starter",
     "tagline": "Batteries-included TS library template",
@@ -792,47 +876,6 @@ export const projects: Project[] = [
       "Quick start"
     ],
     "content": "TypeScript Lib Starter is a batteries-included TypeScript library starter with React GitHub Docs page setup in minutes.\n\nProvides everything needed to start building and publishing TypeScript libraries."
-  },
-  {
-    "id": "fjsf",
-    "title": "FJSF",
-    "tagline": "Fuzzy JSON search & filter",
-    "description": "A fuzzy JSON search and filter utility. Enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "JSON",
-      "Search"
-    ],
-    "github": "https://github.com/yowainwright/fjsf",
-    "stars": 2,
-    "highlights": [
-      "Fuzzy matching",
-      "JSON filtering",
-      "Flexible queries"
-    ],
-    "content": "FJSF is a fuzzy JSON search and filter utility.\n\nIt enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries."
-  },
-  {
-    "id": "intrinsic-dependencies",
-    "title": "Intrinsic Dependencies",
-    "tagline": "Protect invisible required deps",
-    "description": "A simple utility ensuring invisible but required Node.js dependencies are not removed. Prevents accidental removal of critical transitive dependencies that your code relies on.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "Dependencies"
-    ],
-    "github": "https://github.com/yowainwright/intrinsic-dependencies",
-    "stars": 3,
-    "highlights": [
-      "Dependency protection",
-      "Build safety",
-      "Transitive deps"
-    ],
-    "content": "Intrinsic Dependencies is a simple utility ensuring invisible but required Node.js dependencies are not removed.\n\nIt prevents accidental removal of critical transitive dependencies that your code relies on."
   },
   {
     "id": "awesome-monorepo-utilities",
@@ -857,27 +900,6 @@ export const projects: Project[] = [
     "content": "A curated list of awesome monorepo utilities for managing projects at scale."
   },
   {
-    "id": "1ls",
-    "title": "1ls",
-    "tagline": "One-line scripts for CLI",
-    "description": "One-line-script utility for the command line. Provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "Scripting"
-    ],
-    "github": "https://github.com/yowainwright/1ls",
-    "stars": 1,
-    "highlights": [
-      "One-line scripts",
-      "CLI utility",
-      "Task automation"
-    ],
-    "website": "https://jeffry.in/1ls/",
-    "content": "1ls is a one-line-script utility for the command line.\n\nIt provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks."
-  },
-  {
     "id": "xldx",
     "title": "XLDX",
     "tagline": "Excel utility with DX focus",
@@ -897,28 +919,6 @@ export const projects: Project[] = [
     ],
     "website": "https://jeffry.in/xldx/",
     "content": "XLDX is the JavaScript version of xldx, an Excel utility with developer experience on the brain.\n\nSimplifies working with Excel files in Node.js applications."
-  },
-  {
-    "id": "prisma-migrations",
-    "title": "Prisma Migrations",
-    "tagline": "Friendly Prisma migration tooling",
-    "description": "Friendly Prisma migration tooling that simplifies database schema migrations. Provides a more intuitive interface for managing Prisma migrations in development and production.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "Prisma",
-      "Database",
-      "Migrations"
-    ],
-    "github": "https://github.com/yowainwright/prisma-migrations",
-    "stars": 8,
-    "highlights": [
-      "Prisma integration",
-      "Migration management",
-      "Developer friendly"
-    ],
-    "website": "https://jeffry.in/prisma-migrations/",
-    "content": "Prisma Migrations is friendly Prisma migration tooling that simplifies database schema migrations.\n\nIt provides a more intuitive interface for managing Prisma migrations in development and production."
   },
   {
     "id": "fasthar",
