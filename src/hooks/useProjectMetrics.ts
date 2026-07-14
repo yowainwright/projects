@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { projects } from '@/data/projects-generated';
+import { getTotalStars } from '@/data/utils';
 import type { ProjectMetrics } from '@/data/types';
 
 interface UseProjectMetricsResult {
@@ -20,13 +22,36 @@ function getMetricsUrl(projectId: string): string {
   return `${base}metrics/${projectId}.json`;
 }
 
-async function fetchMetricsJson(projectId: string, signal: AbortSignal): Promise<ProjectMetrics> {
+function getStaticStars(projectId: string): number | null {
+  const project = projects.find(({ id }) => id === projectId);
+  if (!project) return null;
+  return getTotalStars(project);
+}
+
+function replaceLatestStars(history: ProjectMetrics['history'], stars: number) {
+  const latestIndex = history.length - 1;
+  return history.map((historyPoint, index) => {
+    if (index !== latestIndex) return historyPoint;
+    return { ...historyPoint, stars };
+  });
+}
+
+function applyStaticStars(projectId: string, metrics: ProjectMetrics): ProjectMetrics {
+  const stars = getStaticStars(projectId);
+  if (stars === null) return metrics;
+  const current = { ...metrics.current, stars };
+  const history = replaceLatestStars(metrics.history, stars);
+  return { ...metrics, current, history };
+}
+
+async function fetchMetricsJson(projectId: string, signal: AbortSignal) {
   const url = getMetricsUrl(projectId);
   const response = await fetch(url, { signal });
   if (!response.ok) {
     throw new Error(`Failed to fetch metrics: ${response.status}`);
   }
-  return response.json();
+  const metrics = await response.json() as ProjectMetrics;
+  return applyStaticStars(projectId, metrics);
 }
 
 export function useProjectMetrics(projectId: string): UseProjectMetricsResult {

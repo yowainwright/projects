@@ -9,6 +9,7 @@ import { routeTree } from './routes';
 import { initAnalytics, trackEvent } from './lib/analytics';
 import { Button } from './components/ui/button';
 import './index.css';
+import './styles/content.css';
 
 initAnalytics();
 

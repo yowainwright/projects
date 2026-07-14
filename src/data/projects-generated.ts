@@ -32,7 +32,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/koajs/koa",
-        "stars": 35704
+        "stars": 35709
       }
     ],
     "npm": "https://www.npmjs.com/package/koa",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/dollarshaveclub/postmate",
     "npm": "https://www.npmjs.com/package/postmate",
-    "stars": 1924,
+    "stars": 1916,
     "highlights": [
       "Call queue feature",
       "Context passing fixes",
@@ -83,15 +83,15 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/jspm/node-importmap-loader",
-        "stars": 11
+        "stars": 12
       },
       {
         "url": "https://github.com/jspm/jspm.org",
-        "stars": 13
+        "stars": 14
       },
       {
         "url": "https://github.com/jspm/import-map",
-        "stars": 51
+        "stars": 52
       }
     ],
     "website": "https://jspm.org",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
       "CI/CD"
     ],
     "github": "https://github.com/goodrxoss/lifecycle",
-    "stars": 76,
+    "stars": 78,
     "highlights": [
       "Isolated PR environments",
       "Kubernetes + Docker integration",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/shave",
-        "stars": 2099
+        "stars": 2090
       },
       {
         "url": "https://github.com/yowainwright/shave",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/yowainwright/codependence",
     "npm": "https://www.npmjs.com/package/codependence",
-    "stars": 19,
+    "stars": 20,
     "highlights": [
       "Pin specific dependencies",
       "Permissive mode for latest versions",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/reframe.js",
-        "stars": 1593
+        "stars": 1585
       },
       {
         "url": "https://github.com/yowainwright/reframe.js",
@@ -229,11 +229,11 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/stickybits",
-        "stars": 2181
+        "stars": 2163
       },
       {
         "url": "https://github.com/yowainwright/stickybits",
-        "stars": 253
+        "stars": 254
       }
     ],
     "npm": "https://www.npmjs.com/package/stickybits",
@@ -260,7 +260,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/yowainwright/pastoralist",
     "npm": "https://www.npmjs.com/package/pastoralist",
-    "stars": 76,
+    "stars": 100,
     "highlights": [
       "Automatic vulnerability scanning",
       "Multi-provider support (OSV, GitHub, Snyk)",
@@ -284,7 +284,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/yowainwright/es-check",
     "npm": "https://www.npmjs.com/package/es-check",
-    "stars": 205,
+    "stars": 212,
     "highlights": [
       "Validates ES3 through ES2023",
       "Feature detection with --checkFeatures",
@@ -372,7 +372,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/scrolldir",
-        "stars": 656
+        "stars": 650
       },
       {
         "url": "https://github.com/yowainwright/scrolldir",
@@ -454,6 +454,26 @@ export const projects: Project[] = [
     "content": "Install dependencies with control and size awareness."
   },
   {
+    "id": "merge-tsconfigs",
+    "title": "Merge TSConfigs",
+    "tagline": "Merge TypeScript config files",
+    "description": "A CLI or Node function for merging tsconfig files. Useful for managing complex TypeScript projects with multiple configuration files that need to be combined.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "Config"
+    ],
+    "github": "https://github.com/yowainwright/merge-tsconfigs",
+    "stars": 3,
+    "highlights": [
+      "TSConfig merging",
+      "CLI and API",
+      "Config management"
+    ],
+    "content": "Merge TSConfigs is a CLI or Node function for merging tsconfig files.\n\nUseful for managing complex TypeScript projects with multiple configuration files that need to be combined."
+  },
+  {
     "id": "sassimple",
     "title": "sassimple",
     "tagline": "Fill CSS gaps with sass mixins",
@@ -474,26 +494,6 @@ export const projects: Project[] = [
       "Lightweight"
     ],
     "content": "Fill in your CSS gaps with sass mixins simply."
-  },
-  {
-    "id": "merge-tsconfigs",
-    "title": "Merge TSConfigs",
-    "tagline": "Merge TypeScript config files",
-    "description": "A CLI or Node function for merging tsconfig files. Useful for managing complex TypeScript projects with multiple configuration files that need to be combined.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "Config"
-    ],
-    "github": "https://github.com/yowainwright/merge-tsconfigs",
-    "stars": 2,
-    "highlights": [
-      "TSConfig merging",
-      "CLI and API",
-      "Config management"
-    ],
-    "content": "Merge TSConfigs is a CLI or Node function for merging tsconfig files.\n\nUseful for managing complex TypeScript projects with multiple configuration files that need to be combined."
   },
   {
     "id": "fast-brake",
@@ -529,7 +529,7 @@ export const projects: Project[] = [
       "Documentation"
     ],
     "github": "https://github.com/yowainwright/awesome-writing-tools",
-    "stars": 158,
+    "stars": 160,
     "highlights": [
       "Grammar and style tools",
       "Markdown editors",
@@ -618,7 +618,7 @@ export const projects: Project[] = [
       "Productivity"
     ],
     "github": "https://github.com/yowainwright/obsidian-gcal-sync",
-    "stars": 1,
+    "stars": 2,
     "highlights": [
       "Bidirectional sync",
       "Slash commands",
@@ -647,6 +647,28 @@ export const projects: Project[] = [
       "Smooth scrolling"
     ],
     "content": "A JavaScript utility enabling horizontal dragging on mousedown events."
+  },
+  {
+    "id": "mini-cookies",
+    "title": "Mini Cookies",
+    "tagline": "Minimal document.cookie wrapper",
+    "description": "A minimal Document.cookie package providing a clean API for cookie management in the browser. Lightweight and straightforward for basic cookie operations.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "Browser",
+      "Cookies"
+    ],
+    "github": "https://github.com/yowainwright/mini-cookies",
+    "npm": "https://www.npmjs.com/package/mini-cookies",
+    "stars": 11,
+    "highlights": [
+      "Zero dependencies",
+      "Simple API",
+      "TypeScript support"
+    ],
+    "website": "https://jeffry.in/mini-cookies/",
+    "content": "Mini Cookies is a minimal Document.cookie package providing a clean API for cookie management in the browser.\n\nLightweight and straightforward for basic cookie operations."
   },
   {
     "id": "rssm",
@@ -743,7 +765,7 @@ export const projects: Project[] = [
       "Dependencies"
     ],
     "github": "https://github.com/yowainwright/diu",
-    "stars": 0,
+    "stars": 1,
     "highlights": [
       "Multi-package manager support",
       "Dependency tracking",
@@ -867,7 +889,7 @@ export const projects: Project[] = [
       "DX"
     ],
     "github": "https://github.com/yowainwright/xldx",
-    "stars": 1,
+    "stars": 2,
     "highlights": [
       "Excel processing",
       "DX-focused",
@@ -889,7 +911,7 @@ export const projects: Project[] = [
       "Migrations"
     ],
     "github": "https://github.com/yowainwright/prisma-migrations",
-    "stars": 3,
+    "stars": 8,
     "highlights": [
       "Prisma integration",
       "Migration management",
@@ -1001,28 +1023,6 @@ export const projects: Project[] = [
       "Date number handling"
     ],
     "content": "A JavaScript utility for removing NaN from numbers with Intl support."
-  },
-  {
-    "id": "mini-cookies",
-    "title": "Mini Cookies",
-    "tagline": "Minimal document.cookie wrapper",
-    "description": "A minimal Document.cookie package providing a clean API for cookie management in the browser. Lightweight and straightforward for basic cookie operations.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "Browser",
-      "Cookies"
-    ],
-    "github": "https://github.com/yowainwright/mini-cookies",
-    "npm": "https://www.npmjs.com/package/mini-cookies",
-    "stars": 11,
-    "highlights": [
-      "Zero dependencies",
-      "Simple API",
-      "TypeScript support"
-    ],
-    "website": "https://jeffry.in/mini-cookies/",
-    "content": "Mini Cookies is a minimal Document.cookie package providing a clean API for cookie management in the browser.\n\nLightweight and straightforward for basic cookie operations."
   },
   {
     "id": "codesandbox-cli-template",

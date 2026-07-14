@@ -102,16 +102,16 @@
     "url": "#install-perfection"
   },
   {
-    "id": "sassimple",
-    "title": "sassimple",
-    "description": "Fill CSS gaps with sass mixins",
-    "url": "#sassimple"
-  },
-  {
     "id": "merge-tsconfigs",
     "title": "Merge TSConfigs",
     "description": "Merge TypeScript config files",
     "url": "#merge-tsconfigs"
+  },
+  {
+    "id": "sassimple",
+    "title": "sassimple",
+    "description": "Fill CSS gaps with sass mixins",
+    "url": "#sassimple"
   },
   {
     "id": "fast-brake",
@@ -154,6 +154,12 @@
     "title": "mousecase",
     "description": "Horizontal dragging on mousedown",
     "url": "#mousecase"
+  },
+  {
+    "id": "mini-cookies",
+    "title": "Mini Cookies",
+    "description": "Minimal document.cookie wrapper",
+    "url": "#mini-cookies"
   },
   {
     "id": "rssm",
@@ -256,12 +262,6 @@
     "title": "generate-clean-number",
     "description": "Remove NaN from numbers",
     "url": "#generate-clean-number"
-  },
-  {
-    "id": "mini-cookies",
-    "title": "Mini Cookies",
-    "description": "Minimal document.cookie wrapper",
-    "url": "#mini-cookies"
   },
   {
     "id": "codesandbox-cli-template",
