@@ -64,7 +64,7 @@ function serializeStructuredData(records: StaticProjectRecord[]): string {
 function injectStaticContent(template: string, markup: string): string {
   if (!template.includes(ROOT_MARKER)) throw new Error('Static root marker not found');
   const root = ROOT_OPEN + markup + ROOT_CLOSE;
-  return template.replace(ROOT_MARKER, root);
+  return template.replace(ROOT_MARKER, () => root);
 }
 
 function injectStructuredData(html: string, records: StaticProjectRecord[]): string {
@@ -73,7 +73,8 @@ function injectStructuredData(html: string, records: StaticProjectRecord[]): str
   const scriptClose = OPEN_ANGLE + '/script' + CLOSE_ANGLE;
   const headClose = OPEN_ANGLE + '/head' + CLOSE_ANGLE;
   const script = scriptOpen + data + scriptClose;
-  return html.replace(headClose, '    ' + script + '\n  ' + headClose);
+  const injection = '    ' + script + '\n  ' + headClose;
+  return html.replace(headClose, () => injection);
 }
 
 function buildCatalogRecord({ project }: StaticProjectRecord) {
@@ -135,9 +136,17 @@ function normalizeMetricStars(project: Project, metrics: ProjectMetrics): Projec
   return { ...metrics, current, repos };
 }
 
+function isMissingFile(error: unknown): boolean {
+  return error instanceof Error && 'code' in error && error.code === 'ENOENT';
+}
+
 async function normalizeMetricFile({ project }: StaticProjectRecord) {
   const path = join(METRICS_DIRECTORY, `${project.id}.json`);
-  const content = await readFile(path, 'utf8');
+  const content = await readFile(path, 'utf8').catch((error: unknown) => {
+    if (isMissingFile(error)) return null;
+    throw error;
+  });
+  if (content === null) return;
   const metrics = JSON.parse(content) as ProjectMetrics;
   const normalized = normalizeMetricStars(project, metrics);
   await writeFile(path, `${JSON.stringify(normalized, null, 2)}\n`);

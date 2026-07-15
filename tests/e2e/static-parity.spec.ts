@@ -1,8 +1,9 @@
 import { expect, test, type Page, type Route } from '@playwright/test';
+import { projects } from '../../src/data/projects-generated';
 
 const APP_URL = '/projects/';
-const ROOT_PATTERN = /<div id="root">[\s\S]*<\/div>\s*<\/body>/;
-const EMPTY_ROOT = '<div id="root"></div>\n  </body>';
+const ROOT_PATTERN = /<div id="root">[\s\S]*<\/div>([\s\S]*<\/body>)/;
+const EMPTY_ROOT = '<div id="root"></div>$1';
 const STABLE_STYLES = '* { animation: none !important; transition: none !important; } input { caret-color: transparent !important; }';
 const LAYOUT_SELECTORS = ['#site-nav', '.header__description', '#projects-content', '#sidebar-search', '#prisma-migrations-header'];
 
@@ -56,7 +57,7 @@ test('static content is available without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto(APP_URL);
-  await expect(page.locator('[data-project-id]')).toHaveCount(45);
+  await expect(page.locator('[data-project-id]')).toHaveCount(projects.length);
   await expect(page.locator('#prisma-migrations')).toContainText('8');
   await expect(page.locator('#es-check')).toContainText('212');
   await context.close();

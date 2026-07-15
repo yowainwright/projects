@@ -184,9 +184,9 @@ function StaticProjectList({ records }: { records: StaticProjectRecord[] }) {
     <StaticProject key={record.project.id} {...record} />
   ));
   return (
-    <main id="project-list" className="min-w-0 flex-1">
+    <div id="project-list" className="min-w-0 flex-1">
       <div id="project-list-container" className="max-w-3xl">{projectElements}</div>
-    </main>
+    </div>
   );
 }
 
