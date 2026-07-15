@@ -3,11 +3,12 @@ import { Button } from '@/components/ui/button';
 import { StarLink } from '@/components/StarLink';
 import { EditableContent } from '@/components/EditableContent';
 import { Comments } from '@/components/Comments';
+import { GithubIcon } from '@/components/icons/GithubIcon';
 import { MDXContent } from '@/components/MDXContent';
 import { MetricsSectionLoader } from './MetricsSectionLoader';
 import { useAuth } from '@/hooks/useAuth';
 import { useInView } from '@/hooks/useInView';
-import { Github, ExternalLink, Plus, X } from 'lucide-react';
+import { ExternalLink, Plus, X } from 'lucide-react';
 import { getGitHubRepos } from '@/data/utils';
 import { DETAIL_STYLES, ANIMATION_CLASSES } from './constants';
 import type {
@@ -25,9 +26,15 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
     ? getEditedValue(project.id, 'description', project.description)
     : project.description;
 
-  const content = getEditedValue
+  const contentValue = getEditedValue
     ? getEditedValue(project.id, 'content', project.content ?? '')
-    : (project.content ?? '');
+    : project.content;
+  const content = contentValue ?? '';
+  const projectHighlights = project.highlights ?? [];
+  const highlightsValue = getEditedValue
+    ? getEditedValue(project.id, 'highlights', projectHighlights)
+    : projectHighlights;
+  const highlights = highlightsValue ?? [];
 
   const handleDescriptionChange = (value: string) => {
     if (onFieldChange) {
@@ -42,6 +49,7 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
   };
 
   const hasContent = content.trim().length > 0;
+  const hasHighlights = highlights.length > 0;
   const animationClass = hasEntered ? ANIMATION_CLASSES.visible : ANIMATION_CLASSES.hidden;
 
   return (
@@ -57,10 +65,10 @@ export function Detail({ project, selectedTags, onTagClick, onTitleClick, onFiel
           className={DETAIL_STYLES.description}
           placeholder="Add a description..."
         />
-        {(project.highlights && project.highlights.length > 0) && (
+        {hasHighlights && (
           <Highlights
             projectId={project.id}
-            highlights={getEditedValue ? getEditedValue(project.id, 'highlights', project.highlights) : project.highlights}
+            highlights={highlights}
             onFieldChange={onFieldChange}
           />
         )}
@@ -295,7 +303,7 @@ export function Links({ project }: LinksProps) {
               rel="noopener noreferrer"
             >
               {repoName}
-              <Github className={DETAIL_STYLES.links.icon} />
+              <GithubIcon className={DETAIL_STYLES.links.icon} />
             </a>
           </Badge>
         );

@@ -4,11 +4,10 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import rehypeStringify from 'rehype-stringify';
-import rehypeShiki from '@shikijs/rehype';
+import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
 import { createHighlighterCore } from 'shiki/core';
 import { createOnigurumaEngine } from 'shiki/engine/oniguruma';
-import customDark from '@/themes/dark.json';
-import customLight from '@/themes/light.json';
+import { darkTheme, lightTheme, shikiThemes } from '@/themes/shiki';
 
 interface MDXContentProps {
   content: string;
@@ -32,7 +31,7 @@ let highlighterPromise: ReturnType<typeof createHighlighterCore> | null = null;
 async function getHighlighter() {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighterCore({
-      themes: [customLight, customDark],
+      themes: [lightTheme, darkTheme],
       langs: [
         import('shiki/langs/javascript.mjs'),
         import('shiki/langs/typescript.mjs'),
@@ -59,17 +58,12 @@ async function getHighlighter() {
 
 async function renderMarkdown(content: string): Promise<string> {
   const highlighter = await getHighlighter();
+  const shikiTransformer = rehypeShikiFromHighlighter(highlighter, { themes: shikiThemes });
 
   const result = await unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypeShiki, {
-      highlighter,
-      themes: {
-        light: customLight,
-        dark: customDark,
-      },
-    })
+    .use(() => shikiTransformer)
     .use(rehypeSanitize, sanitizeSchema)
     .use(rehypeStringify)
     .process(content);
