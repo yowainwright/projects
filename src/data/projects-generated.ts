@@ -32,7 +32,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/koajs/koa",
-        "stars": 35704
+        "stars": 35707
       }
     ],
     "npm": "https://www.npmjs.com/package/koa",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/dollarshaveclub/postmate",
     "npm": "https://www.npmjs.com/package/postmate",
-    "stars": 1924,
+    "stars": 1916,
     "highlights": [
       "Call queue feature",
       "Context passing fixes",
@@ -83,15 +83,15 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/jspm/node-importmap-loader",
-        "stars": 11
+        "stars": 12
       },
       {
         "url": "https://github.com/jspm/jspm.org",
-        "stars": 13
+        "stars": 14
       },
       {
         "url": "https://github.com/jspm/import-map",
-        "stars": 51
+        "stars": 52
       }
     ],
     "website": "https://jspm.org",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
       "CI/CD"
     ],
     "github": "https://github.com/goodrxoss/lifecycle",
-    "stars": 76,
+    "stars": 78,
     "highlights": [
       "Isolated PR environments",
       "Kubernetes + Docker integration",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/shave",
-        "stars": 2099
+        "stars": 2090
       },
       {
         "url": "https://github.com/yowainwright/shave",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/yowainwright/codependence",
     "npm": "https://www.npmjs.com/package/codependence",
-    "stars": 19,
+    "stars": 20,
     "highlights": [
       "Pin specific dependencies",
       "Permissive mode for latest versions",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/reframe.js",
-        "stars": 1593
+        "stars": 1585
       },
       {
         "url": "https://github.com/yowainwright/reframe.js",
@@ -229,11 +229,11 @@ export const projects: Project[] = [
     "github": [
       {
         "url": "https://github.com/dollarshaveclub/stickybits",
-        "stars": 2181
+        "stars": 2163
       },
       {
         "url": "https://github.com/yowainwright/stickybits",
-        "stars": 253
+        "stars": 254
       }
     ],
     "npm": "https://www.npmjs.com/package/stickybits",
@@ -260,7 +260,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/yowainwright/pastoralist",
     "npm": "https://www.npmjs.com/package/pastoralist",
-    "stars": 76,
+    "stars": 100,
     "highlights": [
       "Automatic vulnerability scanning",
       "Multi-provider support (OSV, GitHub, Snyk)",
@@ -284,7 +284,7 @@ export const projects: Project[] = [
     ],
     "github": "https://github.com/yowainwright/es-check",
     "npm": "https://www.npmjs.com/package/es-check",
-    "stars": 205,
+    "stars": 212,
     "highlights": [
       "Validates ES3 through ES2023",
       "Feature detection with --checkFeatures",
@@ -337,6 +337,38 @@ export const projects: Project[] = [
     "content": "Datastructures provides simple functional typed data structures for JavaScript/TypeScript.\n\nIt offers immutable, type-safe implementations of common data structures following functional programming principles."
   },
   {
+    "id": "scrolldir",
+    "title": "ScrollDir",
+    "tagline": "CSS-driven scroll direction detection",
+    "description": "A lightweight JavaScript utility that detects vertical scroll direction and applies it via a CSS data attribute. Enables developers to style elements based on scroll direction without complex JavaScript. Perfect for hiding/showing sticky navigation.",
+    "category": "personal",
+    "tags": [
+      "JavaScript",
+      "CSS",
+      "DOM",
+      "Navigation"
+    ],
+    "github": [
+      {
+        "url": "https://github.com/dollarshaveclub/scrolldir",
+        "stars": 650
+      },
+      {
+        "url": "https://github.com/yowainwright/scrolldir",
+        "stars": 40
+      }
+    ],
+    "npm": "https://www.npmjs.com/package/scrolldir",
+    "highlights": [
+      "Zero dependencies, ~1KB",
+      "Configurable threshold",
+      "Auto and manual modes",
+      "CSS data attribute driven"
+    ],
+    "website": "https://github.com/yowainwright/scrolldir",
+    "content": "ScrollDir is a lightweight JavaScript utility that detects vertical scroll direction and applies it via a CSS data attribute.\n\nIt enables developers to style elements based on scroll direction without complex JavaScript, perfect for hiding/showing sticky navigation."
+  },
+  {
     "id": "build-lambda-layer",
     "title": "Build Lambda Layer",
     "tagline": "AWS Lambda layer builder",
@@ -356,38 +388,6 @@ export const projects: Project[] = [
       "AWS integration"
     ],
     "content": "Build Lambda Layer provides tooling to create and manage AWS Lambda layers for Node.js applications.\n\nBuild awesome Node.js Lambda layers with fine-grained control over the build process."
-  },
-  {
-    "id": "scrolldir",
-    "title": "ScrollDir",
-    "tagline": "CSS-driven scroll direction detection",
-    "description": "A lightweight JavaScript utility that detects vertical scroll direction and applies it via a CSS data attribute. Enables developers to style elements based on scroll direction without complex JavaScript. Perfect for hiding/showing sticky navigation.",
-    "category": "personal",
-    "tags": [
-      "JavaScript",
-      "CSS",
-      "DOM",
-      "Navigation"
-    ],
-    "github": [
-      {
-        "url": "https://github.com/dollarshaveclub/scrolldir",
-        "stars": 656
-      },
-      {
-        "url": "https://github.com/yowainwright/scrolldir",
-        "stars": 40
-      }
-    ],
-    "npm": "https://www.npmjs.com/package/scrolldir",
-    "highlights": [
-      "Zero dependencies, ~1KB",
-      "Configurable threshold",
-      "Auto and manual modes",
-      "CSS data attribute driven"
-    ],
-    "website": "https://github.com/yowainwright/scrolldir",
-    "content": "ScrollDir is a lightweight JavaScript utility that detects vertical scroll direction and applies it via a CSS data attribute.\n\nIt enables developers to style elements based on scroll direction without complex JavaScript, perfect for hiding/showing sticky navigation."
   },
   {
     "id": "stdouttojson",
@@ -454,6 +454,26 @@ export const projects: Project[] = [
     "content": "Install dependencies with control and size awareness."
   },
   {
+    "id": "merge-tsconfigs",
+    "title": "Merge TSConfigs",
+    "tagline": "Merge TypeScript config files",
+    "description": "A CLI or Node function for merging tsconfig files. Useful for managing complex TypeScript projects with multiple configuration files that need to be combined.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "Config"
+    ],
+    "github": "https://github.com/yowainwright/merge-tsconfigs",
+    "stars": 3,
+    "highlights": [
+      "TSConfig merging",
+      "CLI and API",
+      "Config management"
+    ],
+    "content": "Merge TSConfigs is a CLI or Node function for merging tsconfig files.\n\nUseful for managing complex TypeScript projects with multiple configuration files that need to be combined."
+  },
+  {
     "id": "sassimple",
     "title": "sassimple",
     "tagline": "Fill CSS gaps with sass mixins",
@@ -474,26 +494,6 @@ export const projects: Project[] = [
       "Lightweight"
     ],
     "content": "Fill in your CSS gaps with sass mixins simply."
-  },
-  {
-    "id": "merge-tsconfigs",
-    "title": "Merge TSConfigs",
-    "tagline": "Merge TypeScript config files",
-    "description": "A CLI or Node function for merging tsconfig files. Useful for managing complex TypeScript projects with multiple configuration files that need to be combined.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "Config"
-    ],
-    "github": "https://github.com/yowainwright/merge-tsconfigs",
-    "stars": 2,
-    "highlights": [
-      "TSConfig merging",
-      "CLI and API",
-      "Config management"
-    ],
-    "content": "Merge TSConfigs is a CLI or Node function for merging tsconfig files.\n\nUseful for managing complex TypeScript projects with multiple configuration files that need to be combined."
   },
   {
     "id": "fast-brake",
@@ -529,7 +529,7 @@ export const projects: Project[] = [
       "Documentation"
     ],
     "github": "https://github.com/yowainwright/awesome-writing-tools",
-    "stars": 158,
+    "stars": 160,
     "highlights": [
       "Grammar and style tools",
       "Markdown editors",
@@ -583,6 +583,110 @@ export const projects: Project[] = [
     "content": "LogsDX is a log streaming utility with developer experience at its core.\n\nIt provides intuitive log streaming capabilities designed to make debugging and monitoring more pleasant."
   },
   {
+    "id": "mini-cookies",
+    "title": "Mini Cookies",
+    "tagline": "Minimal document.cookie wrapper",
+    "description": "A minimal Document.cookie package providing a clean API for cookie management in the browser. Lightweight and straightforward for basic cookie operations.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "Browser",
+      "Cookies"
+    ],
+    "github": "https://github.com/yowainwright/mini-cookies",
+    "npm": "https://www.npmjs.com/package/mini-cookies",
+    "stars": 11,
+    "highlights": [
+      "Zero dependencies",
+      "Simple API",
+      "TypeScript support"
+    ],
+    "website": "https://jeffry.in/mini-cookies/",
+    "content": "Mini Cookies is a minimal Document.cookie package providing a clean API for cookie management in the browser.\n\nLightweight and straightforward for basic cookie operations."
+  },
+  {
+    "id": "diu",
+    "title": "diu",
+    "tagline": "Package manager manager",
+    "description": "WIP: Do I Use - a package manager manager that helps track and manage dependencies across different package managers.",
+    "category": "personal",
+    "tags": [
+      "CLI",
+      "Package Manager",
+      "Dependencies"
+    ],
+    "github": "https://github.com/yowainwright/diu",
+    "stars": 1,
+    "highlights": [
+      "Multi-package manager support",
+      "Dependency tracking",
+      "Usage analysis"
+    ],
+    "content": "Do I Use - a package manager manager for tracking dependencies."
+  },
+  {
+    "id": "intrinsic-dependencies",
+    "title": "Intrinsic Dependencies",
+    "tagline": "Protect invisible required deps",
+    "description": "A simple utility ensuring invisible but required Node.js dependencies are not removed. Prevents accidental removal of critical transitive dependencies that your code relies on.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "Dependencies"
+    ],
+    "github": "https://github.com/yowainwright/intrinsic-dependencies",
+    "stars": 3,
+    "highlights": [
+      "Dependency protection",
+      "Build safety",
+      "Transitive deps"
+    ],
+    "content": "Intrinsic Dependencies is a simple utility ensuring invisible but required Node.js dependencies are not removed.\n\nIt prevents accidental removal of critical transitive dependencies that your code relies on."
+  },
+  {
+    "id": "1ls",
+    "title": "1ls",
+    "tagline": "One-line scripts for CLI",
+    "description": "One-line-script utility for the command line. Provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "Scripting"
+    ],
+    "github": "https://github.com/yowainwright/1ls",
+    "stars": 1,
+    "highlights": [
+      "One-line scripts",
+      "CLI utility",
+      "Task automation"
+    ],
+    "website": "https://jeffry.in/1ls/",
+    "content": "1ls is a one-line-script utility for the command line.\n\nIt provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks."
+  },
+  {
+    "id": "fjsf",
+    "title": "FJSF",
+    "tagline": "Fuzzy JSON search & filter",
+    "description": "A fuzzy JSON search and filter utility. Enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "CLI",
+      "JSON",
+      "Search"
+    ],
+    "github": "https://github.com/yowainwright/fjsf",
+    "stars": 2,
+    "highlights": [
+      "Fuzzy matching",
+      "JSON filtering",
+      "Flexible queries"
+    ],
+    "content": "FJSF is a fuzzy JSON search and filter utility.\n\nIt enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries."
+  },
+  {
     "id": "developer-ci-benefits",
     "title": "Developer CI Benefits",
     "tagline": "CI benefits talk docs",
@@ -606,6 +710,28 @@ export const projects: Project[] = [
     "content": "Talk docs covering CI benefits, descriptions, and setup tips."
   },
   {
+    "id": "prisma-migrations",
+    "title": "Prisma Migrations",
+    "tagline": "Friendly Prisma migration tooling",
+    "description": "Friendly Prisma migration tooling that simplifies database schema migrations. Provides a more intuitive interface for managing Prisma migrations in development and production.",
+    "category": "personal",
+    "tags": [
+      "TypeScript",
+      "Prisma",
+      "Database",
+      "Migrations"
+    ],
+    "github": "https://github.com/yowainwright/prisma-migrations",
+    "stars": 8,
+    "highlights": [
+      "Prisma integration",
+      "Migration management",
+      "Developer friendly"
+    ],
+    "website": "https://jeffry.in/prisma-migrations/",
+    "content": "Prisma Migrations is friendly Prisma migration tooling that simplifies database schema migrations.\n\nIt provides a more intuitive interface for managing Prisma migrations in development and production."
+  },
+  {
     "id": "obsidian-gcal-sync",
     "title": "Obsidian GCal Sync",
     "tagline": "Obsidian Google Calendar sync",
@@ -618,7 +744,7 @@ export const projects: Project[] = [
       "Productivity"
     ],
     "github": "https://github.com/yowainwright/obsidian-gcal-sync",
-    "stars": 1,
+    "stars": 2,
     "highlights": [
       "Bidirectional sync",
       "Slash commands",
@@ -732,26 +858,6 @@ export const projects: Project[] = [
     "content": "A simple command-line utility for killing processes by name or port."
   },
   {
-    "id": "diu",
-    "title": "diu",
-    "tagline": "Package manager manager",
-    "description": "WIP: Do I Use - a package manager manager that helps track and manage dependencies across different package managers.",
-    "category": "personal",
-    "tags": [
-      "CLI",
-      "Package Manager",
-      "Dependencies"
-    ],
-    "github": "https://github.com/yowainwright/diu",
-    "stars": 0,
-    "highlights": [
-      "Multi-package manager support",
-      "Dependency tracking",
-      "Usage analysis"
-    ],
-    "content": "Do I Use - a package manager manager for tracking dependencies."
-  },
-  {
     "id": "typescript-lib-starter",
     "title": "TypeScript Lib Starter",
     "tagline": "Batteries-included TS library template",
@@ -770,47 +876,6 @@ export const projects: Project[] = [
       "Quick start"
     ],
     "content": "TypeScript Lib Starter is a batteries-included TypeScript library starter with React GitHub Docs page setup in minutes.\n\nProvides everything needed to start building and publishing TypeScript libraries."
-  },
-  {
-    "id": "fjsf",
-    "title": "FJSF",
-    "tagline": "Fuzzy JSON search & filter",
-    "description": "A fuzzy JSON search and filter utility. Enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "JSON",
-      "Search"
-    ],
-    "github": "https://github.com/yowainwright/fjsf",
-    "stars": 2,
-    "highlights": [
-      "Fuzzy matching",
-      "JSON filtering",
-      "Flexible queries"
-    ],
-    "content": "FJSF is a fuzzy JSON search and filter utility.\n\nIt enables flexible searching and filtering of JSON data with fuzzy matching capabilities for more forgiving queries."
-  },
-  {
-    "id": "intrinsic-dependencies",
-    "title": "Intrinsic Dependencies",
-    "tagline": "Protect invisible required deps",
-    "description": "A simple utility ensuring invisible but required Node.js dependencies are not removed. Prevents accidental removal of critical transitive dependencies that your code relies on.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "Dependencies"
-    ],
-    "github": "https://github.com/yowainwright/intrinsic-dependencies",
-    "stars": 3,
-    "highlights": [
-      "Dependency protection",
-      "Build safety",
-      "Transitive deps"
-    ],
-    "content": "Intrinsic Dependencies is a simple utility ensuring invisible but required Node.js dependencies are not removed.\n\nIt prevents accidental removal of critical transitive dependencies that your code relies on."
   },
   {
     "id": "awesome-monorepo-utilities",
@@ -835,27 +900,6 @@ export const projects: Project[] = [
     "content": "A curated list of awesome monorepo utilities for managing projects at scale."
   },
   {
-    "id": "1ls",
-    "title": "1ls",
-    "tagline": "One-line scripts for CLI",
-    "description": "One-line-script utility for the command line. Provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "CLI",
-      "Scripting"
-    ],
-    "github": "https://github.com/yowainwright/1ls",
-    "stars": 1,
-    "highlights": [
-      "One-line scripts",
-      "CLI utility",
-      "Task automation"
-    ],
-    "website": "https://jeffry.in/1ls/",
-    "content": "1ls is a one-line-script utility for the command line.\n\nIt provides a streamlined way to create and execute single-line scripts, simplifying common CLI tasks."
-  },
-  {
     "id": "xldx",
     "title": "XLDX",
     "tagline": "Excel utility with DX focus",
@@ -867,7 +911,7 @@ export const projects: Project[] = [
       "DX"
     ],
     "github": "https://github.com/yowainwright/xldx",
-    "stars": 1,
+    "stars": 2,
     "highlights": [
       "Excel processing",
       "DX-focused",
@@ -875,28 +919,6 @@ export const projects: Project[] = [
     ],
     "website": "https://jeffry.in/xldx/",
     "content": "XLDX is the JavaScript version of xldx, an Excel utility with developer experience on the brain.\n\nSimplifies working with Excel files in Node.js applications."
-  },
-  {
-    "id": "prisma-migrations",
-    "title": "Prisma Migrations",
-    "tagline": "Friendly Prisma migration tooling",
-    "description": "Friendly Prisma migration tooling that simplifies database schema migrations. Provides a more intuitive interface for managing Prisma migrations in development and production.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "Prisma",
-      "Database",
-      "Migrations"
-    ],
-    "github": "https://github.com/yowainwright/prisma-migrations",
-    "stars": 3,
-    "highlights": [
-      "Prisma integration",
-      "Migration management",
-      "Developer friendly"
-    ],
-    "website": "https://jeffry.in/prisma-migrations/",
-    "content": "Prisma Migrations is friendly Prisma migration tooling that simplifies database schema migrations.\n\nIt provides a more intuitive interface for managing Prisma migrations in development and production."
   },
   {
     "id": "fasthar",
@@ -1001,28 +1023,6 @@ export const projects: Project[] = [
       "Date number handling"
     ],
     "content": "A JavaScript utility for removing NaN from numbers with Intl support."
-  },
-  {
-    "id": "mini-cookies",
-    "title": "Mini Cookies",
-    "tagline": "Minimal document.cookie wrapper",
-    "description": "A minimal Document.cookie package providing a clean API for cookie management in the browser. Lightweight and straightforward for basic cookie operations.",
-    "category": "personal",
-    "tags": [
-      "TypeScript",
-      "Browser",
-      "Cookies"
-    ],
-    "github": "https://github.com/yowainwright/mini-cookies",
-    "npm": "https://www.npmjs.com/package/mini-cookies",
-    "stars": 11,
-    "highlights": [
-      "Zero dependencies",
-      "Simple API",
-      "TypeScript support"
-    ],
-    "website": "https://jeffry.in/mini-cookies/",
-    "content": "Mini Cookies is a minimal Document.cookie package providing a clean API for cookie management in the browser.\n\nLightweight and straightforward for basic cookie operations."
   },
   {
     "id": "codesandbox-cli-template",

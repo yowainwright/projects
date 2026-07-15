@@ -72,16 +72,16 @@
     "url": "#datastructures"
   },
   {
-    "id": "build-lambda-layer",
-    "title": "Build Lambda Layer",
-    "description": "AWS Lambda layer builder",
-    "url": "#build-lambda-layer"
-  },
-  {
     "id": "scrolldir",
     "title": "ScrollDir",
     "description": "CSS-driven scroll direction detection",
     "url": "#scrolldir"
+  },
+  {
+    "id": "build-lambda-layer",
+    "title": "Build Lambda Layer",
+    "description": "AWS Lambda layer builder",
+    "url": "#build-lambda-layer"
   },
   {
     "id": "stdouttojson",
@@ -102,16 +102,16 @@
     "url": "#install-perfection"
   },
   {
-    "id": "sassimple",
-    "title": "sassimple",
-    "description": "Fill CSS gaps with sass mixins",
-    "url": "#sassimple"
-  },
-  {
     "id": "merge-tsconfigs",
     "title": "Merge TSConfigs",
     "description": "Merge TypeScript config files",
     "url": "#merge-tsconfigs"
+  },
+  {
+    "id": "sassimple",
+    "title": "sassimple",
+    "description": "Fill CSS gaps with sass mixins",
+    "url": "#sassimple"
   },
   {
     "id": "fast-brake",
@@ -138,10 +138,46 @@
     "url": "#logsdx"
   },
   {
+    "id": "mini-cookies",
+    "title": "Mini Cookies",
+    "description": "Minimal document.cookie wrapper",
+    "url": "#mini-cookies"
+  },
+  {
+    "id": "diu",
+    "title": "diu",
+    "description": "Package manager manager",
+    "url": "#diu"
+  },
+  {
+    "id": "intrinsic-dependencies",
+    "title": "Intrinsic Dependencies",
+    "description": "Protect invisible required deps",
+    "url": "#intrinsic-dependencies"
+  },
+  {
+    "id": "1ls",
+    "title": "1ls",
+    "description": "One-line scripts for CLI",
+    "url": "#1ls"
+  },
+  {
+    "id": "fjsf",
+    "title": "FJSF",
+    "description": "Fuzzy JSON search & filter",
+    "url": "#fjsf"
+  },
+  {
     "id": "developer-ci-benefits",
     "title": "Developer CI Benefits",
     "description": "CI benefits talk docs",
     "url": "#developer-ci-benefits"
+  },
+  {
+    "id": "prisma-migrations",
+    "title": "Prisma Migrations",
+    "description": "Friendly Prisma migration tooling",
+    "url": "#prisma-migrations"
   },
   {
     "id": "obsidian-gcal-sync",
@@ -180,28 +216,10 @@
     "url": "#pk"
   },
   {
-    "id": "diu",
-    "title": "diu",
-    "description": "Package manager manager",
-    "url": "#diu"
-  },
-  {
     "id": "typescript-lib-starter",
     "title": "TypeScript Lib Starter",
     "description": "Batteries-included TS library template",
     "url": "#typescript-lib-starter"
-  },
-  {
-    "id": "fjsf",
-    "title": "FJSF",
-    "description": "Fuzzy JSON search & filter",
-    "url": "#fjsf"
-  },
-  {
-    "id": "intrinsic-dependencies",
-    "title": "Intrinsic Dependencies",
-    "description": "Protect invisible required deps",
-    "url": "#intrinsic-dependencies"
   },
   {
     "id": "awesome-monorepo-utilities",
@@ -210,22 +228,10 @@
     "url": "#awesome-monorepo-utilities"
   },
   {
-    "id": "1ls",
-    "title": "1ls",
-    "description": "One-line scripts for CLI",
-    "url": "#1ls"
-  },
-  {
     "id": "xldx",
     "title": "XLDX",
     "description": "Excel utility with DX focus",
     "url": "#xldx"
-  },
-  {
-    "id": "prisma-migrations",
-    "title": "Prisma Migrations",
-    "description": "Friendly Prisma migration tooling",
-    "url": "#prisma-migrations"
   },
   {
     "id": "fasthar",
@@ -256,12 +262,6 @@
     "title": "generate-clean-number",
     "description": "Remove NaN from numbers",
     "url": "#generate-clean-number"
-  },
-  {
-    "id": "mini-cookies",
-    "title": "Mini Cookies",
-    "description": "Minimal document.cookie wrapper",
-    "url": "#mini-cookies"
   },
   {
     "id": "codesandbox-cli-template",

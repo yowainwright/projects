@@ -14,11 +14,10 @@ export default defineConfig({
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
   ],
-  // webServer disabled - run `bun run preview` manually before tests
-  // webServer: {
-  //   command: 'bun run preview',
-  //   url: 'http://localhost:4173/projects',
-  //   reuseExistingServer: true,
-  //   timeout: 120000,
-  // },
+  webServer: {
+    command: 'bun run preview -- --host 127.0.0.1',
+    url: 'http://127.0.0.1:4173/projects/',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000,
+  },
 });

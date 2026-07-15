@@ -13,15 +13,16 @@ export function useStars(githubUrl: string | undefined, fallback: number = 0): U
   const [fromCache, setFromCache] = useState(false);
 
   useEffect(() => {
-    if (!githubUrl) {
+    const starsUrl = githubUrl;
+    if (!starsUrl) {
       setLoading(false);
       return;
     }
 
     let cancelled = false;
 
-    async function fetchStars() {
-      const result = await getStarCount(githubUrl);
+    async function fetchStars(url: string) {
+      const result = await getStarCount(url);
 
       if (cancelled) return;
 
@@ -32,7 +33,7 @@ export function useStars(githubUrl: string | undefined, fallback: number = 0): U
       setLoading(false);
     }
 
-    fetchStars();
+    fetchStars(starsUrl);
 
     return () => {
       cancelled = true;

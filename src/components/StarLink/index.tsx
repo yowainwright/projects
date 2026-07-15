@@ -29,8 +29,8 @@ function getStarsFromRepo(repo: { stars?: number } | undefined): number {
 }
 
 function selectStars(metricsStars: number, fallbackStars: number): number {
-  if (metricsStars > 0) return metricsStars;
-  return fallbackStars;
+  if (fallbackStars > 0) return fallbackStars;
+  return metricsStars;
 }
 
 function getMetricsStars(metrics: { current: { stars: number } } | null): number {

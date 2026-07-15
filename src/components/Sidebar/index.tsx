@@ -156,7 +156,7 @@ export function FilterCount({ search, selectedTags, count }: FilterCountProps) {
   );
 }
 
-interface CategoryNavProps extends BadgeNavProps {
+interface CategoryNavProps extends Omit<BadgeNavProps, 'projectsByCategory'> {
   categories: BadgeNavProps['projectsByCategory'];
 }
 

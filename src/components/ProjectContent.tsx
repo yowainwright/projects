@@ -7,7 +7,6 @@ import { useScrollspy } from '@/hooks/useScrollspy';
 import { useProjectEdits } from '@/hooks/useProjectEdits';
 import { useDebounce } from '@/hooks/useDebounce';
 import { PROJECT_CONTENT_STYLES } from './ProjectContent.constants';
-import '@/styles/content.css';
 
 const trimWord = (wrd: string, srchWrd: string) => {
   const lwrSrchWrd = srchWrd.toLowerCase();
