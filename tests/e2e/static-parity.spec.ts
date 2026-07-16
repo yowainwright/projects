@@ -1,5 +1,6 @@
 import { expect, test, type Page, type Route } from '@playwright/test';
 import { projects } from '../../src/data/projects-generated';
+import { getTotalStars } from '../../src/data/utils';
 
 const APP_URL = '/projects/';
 const ROOT_PATTERN = /<div id="root">[\s\S]*<\/div>([\s\S]*<\/body>)/;
@@ -53,13 +54,21 @@ async function settleLayout(page: Page) {
   }));
 }
 
+async function expectStaticStars(page: Page, projectId: string) {
+  const project = projects.find(({ id }) => id === projectId);
+  if (!project) throw new Error(`Missing project: ${projectId}`);
+  const expectedStars = getTotalStars(project).toLocaleString('en-US');
+  const stars = page.locator(`#${projectId} [aria-label="Current GitHub stars"] dd`);
+  await expect(stars).toHaveText(expectedStars);
+}
+
 test('static content is available without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto(APP_URL);
   await expect(page.locator('[data-project-id]')).toHaveCount(projects.length);
-  await expect(page.locator('#prisma-migrations')).toContainText('8');
-  await expect(page.locator('#es-check')).toContainText('212');
+  await expectStaticStars(page, 'prisma-migrations');
+  await expectStaticStars(page, 'es-check');
   await context.close();
 });
 
