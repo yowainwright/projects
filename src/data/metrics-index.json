@@ -1,50 +1,5 @@
 {
-  "fast-brake": {
-    "grade": {
-      "score": 7,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 20,
-      "commits": 20
-    }
-  },
-  "datastructures": {
-    "grade": {
-      "score": 35,
-      "stars": 1,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 100,
-      "commits": 100
-    }
-  },
-  "typescript-lib-starter": {
-    "grade": {
-      "score": 0,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "generate-clean-number": {
-    "grade": {
-      "score": 0,
-      "stars": 1,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "yaml-comment-generator": {
-    "grade": {
-      "score": 0,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "stickybits": {
+  "postmate": {
     "grade": {
       "score": 65,
       "stars": 100,
@@ -53,103 +8,31 @@
       "commits": 0
     }
   },
-  "md-page-to-json": {
+  "lifecycle": {
     "grade": {
-      "score": 4,
-      "stars": 0,
+      "score": 19,
+      "stars": 8,
       "monthlyDownloads": 0,
-      "monthlyActivity": 11,
-      "commits": 11
-    }
-  },
-  "developer-ci-benefits": {
-    "grade": {
-      "score": 1,
-      "stars": 3,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
+      "monthlyActivity": 45,
+      "commits": 45
     }
   },
   "merge-tsconfigs": {
     "grade": {
-      "score": 10,
+      "score": 12,
       "stars": 0,
       "monthlyDownloads": 0,
-      "monthlyActivity": 29,
-      "commits": 29
+      "monthlyActivity": 33,
+      "commits": 33
     }
   },
-  "codependence": {
+  "prisma-migrations": {
     "grade": {
-      "score": 66,
-      "stars": 2,
-      "monthlyDownloads": 100,
-      "monthlyActivity": 100,
-      "commits": 100
-    }
-  },
-  "scrolldir": {
-    "grade": {
-      "score": 34,
-      "stars": 69,
-      "monthlyDownloads": 33,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "mousecase": {
-    "grade": {
-      "score": 1,
-      "stars": 3,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "logsdx": {
-    "grade": {
-      "score": 4,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 12,
-      "commits": 12
-    }
-  },
-  "common-utilities": {
-    "grade": {
-      "score": 36,
-      "stars": 3,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 100,
-      "commits": 100
-    }
-  },
-  "build-lambda-layer": {
-    "grade": {
-      "score": 32,
+      "score": 2,
       "stars": 1,
       "monthlyDownloads": 0,
-      "monthlyActivity": 89,
-      "commits": 89
-    }
-  },
-  "stdouttojson": {
-    "grade": {
-      "score": 26,
-      "stars": 1,
-      "monthlyDownloads": 1,
-      "monthlyActivity": 72,
-      "commits": 72
-    }
-  },
-  "xldx": {
-    "grade": {
-      "score": 0,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
+      "monthlyActivity": 4,
+      "commits": 4
     }
   },
   "fjsf": {
@@ -161,43 +44,16 @@
       "commits": 2
     }
   },
-  "jspm": {
-    "grade": {
-      "score": 32,
-      "stars": 8,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 82,
-      "commits": 82
-    }
-  },
-  "obsidian-gcal-sync": {
-    "grade": {
-      "score": 1,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 3,
-      "commits": 3
-    }
-  },
-  "envdx": {
+  "generate-clean-number": {
     "grade": {
       "score": 0,
-      "stars": 0,
+      "stars": 1,
       "monthlyDownloads": 0,
-      "monthlyActivity": 1,
-      "commits": 1
+      "monthlyActivity": 0,
+      "commits": 0
     }
   },
-  "es-check": {
-    "grade": {
-      "score": 41,
-      "stars": 21,
-      "monthlyDownloads": 100,
-      "monthlyActivity": 11,
-      "commits": 11
-    }
-  },
-  "postmate": {
+  "reframe": {
     "grade": {
       "score": 65,
       "stars": 100,
@@ -206,22 +62,13 @@
       "commits": 0
     }
   },
-  "1ls": {
+  "pk": {
     "grade": {
-      "score": 2,
+      "score": 1,
       "stars": 0,
       "monthlyDownloads": 0,
-      "monthlyActivity": 7,
-      "commits": 7
-    }
-  },
-  "pastoralist": {
-    "grade": {
-      "score": 43,
-      "stars": 10,
-      "monthlyDownloads": 15,
-      "monthlyActivity": 100,
-      "commits": 100
+      "monthlyActivity": 4,
+      "commits": 4
     }
   },
   "koa": {
@@ -242,6 +89,78 @@
       "commits": 0
     }
   },
+  "codependence": {
+    "grade": {
+      "score": 66,
+      "stars": 2,
+      "monthlyDownloads": 100,
+      "monthlyActivity": 100,
+      "commits": 100
+    }
+  },
+  "fast-brake": {
+    "grade": {
+      "score": 7,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 20,
+      "commits": 20
+    }
+  },
+  "1ls": {
+    "grade": {
+      "score": 3,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 9,
+      "commits": 9
+    }
+  },
+  "common-utilities": {
+    "grade": {
+      "score": 36,
+      "stars": 3,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 100,
+      "commits": 100
+    }
+  },
+  "es-check": {
+    "grade": {
+      "score": 42,
+      "stars": 21,
+      "monthlyDownloads": 100,
+      "monthlyActivity": 12,
+      "commits": 12
+    }
+  },
+  "mousecase": {
+    "grade": {
+      "score": 1,
+      "stars": 3,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "xldx": {
+    "grade": {
+      "score": 0,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "rssm": {
+    "grade": {
+      "score": 1,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 2,
+      "commits": 2
+    }
+  },
   "awesome-writing-tools": {
     "grade": {
       "score": 6,
@@ -251,103 +170,13 @@
       "commits": 2
     }
   },
-  "diu": {
+  "scrolldir": {
     "grade": {
-      "score": 2,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 5,
-      "commits": 5
-    }
-  },
-  "mini-cookies": {
-    "grade": {
-      "score": 3,
-      "stars": 1,
-      "monthlyDownloads": 2,
-      "monthlyActivity": 5,
-      "commits": 5
-    }
-  },
-  "awesome-monorepo-utilities": {
-    "grade": {
-      "score": 0,
-      "stars": 1,
-      "monthlyDownloads": 0,
+      "score": 33,
+      "stars": 69,
+      "monthlyDownloads": 31,
       "monthlyActivity": 0,
       "commits": 0
-    }
-  },
-  "sassimple": {
-    "grade": {
-      "score": 8,
-      "stars": 1,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 21,
-      "commits": 21
-    }
-  },
-  "shave": {
-    "grade": {
-      "score": 100,
-      "stars": 100,
-      "monthlyDownloads": 100,
-      "monthlyActivity": 100,
-      "commits": 100
-    }
-  },
-  "prisma-migrations": {
-    "grade": {
-      "score": 1,
-      "stars": 1,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 2,
-      "commits": 2
-    }
-  },
-  "fasthar": {
-    "grade": {
-      "score": 0,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 1,
-      "commits": 1
-    }
-  },
-  "pk": {
-    "grade": {
-      "score": 0,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 1,
-      "commits": 1
-    }
-  },
-  "algorithms": {
-    "grade": {
-      "score": 0,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "reframe": {
-    "grade": {
-      "score": 65,
-      "stars": 100,
-      "monthlyDownloads": 100,
-      "monthlyActivity": 0,
-      "commits": 0
-    }
-  },
-  "install-perfection": {
-    "grade": {
-      "score": 16,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 46,
-      "commits": 46
     }
   },
   "codesandbox-cli-template": {
@@ -359,7 +188,34 @@
       "commits": 1
     }
   },
-  "awesome-policy-tools": {
+  "intrinsic-dependencies": {
+    "grade": {
+      "score": 2,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 6,
+      "commits": 6
+    }
+  },
+  "mini-cookies": {
+    "grade": {
+      "score": 3,
+      "stars": 1,
+      "monthlyDownloads": 2,
+      "monthlyActivity": 5,
+      "commits": 5
+    }
+  },
+  "install-perfection": {
+    "grade": {
+      "score": 16,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 46,
+      "commits": 46
+    }
+  },
+  "typescript-lib-starter": {
     "grade": {
       "score": 0,
       "stars": 0,
@@ -368,22 +224,22 @@
       "commits": 0
     }
   },
-  "intrinsic-dependencies": {
+  "stdouttojson": {
     "grade": {
-      "score": 2,
-      "stars": 0,
-      "monthlyDownloads": 0,
-      "monthlyActivity": 5,
-      "commits": 5
+      "score": 26,
+      "stars": 1,
+      "monthlyDownloads": 1,
+      "monthlyActivity": 72,
+      "commits": 72
     }
   },
-  "lifecycle": {
+  "obsidian-gcal-sync": {
     "grade": {
-      "score": 18,
-      "stars": 8,
+      "score": 1,
+      "stars": 0,
       "monthlyDownloads": 0,
-      "monthlyActivity": 42,
-      "commits": 42
+      "monthlyActivity": 3,
+      "commits": 3
     }
   },
   "macrustle": {
@@ -395,13 +251,157 @@
       "commits": 72
     }
   },
-  "rssm": {
+  "fasthar": {
     "grade": {
-      "score": 1,
+      "score": 0,
       "stars": 0,
       "monthlyDownloads": 0,
-      "monthlyActivity": 2,
-      "commits": 2
+      "monthlyActivity": 1,
+      "commits": 1
+    }
+  },
+  "sassimple": {
+    "grade": {
+      "score": 8,
+      "stars": 1,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 21,
+      "commits": 21
+    }
+  },
+  "awesome-monorepo-utilities": {
+    "grade": {
+      "score": 0,
+      "stars": 1,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "awesome-policy-tools": {
+    "grade": {
+      "score": 0,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "datastructures": {
+    "grade": {
+      "score": 35,
+      "stars": 1,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 100,
+      "commits": 100
+    }
+  },
+  "jspm": {
+    "grade": {
+      "score": 32,
+      "stars": 8,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 82,
+      "commits": 82
+    }
+  },
+  "pastoralist": {
+    "grade": {
+      "score": 46,
+      "stars": 11,
+      "monthlyDownloads": 25,
+      "monthlyActivity": 100,
+      "commits": 100
+    }
+  },
+  "shave": {
+    "grade": {
+      "score": 100,
+      "stars": 100,
+      "monthlyDownloads": 100,
+      "monthlyActivity": 100,
+      "commits": 100
+    }
+  },
+  "logsdx": {
+    "grade": {
+      "score": 5,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 13,
+      "commits": 13
+    }
+  },
+  "md-page-to-json": {
+    "grade": {
+      "score": 4,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 11,
+      "commits": 11
+    }
+  },
+  "algorithms": {
+    "grade": {
+      "score": 0,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "yaml-comment-generator": {
+    "grade": {
+      "score": 0,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "diu": {
+    "grade": {
+      "score": 5,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 13,
+      "commits": 13
+    }
+  },
+  "build-lambda-layer": {
+    "grade": {
+      "score": 32,
+      "stars": 1,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 89,
+      "commits": 89
+    }
+  },
+  "stickybits": {
+    "grade": {
+      "score": 65,
+      "stars": 100,
+      "monthlyDownloads": 100,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "developer-ci-benefits": {
+    "grade": {
+      "score": 1,
+      "stars": 3,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 0,
+      "commits": 0
+    }
+  },
+  "envdx": {
+    "grade": {
+      "score": 0,
+      "stars": 0,
+      "monthlyDownloads": 0,
+      "monthlyActivity": 1,
+      "commits": 1
     }
   }
 }
