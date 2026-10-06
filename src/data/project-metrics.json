@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-28T06:23:27.687Z",
+  "lastUpdated": "2026-10-05T06:26:51.081Z",
   "projects": {
     "sassimple": {
       "id": "sassimple",
@@ -964,6 +964,42 @@
               "count": 18
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 12,
+          "forks": 1,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2019,
+              "count": 4
+            },
+            {
+              "year": 2020,
+              "count": 22
+            },
+            {
+              "year": 2021,
+              "count": 9
+            },
+            {
+              "year": 2022,
+              "count": 29
+            },
+            {
+              "year": 2023,
+              "count": 22
+            },
+            {
+              "year": 2024,
+              "count": 18
+            }
+          ]
         }
       ],
       "repos": [
@@ -1648,6 +1684,37 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 12,
+              "forks": 1,
+              "commits": [
+                {
+                  "year": 2019,
+                  "count": 4
+                },
+                {
+                  "year": 2020,
+                  "count": 22
+                },
+                {
+                  "year": 2021,
+                  "count": 9
+                },
+                {
+                  "year": 2022,
+                  "count": 29
+                },
+                {
+                  "year": 2023,
+                  "count": 22
+                },
+                {
+                  "year": 2024,
+                  "count": 18
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 12,
               "forks": 1,
               "commits": [
@@ -2415,6 +2482,34 @@
               "count": 28
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 3,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2023,
+              "count": 104
+            },
+            {
+              "year": 2024,
+              "count": 26
+            },
+            {
+              "year": 2025,
+              "count": 8
+            },
+            {
+              "year": 2026,
+              "count": 28
+            }
+          ]
         }
       ],
       "repos": [
@@ -2871,6 +2966,29 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 3,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2023,
+                  "count": 104
+                },
+                {
+                  "year": 2024,
+                  "count": 26
+                },
+                {
+                  "year": 2025,
+                  "count": 8
+                },
+                {
+                  "year": 2026,
+                  "count": 28
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 3,
               "forks": 0,
               "commits": [
@@ -3370,6 +3488,22 @@
               "count": 98
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1,
+          "forks": 1,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 98
+            }
+          ]
         }
       ],
       "repos": [
@@ -3578,6 +3712,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 1,
+              "forks": 1,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 98
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 1,
               "forks": 1,
               "commits": [
@@ -4063,6 +4208,22 @@
               "count": 33
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 3,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 33
+            }
+          ]
         }
       ],
       "repos": [
@@ -4269,6 +4430,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 3,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 33
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 3,
               "forks": 0,
               "commits": [
@@ -4925,6 +5097,30 @@
               "count": 9
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2023,
+              "count": 10
+            },
+            {
+              "year": 2024,
+              "count": 34
+            },
+            {
+              "year": 2025,
+              "count": 9
+            }
+          ]
         }
       ],
       "repos": [
@@ -5294,6 +5490,25 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 1,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2023,
+                  "count": 10
+                },
+                {
+                  "year": 2024,
+                  "count": 34
+                },
+                {
+                  "year": 2025,
+                  "count": 9
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 1,
               "forks": 0,
               "commits": [
@@ -5719,6 +5934,22 @@
               "count": 12
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 2,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 12
+            }
+          ]
         }
       ],
       "repos": [
@@ -5865,6 +6096,17 @@
                   "count": 12
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 2,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 12
+                }
+              ]
             }
           ]
         }
@@ -5891,9 +6133,9 @@
           }
         ],
         "downloads": {
-          "monthly": 98,
-          "yearly": 1359,
-          "allTime": 1359
+          "monthly": 96,
+          "yearly": 1414,
+          "allTime": 1414
         },
         "activity": {
           "total": 26,
@@ -6337,6 +6579,22 @@
               "count": 26
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 11,
+          "forks": 0,
+          "downloads": {
+            "monthly": 96,
+            "yearly": 1414,
+            "allTime": 1414
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 26
+            }
+          ]
         }
       ],
       "repos": [
@@ -6537,6 +6795,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 11,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 26
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 11,
               "forks": 0,
               "commits": [
@@ -7020,6 +7289,22 @@
               "count": 15
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 2,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 15
+            }
+          ]
         }
       ],
       "repos": [
@@ -7224,6 +7509,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 2,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 15
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 2,
               "forks": 0,
               "commits": [
@@ -8356,6 +8652,54 @@
               "count": 16
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 29,
+          "forks": 5,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2018,
+              "count": 4
+            },
+            {
+              "year": 2019,
+              "count": 5
+            },
+            {
+              "year": 2020,
+              "count": 206
+            },
+            {
+              "year": 2021,
+              "count": 523
+            },
+            {
+              "year": 2022,
+              "count": 214
+            },
+            {
+              "year": 2023,
+              "count": 338
+            },
+            {
+              "year": 2024,
+              "count": 34
+            },
+            {
+              "year": 2025,
+              "count": 23
+            },
+            {
+              "year": 2026,
+              "count": 16
+            }
+          ]
         }
       ],
       "repos": [
@@ -9216,6 +9560,49 @@
                   "count": 16
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 29,
+              "forks": 5,
+              "commits": [
+                {
+                  "year": 2018,
+                  "count": 4
+                },
+                {
+                  "year": 2019,
+                  "count": 5
+                },
+                {
+                  "year": 2020,
+                  "count": 206
+                },
+                {
+                  "year": 2021,
+                  "count": 523
+                },
+                {
+                  "year": 2022,
+                  "count": 214
+                },
+                {
+                  "year": 2023,
+                  "count": 338
+                },
+                {
+                  "year": 2024,
+                  "count": 34
+                },
+                {
+                  "year": 2025,
+                  "count": 23
+                },
+                {
+                  "year": 2026,
+                  "count": 16
+                }
+              ]
             }
           ]
         }
@@ -9590,6 +9977,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 2,
+          "forks": 1,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -9698,6 +10096,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 2,
+              "forks": 1,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 2,
               "forks": 1,
               "commits": []
@@ -10084,6 +10488,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -10201,6 +10616,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 0,
+              "forks": 0,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 0,
               "forks": 0,
               "commits": []
@@ -11071,6 +11492,38 @@
               "count": 26
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 6,
+          "forks": 1,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2022,
+              "count": 167
+            },
+            {
+              "year": 2023,
+              "count": 67
+            },
+            {
+              "year": 2024,
+              "count": 100
+            },
+            {
+              "year": 2025,
+              "count": 87
+            },
+            {
+              "year": 2026,
+              "count": 26
+            }
+          ]
         }
       ],
       "repos": [
@@ -11675,6 +12128,33 @@
                   "count": 26
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 6,
+              "forks": 1,
+              "commits": [
+                {
+                  "year": 2022,
+                  "count": 167
+                },
+                {
+                  "year": 2023,
+                  "count": 67
+                },
+                {
+                  "year": 2024,
+                  "count": 100
+                },
+                {
+                  "year": 2025,
+                  "count": 87
+                },
+                {
+                  "year": 2026,
+                  "count": 26
+                }
+              ]
             }
           ]
         }
@@ -12058,6 +12538,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -12178,6 +12669,12 @@
               "stars": 0,
               "forks": 0,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 0,
+              "forks": 0,
+              "commits": []
             }
           ]
         }
@@ -12224,9 +12721,9 @@
           }
         ],
         "downloads": {
-          "monthly": 149,
-          "yearly": 1884,
-          "allTime": 1884
+          "monthly": 209,
+          "yearly": 1945,
+          "allTime": 1945
         },
         "activity": {
           "total": 362,
@@ -13062,6 +13559,42 @@
               "count": 8
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 5,
+          "forks": 0,
+          "downloads": {
+            "monthly": 209,
+            "yearly": 1945,
+            "allTime": 1945
+          },
+          "commits": [
+            {
+              "year": 2021,
+              "count": 2
+            },
+            {
+              "year": 2022,
+              "count": 169
+            },
+            {
+              "year": 2023,
+              "count": 45
+            },
+            {
+              "year": 2024,
+              "count": 69
+            },
+            {
+              "year": 2025,
+              "count": 69
+            },
+            {
+              "year": 2026,
+              "count": 8
+            }
+          ]
         }
       ],
       "repos": [
@@ -13682,6 +14215,37 @@
                   "count": 8
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 5,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2021,
+                  "count": 2
+                },
+                {
+                  "year": 2022,
+                  "count": 169
+                },
+                {
+                  "year": 2023,
+                  "count": 45
+                },
+                {
+                  "year": 2024,
+                  "count": 69
+                },
+                {
+                  "year": 2025,
+                  "count": 69
+                },
+                {
+                  "year": 2026,
+                  "count": 8
+                }
+              ]
             }
           ]
         }
@@ -13689,7 +14253,7 @@
       "grade": {
         "score": 26,
         "stars": 1,
-        "monthlyDownloads": 1,
+        "monthlyDownloads": 2,
         "monthlyActivity": 72,
         "commits": 72
       }
@@ -14056,6 +14620,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 11,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -14164,6 +14739,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 11,
+              "forks": 0,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 11,
               "forks": 0,
               "commits": []
@@ -14541,6 +15122,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 29,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -14649,6 +15241,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 29,
+              "forks": 0,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 29,
               "forks": 0,
               "commits": []
@@ -15120,6 +15718,22 @@
               "count": 5
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 5
+            }
+          ]
         }
       ],
       "repos": [
@@ -15325,6 +15939,17 @@
                   "count": 5
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 0,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 5
+                }
+              ]
             }
           ]
         }
@@ -15346,9 +15971,9 @@
         "forks": 52,
         "commits": [],
         "downloads": {
-          "monthly": 36498,
-          "yearly": 412696,
-          "allTime": 412696
+          "monthly": 40387,
+          "yearly": 427766,
+          "allTime": 427766
         },
         "activity": {
           "total": 0,
@@ -15709,6 +16334,17 @@
             "allTime": 412696
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1644,
+          "forks": 52,
+          "downloads": {
+            "monthly": 40387,
+            "yearly": 427766,
+            "allTime": 427766
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -15817,6 +16453,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 1579,
+              "forks": 49,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 1579,
               "forks": 49,
               "commits": []
@@ -15940,6 +16582,12 @@
               "stars": 65,
               "forks": 3,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 65,
+              "forks": 3,
+              "commits": []
             }
           ]
         }
@@ -15965,7 +16613,7 @@
           },
           {
             "year": 2026,
-            "count": 100
+            "count": 102
           }
         ],
         "downloads": {
@@ -15974,7 +16622,7 @@
           "allTime": 0
         },
         "activity": {
-          "total": 103,
+          "total": 105,
           "years": [
             {
               "year": 2025,
@@ -15982,7 +16630,7 @@
             },
             {
               "year": 2026,
-              "count": 100
+              "count": 102
             }
           ],
           "months": [
@@ -16008,7 +16656,7 @@
             },
             {
               "month": "2026-09",
-              "commits": 29
+              "commits": 31
             }
           ]
         },
@@ -16435,6 +17083,26 @@
               "count": 100
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 3
+            },
+            {
+              "year": 2026,
+              "count": 102
+            }
+          ]
         }
       ],
       "repos": [
@@ -16450,11 +17118,11 @@
               },
               {
                 "year": 2026,
-                "count": 100
+                "count": 102
               }
             ],
             "activity": {
-              "total": 103,
+              "total": 105,
               "years": [
                 {
                   "year": 2025,
@@ -16462,7 +17130,7 @@
                 },
                 {
                   "year": 2026,
-                  "count": 100
+                  "count": 102
                 }
               ],
               "months": [
@@ -16488,7 +17156,7 @@
                 },
                 {
                   "month": "2026-09",
-                  "commits": 29
+                  "commits": 31
                 }
               ]
             }
@@ -16665,6 +17333,21 @@
                 {
                   "year": 2026,
                   "count": 100
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 1,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 3
+                },
+                {
+                  "year": 2026,
+                  "count": 102
                 }
               ]
             }
@@ -17211,6 +17894,30 @@
               "count": 1
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 3,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2024,
+              "count": 1
+            },
+            {
+              "year": 2025,
+              "count": 61
+            },
+            {
+              "year": 2026,
+              "count": 1
+            }
+          ]
         }
       ],
       "repos": [
@@ -17492,6 +18199,25 @@
                   "count": 1
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 3,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2024,
+                  "count": 1
+                },
+                {
+                  "year": 2025,
+                  "count": 61
+                },
+                {
+                  "year": 2026,
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -17513,9 +18239,9 @@
         "forks": 181,
         "commits": [],
         "downloads": {
-          "monthly": 108414,
-          "yearly": 1219830,
-          "allTime": 1219830
+          "monthly": 119257,
+          "yearly": 1240608,
+          "allTime": 1240608
         },
         "activity": {
           "total": 0,
@@ -17867,6 +18593,17 @@
             "allTime": 1219830
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1918,
+          "forks": 181,
+          "downloads": {
+            "monthly": 119257,
+            "yearly": 1240608,
+            "allTime": 1240608
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -17975,6 +18712,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 1918,
+              "forks": 181,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 1918,
               "forks": 181,
               "commits": []
@@ -18377,6 +19120,22 @@
               "count": 3
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 3
+            }
+          ]
         }
       ],
       "repos": [
@@ -18513,6 +19272,17 @@
                   "count": 3
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 0,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 3
+                }
+              ]
             }
           ]
         }
@@ -18543,9 +19313,9 @@
           }
         ],
         "downloads": {
-          "monthly": 865276,
-          "yearly": 7763921,
-          "allTime": 7763921
+          "monthly": 961673,
+          "yearly": 8018356,
+          "allTime": 8018356
         },
         "activity": {
           "total": 96,
@@ -18614,7 +19384,7 @@
             }
           ]
         },
-        "openIssues": 2,
+        "openIssues": 1,
         "contributors": 32,
         "bundleSize": 318
       },
@@ -19085,6 +19855,26 @@
               "count": 64
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 219,
+          "forks": 26,
+          "downloads": {
+            "monthly": 961673,
+            "yearly": 8018356,
+            "allTime": 8018356
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 32
+            },
+            {
+              "year": 2026,
+              "count": 64
+            }
+          ]
         }
       ],
       "repos": [
@@ -19393,6 +20183,21 @@
                   "count": 64
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 219,
+              "forks": 26,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 32
+                },
+                {
+                  "year": 2026,
+                  "count": 64
+                }
+              ]
             }
           ]
         }
@@ -19414,9 +20219,9 @@
         "forks": 173,
         "commits": [],
         "downloads": {
-          "monthly": 116990,
-          "yearly": 1833861,
-          "allTime": 1833861
+          "monthly": 143499,
+          "yearly": 1829691,
+          "allTime": 1829691
         },
         "activity": {
           "total": 0,
@@ -19768,6 +20573,17 @@
             "allTime": 1833861
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 2409,
+          "forks": 173,
+          "downloads": {
+            "monthly": 143499,
+            "yearly": 1829691,
+            "allTime": 1829691
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -19876,6 +20692,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 2156,
+              "forks": 159,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 2156,
               "forks": 159,
               "commits": []
@@ -19990,6 +20812,12 @@
               "stars": 253,
               "forks": 14,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 253,
+              "forks": 14,
+              "commits": []
             }
           ]
         }
@@ -20015,7 +20843,7 @@
           },
           {
             "year": 2026,
-            "count": 136
+            "count": 138
           }
         ],
         "downloads": {
@@ -20024,7 +20852,7 @@
           "allTime": 0
         },
         "activity": {
-          "total": 139,
+          "total": 141,
           "years": [
             {
               "year": 2025,
@@ -20032,7 +20860,7 @@
             },
             {
               "year": 2026,
-              "count": 136
+              "count": 138
             }
           ],
           "months": [
@@ -20058,7 +20886,7 @@
             },
             {
               "month": "2026-09",
-              "commits": 40
+              "commits": 42
             }
           ]
         },
@@ -20493,6 +21321,26 @@
               "count": 136
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 3
+            },
+            {
+              "year": 2026,
+              "count": 138
+            }
+          ]
         }
       ],
       "repos": [
@@ -20508,11 +21356,11 @@
               },
               {
                 "year": 2026,
-                "count": 136
+                "count": 138
               }
             ],
             "activity": {
-              "total": 139,
+              "total": 141,
               "years": [
                 {
                   "year": 2025,
@@ -20520,7 +21368,7 @@
                 },
                 {
                   "year": 2026,
-                  "count": 136
+                  "count": 138
                 }
               ],
               "months": [
@@ -20546,7 +21394,7 @@
                 },
                 {
                   "month": "2026-09",
-                  "commits": 40
+                  "commits": 42
                 }
               ]
             }
@@ -20731,6 +21579,21 @@
                 {
                   "year": 2026,
                   "count": 136
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 1,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 3
+                },
+                {
+                  "year": 2026,
+                  "count": 138
                 }
               ]
             }
@@ -21400,6 +22263,30 @@
               "count": 1
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 3,
+          "forks": 1,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2023,
+              "count": 137
+            },
+            {
+              "year": 2024,
+              "count": 92
+            },
+            {
+              "year": 2025,
+              "count": 1
+            }
+          ]
         }
       ],
       "repos": [
@@ -21804,6 +22691,25 @@
                   "count": 1
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 3,
+              "forks": 1,
+              "commits": [
+                {
+                  "year": 2023,
+                  "count": 137
+                },
+                {
+                  "year": 2024,
+                  "count": 92
+                },
+                {
+                  "year": 2025,
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -21848,7 +22754,7 @@
             }
           ]
         },
-        "openIssues": 0,
+        "openIssues": 1,
         "contributors": 1,
         "bundleSize": 0
       },
@@ -22263,6 +23169,22 @@
               "count": 4
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 4
+            }
+          ]
         }
       ],
       "repos": [
@@ -22451,6 +23373,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 0,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 4
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 0,
               "forks": 0,
               "commits": [
@@ -22921,6 +23854,22 @@
               "count": 84
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 84
+            }
+          ]
         }
       ],
       "repos": [
@@ -23112,6 +24061,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 0,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 84
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 0,
               "forks": 0,
               "commits": [
@@ -23537,6 +24497,22 @@
               "count": 20
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 8,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 20
+            }
+          ]
         }
       ],
       "repos": [
@@ -23683,6 +24659,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 8,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 20
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 8,
               "forks": 0,
               "commits": [
@@ -24065,6 +25052,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 5,
+          "forks": 2,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -24176,6 +25174,12 @@
               "stars": 5,
               "forks": 2,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 5,
+              "forks": 2,
+              "commits": []
             }
           ]
         }
@@ -24214,16 +25218,16 @@
           },
           {
             "year": 2026,
-            "count": 156
+            "count": 160
           }
         ],
         "downloads": {
-          "monthly": 32270,
-          "yearly": 332408,
-          "allTime": 332408
+          "monthly": 39819,
+          "yearly": 343046,
+          "allTime": 343046
         },
         "activity": {
-          "total": 679,
+          "total": 683,
           "years": [
             {
               "year": 2022,
@@ -24243,7 +25247,7 @@
             },
             {
               "year": 2026,
-              "count": 156
+              "count": 160
             }
           ],
           "months": [
@@ -24417,7 +25421,7 @@
             },
             {
               "month": "2026-09",
-              "commits": 3
+              "commits": 7
             }
           ]
         },
@@ -25060,6 +26064,38 @@
               "count": 156
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 22,
+          "forks": 0,
+          "downloads": {
+            "monthly": 39819,
+            "yearly": 343046,
+            "allTime": 343046
+          },
+          "commits": [
+            {
+              "year": 2022,
+              "count": 194
+            },
+            {
+              "year": 2023,
+              "count": 87
+            },
+            {
+              "year": 2024,
+              "count": 111
+            },
+            {
+              "year": 2025,
+              "count": 131
+            },
+            {
+              "year": 2026,
+              "count": 160
+            }
+          ]
         }
       ],
       "repos": [
@@ -25087,11 +26123,11 @@
               },
               {
                 "year": 2026,
-                "count": 156
+                "count": 160
               }
             ],
             "activity": {
-              "total": 679,
+              "total": 683,
               "years": [
                 {
                   "year": 2022,
@@ -25111,7 +26147,7 @@
                 },
                 {
                   "year": 2026,
-                  "count": 156
+                  "count": 160
                 }
               ],
               "months": [
@@ -25285,7 +26321,7 @@
                 },
                 {
                   "month": "2026-09",
-                  "commits": 3
+                  "commits": 7
                 }
               ]
             }
@@ -25680,6 +26716,33 @@
                   "count": 156
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 22,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2022,
+                  "count": 194
+                },
+                {
+                  "year": 2023,
+                  "count": 87
+                },
+                {
+                  "year": 2024,
+                  "count": 111
+                },
+                {
+                  "year": 2025,
+                  "count": 131
+                },
+                {
+                  "year": 2026,
+                  "count": 160
+                }
+              ]
             }
           ]
         }
@@ -25701,9 +26764,9 @@
         "forks": 36,
         "commits": [],
         "downloads": {
-          "monthly": 2854,
-          "yearly": 30487,
-          "allTime": 30487
+          "monthly": 3249,
+          "yearly": 31690,
+          "allTime": 31690
         },
         "activity": {
           "total": 0,
@@ -26055,6 +27118,17 @@
             "allTime": 30487
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 687,
+          "forks": 36,
+          "downloads": {
+            "monthly": 3249,
+            "yearly": 31690,
+            "allTime": 31690
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -26163,6 +27237,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 648,
+              "forks": 33,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 648,
               "forks": 33,
               "commits": []
@@ -26277,14 +27357,20 @@
               "stars": 39,
               "forks": 3,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 39,
+              "forks": 3,
+              "commits": []
             }
           ]
         }
       ],
       "grade": {
-        "score": 33,
+        "score": 34,
         "stars": 69,
-        "monthlyDownloads": 29,
+        "monthlyDownloads": 32,
         "monthlyActivity": 0,
         "commits": 0
       }
@@ -26293,8 +27379,8 @@
       "id": "lifecycle",
       "github": "https://github.com/goodrxoss/lifecycle",
       "current": {
-        "stars": 81,
-        "forks": 13,
+        "stars": 82,
+        "forks": 14,
         "commits": [
           {
             "year": 2024,
@@ -26306,7 +27392,7 @@
           },
           {
             "year": 2026,
-            "count": 162
+            "count": 163
           }
         ],
         "downloads": {
@@ -26315,7 +27401,7 @@
           "allTime": 0
         },
         "activity": {
-          "total": 244,
+          "total": 245,
           "years": [
             {
               "year": 2024,
@@ -26327,7 +27413,7 @@
             },
             {
               "year": 2026,
-              "count": 162
+              "count": 163
             }
           ],
           "months": [
@@ -26401,11 +27487,11 @@
             },
             {
               "month": "2026-09",
-              "commits": 6
+              "commits": 7
             }
           ]
         },
-        "openIssues": 2,
+        "openIssues": 5,
         "contributors": 9,
         "bundleSize": 0
       },
@@ -26904,14 +27990,38 @@
               "count": 162
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 82,
+          "forks": 14,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2024,
+              "count": 2
+            },
+            {
+              "year": 2025,
+              "count": 80
+            },
+            {
+              "year": 2026,
+              "count": 163
+            }
+          ]
         }
       ],
       "repos": [
         {
           "repoPath": "goodrxoss/lifecycle",
           "current": {
-            "stars": 81,
-            "forks": 13,
+            "stars": 82,
+            "forks": 14,
             "commits": [
               {
                 "year": 2024,
@@ -26923,11 +28033,11 @@
               },
               {
                 "year": 2026,
-                "count": 162
+                "count": 163
               }
             ],
             "activity": {
-              "total": 244,
+              "total": 245,
               "years": [
                 {
                   "year": 2024,
@@ -26939,7 +28049,7 @@
                 },
                 {
                   "year": 2026,
-                  "count": 162
+                  "count": 163
                 }
               ],
               "months": [
@@ -27013,7 +28123,7 @@
                 },
                 {
                   "month": "2026-09",
-                  "commits": 6
+                  "commits": 7
                 }
               ]
             }
@@ -27266,6 +28376,25 @@
                 {
                   "year": 2026,
                   "count": 162
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 82,
+              "forks": 14,
+              "commits": [
+                {
+                  "year": 2024,
+                  "count": 2
+                },
+                {
+                  "year": 2025,
+                  "count": 80
+                },
+                {
+                  "year": 2026,
+                  "count": 163
                 }
               ]
             }
@@ -27743,6 +28872,22 @@
               "count": 7
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 0,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 7
+            }
+          ]
         }
       ],
       "repos": [
@@ -27955,6 +29100,17 @@
                   "count": 7
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 0,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 7
+                }
+              ]
             }
           ]
         }
@@ -27972,8 +29128,8 @@
       "github": "https://github.com/koajs/koa",
       "npm": "https://www.npmjs.com/package/koa",
       "current": {
-        "stars": 35684,
-        "forks": 3227,
+        "stars": 35682,
+        "forks": 3233,
         "commits": [
           {
             "year": 2015,
@@ -28025,9 +29181,9 @@
           }
         ],
         "downloads": {
-          "monthly": 27416950,
-          "yearly": 331517589,
-          "allTime": 331517589
+          "monthly": 31048507,
+          "yearly": 337211641,
+          "allTime": 337211641
         },
         "activity": {
           "total": 531,
@@ -28436,7 +29592,7 @@
             }
           ]
         },
-        "openIssues": 38,
+        "openIssues": 41,
         "contributors": 236,
         "bundleSize": 63253
       },
@@ -29443,14 +30599,74 @@
               "count": 29
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 35682,
+          "forks": 3233,
+          "downloads": {
+            "monthly": 31048507,
+            "yearly": 337211641,
+            "allTime": 337211641
+          },
+          "commits": [
+            {
+              "year": 2015,
+              "count": 2
+            },
+            {
+              "year": 2016,
+              "count": 53
+            },
+            {
+              "year": 2017,
+              "count": 106
+            },
+            {
+              "year": 2018,
+              "count": 55
+            },
+            {
+              "year": 2019,
+              "count": 39
+            },
+            {
+              "year": 2020,
+              "count": 34
+            },
+            {
+              "year": 2021,
+              "count": 57
+            },
+            {
+              "year": 2022,
+              "count": 30
+            },
+            {
+              "year": 2023,
+              "count": 13
+            },
+            {
+              "year": 2024,
+              "count": 31
+            },
+            {
+              "year": 2025,
+              "count": 82
+            },
+            {
+              "year": 2026,
+              "count": 29
+            }
+          ]
         }
       ],
       "repos": [
         {
           "repoPath": "koajs/koa",
           "current": {
-            "stars": 35684,
-            "forks": 3227,
+            "stars": 35682,
+            "forks": 3233,
             "commits": [
               {
                 "year": 2015,
@@ -30667,6 +31883,61 @@
                   "count": 29
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 35682,
+              "forks": 3233,
+              "commits": [
+                {
+                  "year": 2015,
+                  "count": 2
+                },
+                {
+                  "year": 2016,
+                  "count": 53
+                },
+                {
+                  "year": 2017,
+                  "count": 106
+                },
+                {
+                  "year": 2018,
+                  "count": 55
+                },
+                {
+                  "year": 2019,
+                  "count": 39
+                },
+                {
+                  "year": 2020,
+                  "count": 34
+                },
+                {
+                  "year": 2021,
+                  "count": 57
+                },
+                {
+                  "year": 2022,
+                  "count": 30
+                },
+                {
+                  "year": 2023,
+                  "count": 13
+                },
+                {
+                  "year": 2024,
+                  "count": 31
+                },
+                {
+                  "year": 2025,
+                  "count": 82
+                },
+                {
+                  "year": 2026,
+                  "count": 29
+                }
+              ]
             }
           ]
         }
@@ -31041,6 +32312,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 31,
+          "forks": 5,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -31149,6 +32431,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 31,
+              "forks": 5,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 31,
               "forks": 5,
               "commits": []
@@ -31535,6 +32823,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 2,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -31652,6 +32951,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 2,
+              "forks": 0,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 2,
               "forks": 0,
               "commits": []
@@ -32029,6 +33334,17 @@
             "allTime": 0
           },
           "commits": []
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 10,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": []
         }
       ],
       "repos": [
@@ -32140,6 +33456,12 @@
               "stars": 10,
               "forks": 0,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 10,
+              "forks": 0,
+              "commits": []
             }
           ]
         }
@@ -32157,8 +33479,8 @@
       "github": "https://github.com/dollarshaveclub/shave",
       "npm": "https://www.npmjs.com/package/shave",
       "current": {
-        "stars": 2255,
-        "forks": 133,
+        "stars": 2254,
+        "forks": 131,
         "commits": [
           {
             "year": 2016,
@@ -32206,9 +33528,9 @@
           }
         ],
         "downloads": {
-          "monthly": 79497,
-          "yearly": 1022773,
-          "allTime": 1022773
+          "monthly": 79376,
+          "yearly": 1037577,
+          "allTime": 1037577
         },
         "activity": {
           "total": 1169,
@@ -33560,14 +34882,70 @@
               "count": 21
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 2254,
+          "forks": 131,
+          "downloads": {
+            "monthly": 79376,
+            "yearly": 1037577,
+            "allTime": 1037577
+          },
+          "commits": [
+            {
+              "year": 2016,
+              "count": 84
+            },
+            {
+              "year": 2017,
+              "count": 34
+            },
+            {
+              "year": 2018,
+              "count": 43
+            },
+            {
+              "year": 2019,
+              "count": 23
+            },
+            {
+              "year": 2020,
+              "count": 115
+            },
+            {
+              "year": 2021,
+              "count": 219
+            },
+            {
+              "year": 2022,
+              "count": 155
+            },
+            {
+              "year": 2023,
+              "count": 135
+            },
+            {
+              "year": 2024,
+              "count": 200
+            },
+            {
+              "year": 2025,
+              "count": 140
+            },
+            {
+              "year": 2026,
+              "count": 21
+            }
+          ]
         }
       ],
       "repos": [
         {
           "repoPath": "dollarshaveclub/shave",
           "current": {
-            "stars": 2085,
-            "forks": 122,
+            "stars": 2084,
+            "forks": 121,
             "commits": [],
             "activity": {
               "total": 0,
@@ -33671,6 +35049,12 @@
               "stars": 2085,
               "forks": 122,
               "commits": []
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 2084,
+              "forks": 121,
+              "commits": []
             }
           ]
         },
@@ -33678,7 +35062,7 @@
           "repoPath": "yowainwright/shave",
           "current": {
             "stars": 170,
-            "forks": 11,
+            "forks": 10,
             "commits": [
               {
                 "year": 2016,
@@ -34827,6 +36211,57 @@
                   "count": 21
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 170,
+              "forks": 10,
+              "commits": [
+                {
+                  "year": 2016,
+                  "count": 84
+                },
+                {
+                  "year": 2017,
+                  "count": 34
+                },
+                {
+                  "year": 2018,
+                  "count": 43
+                },
+                {
+                  "year": 2019,
+                  "count": 23
+                },
+                {
+                  "year": 2020,
+                  "count": 115
+                },
+                {
+                  "year": 2021,
+                  "count": 219
+                },
+                {
+                  "year": 2022,
+                  "count": 155
+                },
+                {
+                  "year": 2023,
+                  "count": 135
+                },
+                {
+                  "year": 2024,
+                  "count": 200
+                },
+                {
+                  "year": 2025,
+                  "count": 140
+                },
+                {
+                  "year": 2026,
+                  "count": 21
+                }
+              ]
             }
           ]
         }
@@ -34844,8 +36279,8 @@
       "github": "https://github.com/yowainwright/pastoralist",
       "npm": "https://www.npmjs.com/package/pastoralist",
       "current": {
-        "stars": 108,
-        "forks": 55,
+        "stars": 109,
+        "forks": 56,
         "commits": [
           {
             "year": 2021,
@@ -34869,16 +36304,16 @@
           },
           {
             "year": 2026,
-            "count": 367
+            "count": 380
           }
         ],
         "downloads": {
-          "monthly": 4593,
-          "yearly": 35072,
-          "allTime": 35072
+          "monthly": 5611,
+          "yearly": 36848,
+          "allTime": 36848
         },
         "activity": {
-          "total": 1513,
+          "total": 1526,
           "years": [
             {
               "year": 2021,
@@ -34902,7 +36337,7 @@
             },
             {
               "year": 2026,
-              "count": 367
+              "count": 380
             }
           ],
           "months": [
@@ -35108,13 +36543,17 @@
             },
             {
               "month": "2026-09",
-              "commits": 21
+              "commits": 31
+            },
+            {
+              "month": "2026-10",
+              "commits": 3
             }
           ]
         },
         "openIssues": 0,
         "contributors": 3,
-        "bundleSize": 58028
+        "bundleSize": 68398
       },
       "history": [
         {
@@ -35788,14 +37227,50 @@
               "count": 367
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 109,
+          "forks": 56,
+          "downloads": {
+            "monthly": 5611,
+            "yearly": 36848,
+            "allTime": 36848
+          },
+          "commits": [
+            {
+              "year": 2021,
+              "count": 2
+            },
+            {
+              "year": 2022,
+              "count": 381
+            },
+            {
+              "year": 2023,
+              "count": 127
+            },
+            {
+              "year": 2024,
+              "count": 155
+            },
+            {
+              "year": 2025,
+              "count": 481
+            },
+            {
+              "year": 2026,
+              "count": 380
+            }
+          ]
         }
       ],
       "repos": [
         {
           "repoPath": "yowainwright/pastoralist",
           "current": {
-            "stars": 108,
-            "forks": 55,
+            "stars": 109,
+            "forks": 56,
             "commits": [
               {
                 "year": 2021,
@@ -35819,11 +37294,11 @@
               },
               {
                 "year": 2026,
-                "count": 367
+                "count": 380
               }
             ],
             "activity": {
-              "total": 1513,
+              "total": 1526,
               "years": [
                 {
                   "year": 2021,
@@ -35847,7 +37322,7 @@
                 },
                 {
                   "year": 2026,
-                  "count": 367
+                  "count": 380
                 }
               ],
               "months": [
@@ -36053,7 +37528,11 @@
                 },
                 {
                   "month": "2026-09",
-                  "commits": 21
+                  "commits": 31
+                },
+                {
+                  "month": "2026-10",
+                  "commits": 3
                 }
               ]
             }
@@ -36485,14 +37964,45 @@
                   "count": 367
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 109,
+              "forks": 56,
+              "commits": [
+                {
+                  "year": 2021,
+                  "count": 2
+                },
+                {
+                  "year": 2022,
+                  "count": 381
+                },
+                {
+                  "year": 2023,
+                  "count": 127
+                },
+                {
+                  "year": 2024,
+                  "count": 155
+                },
+                {
+                  "year": 2025,
+                  "count": 481
+                },
+                {
+                  "year": 2026,
+                  "count": 380
+                }
+              ]
             }
           ]
         }
       ],
       "grade": {
-        "score": 53,
+        "score": 56,
         "stars": 11,
-        "monthlyDownloads": 46,
+        "monthlyDownloads": 56,
         "monthlyActivity": 100,
         "commits": 100
       }
@@ -36502,7 +38012,7 @@
       "github": "https://github.com/yowainwright/awesome-writing-tools",
       "current": {
         "stars": 165,
-        "forks": 51,
+        "forks": 54,
         "commits": [
           {
             "year": 2026,
@@ -36926,6 +38436,22 @@
               "count": 10
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 165,
+          "forks": 54,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2026,
+              "count": 10
+            }
+          ]
         }
       ],
       "repos": [
@@ -36933,7 +38459,7 @@
           "repoPath": "yowainwright/awesome-writing-tools",
           "current": {
             "stars": 165,
-            "forks": 51,
+            "forks": 54,
             "commits": [
               {
                 "year": 2026,
@@ -37098,6 +38624,17 @@
               "date": "2026-09-28",
               "stars": 165,
               "forks": 51,
+              "commits": [
+                {
+                  "year": 2026,
+                  "count": 10
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 165,
+              "forks": 54,
               "commits": [
                 {
                   "year": 2026,
@@ -37563,6 +39100,22 @@
               "count": 11
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 1,
+          "forks": 0,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2025,
+              "count": 11
+            }
+          ]
         }
       ],
       "repos": [
@@ -37751,6 +39304,17 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 1,
+              "forks": 0,
+              "commits": [
+                {
+                  "year": 2025,
+                  "count": 11
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 1,
               "forks": 0,
               "commits": [
@@ -38850,6 +40414,50 @@
               "count": 1
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 10,
+          "forks": 2,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2018,
+              "count": 95
+            },
+            {
+              "year": 2019,
+              "count": 10
+            },
+            {
+              "year": 2020,
+              "count": 137
+            },
+            {
+              "year": 2021,
+              "count": 368
+            },
+            {
+              "year": 2022,
+              "count": 114
+            },
+            {
+              "year": 2023,
+              "count": 11
+            },
+            {
+              "year": 2024,
+              "count": 18
+            },
+            {
+              "year": 2025,
+              "count": 1
+            }
+          ]
         }
       ],
       "repos": [
@@ -39642,6 +41250,45 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 10,
+              "forks": 2,
+              "commits": [
+                {
+                  "year": 2018,
+                  "count": 95
+                },
+                {
+                  "year": 2019,
+                  "count": 10
+                },
+                {
+                  "year": 2020,
+                  "count": 137
+                },
+                {
+                  "year": 2021,
+                  "count": 368
+                },
+                {
+                  "year": 2022,
+                  "count": 114
+                },
+                {
+                  "year": 2023,
+                  "count": 11
+                },
+                {
+                  "year": 2024,
+                  "count": 18
+                },
+                {
+                  "year": 2025,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 10,
               "forks": 2,
               "commits": [
@@ -40814,6 +42461,54 @@
               "count": 1
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 78,
+          "forks": 27,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2018,
+              "count": 23
+            },
+            {
+              "year": 2019,
+              "count": 44
+            },
+            {
+              "year": 2020,
+              "count": 48
+            },
+            {
+              "year": 2021,
+              "count": 26
+            },
+            {
+              "year": 2022,
+              "count": 17
+            },
+            {
+              "year": 2023,
+              "count": 206
+            },
+            {
+              "year": 2024,
+              "count": 19
+            },
+            {
+              "year": 2025,
+              "count": 25
+            },
+            {
+              "year": 2026,
+              "count": 1
+            }
+          ]
         }
       ],
       "repos": [
@@ -41191,6 +42886,25 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 12,
+              "forks": 3,
+              "commits": [
+                {
+                  "year": 2023,
+                  "count": 152
+                },
+                {
+                  "year": 2024,
+                  "count": 11
+                },
+                {
+                  "year": 2025,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 12,
               "forks": 3,
               "commits": [
@@ -42059,6 +43773,49 @@
                   "count": 1
                 }
               ]
+            },
+            {
+              "date": "2026-10-05",
+              "stars": 14,
+              "forks": 18,
+              "commits": [
+                {
+                  "year": 2018,
+                  "count": 23
+                },
+                {
+                  "year": 2019,
+                  "count": 44
+                },
+                {
+                  "year": 2020,
+                  "count": 48
+                },
+                {
+                  "year": 2021,
+                  "count": 26
+                },
+                {
+                  "year": 2022,
+                  "count": 17
+                },
+                {
+                  "year": 2023,
+                  "count": 54
+                },
+                {
+                  "year": 2024,
+                  "count": 8
+                },
+                {
+                  "year": 2025,
+                  "count": 24
+                },
+                {
+                  "year": 2026,
+                  "count": 1
+                }
+              ]
             }
           ]
         },
@@ -42167,6 +43924,12 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 52,
+              "forks": 6,
+              "commits": []
+            },
+            {
+              "date": "2026-10-05",
               "stars": 52,
               "forks": 6,
               "commits": []
@@ -43181,6 +44944,46 @@
               "count": 1
             }
           ]
+        },
+        {
+          "date": "2026-10-05",
+          "stars": 4,
+          "forks": 1,
+          "downloads": {
+            "monthly": 0,
+            "yearly": 0,
+            "allTime": 0
+          },
+          "commits": [
+            {
+              "year": 2019,
+              "count": 3
+            },
+            {
+              "year": 2020,
+              "count": 75
+            },
+            {
+              "year": 2021,
+              "count": 112
+            },
+            {
+              "year": 2022,
+              "count": 56
+            },
+            {
+              "year": 2023,
+              "count": 95
+            },
+            {
+              "year": 2024,
+              "count": 18
+            },
+            {
+              "year": 2025,
+              "count": 1
+            }
+          ]
         }
       ],
       "repos": [
@@ -43897,6 +45700,41 @@
             },
             {
               "date": "2026-09-28",
+              "stars": 4,
+              "forks": 1,
+              "commits": [
+                {
+                  "year": 2019,
+                  "count": 3
+                },
+                {
+                  "year": 2020,
+                  "count": 75
+                },
+                {
+                  "year": 2021,
+                  "count": 112
+                },
+                {
+                  "year": 2022,
+                  "count": 56
+                },
+                {
+                  "year": 2023,
+                  "count": 95
+                },
+                {
+                  "year": 2024,
+                  "count": 18
+                },
+                {
+                  "year": 2025,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "date": "2026-10-05",
               "stars": 4,
               "forks": 1,
               "commits": [

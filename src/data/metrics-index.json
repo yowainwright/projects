@@ -120,7 +120,7 @@
     "grade": {
       "score": 26,
       "stars": 1,
-      "monthlyDownloads": 1,
+      "monthlyDownloads": 2,
       "monthlyActivity": 72,
       "commits": 72
     }
@@ -280,9 +280,9 @@
   },
   "scrolldir": {
     "grade": {
-      "score": 33,
+      "score": 34,
       "stars": 69,
-      "monthlyDownloads": 29,
+      "monthlyDownloads": 32,
       "monthlyActivity": 0,
       "commits": 0
     }
@@ -352,9 +352,9 @@
   },
   "pastoralist": {
     "grade": {
-      "score": 53,
+      "score": 56,
       "stars": 11,
-      "monthlyDownloads": 46,
+      "monthlyDownloads": 56,
       "monthlyActivity": 100,
       "commits": 100
     }
