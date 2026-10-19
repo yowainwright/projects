@@ -120,7 +120,7 @@
     "grade": {
       "score": 26,
       "stars": 1,
-      "monthlyDownloads": 1,
+      "monthlyDownloads": 3,
       "monthlyActivity": 72,
       "commits": 72
     }
@@ -163,11 +163,11 @@
   },
   "pk": {
     "grade": {
-      "score": 7,
+      "score": 8,
       "stars": 0,
       "monthlyDownloads": 0,
-      "monthlyActivity": 21,
-      "commits": 21
+      "monthlyActivity": 22,
+      "commits": 22
     }
   },
   "logsdx": {
@@ -217,11 +217,11 @@
   },
   "diu": {
     "grade": {
-      "score": 10,
+      "score": 14,
       "stars": 0,
       "monthlyDownloads": 0,
-      "monthlyActivity": 28,
-      "commits": 28
+      "monthlyActivity": 40,
+      "commits": 40
     }
   },
   "install-perfection": {
@@ -280,20 +280,20 @@
   },
   "scrolldir": {
     "grade": {
-      "score": 33,
+      "score": 35,
       "stars": 69,
-      "monthlyDownloads": 29,
+      "monthlyDownloads": 36,
       "monthlyActivity": 0,
       "commits": 0
     }
   },
   "lifecycle": {
     "grade": {
-      "score": 20,
+      "score": 21,
       "stars": 8,
       "monthlyDownloads": 0,
-      "monthlyActivity": 49,
-      "commits": 49
+      "monthlyActivity": 51,
+      "commits": 51
     }
   },
   "fasthar": {
@@ -352,9 +352,9 @@
   },
   "pastoralist": {
     "grade": {
-      "score": 53,
+      "score": 57,
       "stars": 11,
-      "monthlyDownloads": 46,
+      "monthlyDownloads": 62,
       "monthlyActivity": 100,
       "commits": 100
     }
